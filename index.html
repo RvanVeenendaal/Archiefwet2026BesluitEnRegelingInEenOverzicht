@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archiefwet 2026 – Wet, Besluit en Regeling per onderwerp</title>
+<style>
+  :root { --wet:#154273; --besluit:#a45500; --regeling:#2a6e3f; --bg:#f6f7f9; --line:#d9dde3; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/1.5 system-ui, "Segoe UI", sans-serif; background:var(--bg); color:#1b1f24; }
+  header { background:var(--wet); color:#fff; padding:1.5rem 1rem; }
+  header h1 { margin:0 0 .25rem; font-size:1.6rem; }
+  header p { margin:0; opacity:.9; }
+  main { max-width:1100px; margin:0 auto; padding:1rem; }
+  .notice { background:#fff8e1; border:1px solid #f0d78c; border-radius:6px; padding:.75rem 1rem; margin:1rem 0; font-size:.92rem; }
+  .flow { display:flex; gap:.5rem; align-items:stretch; flex-wrap:wrap; margin:1rem 0; }
+  .flow div { flex:1 1 220px; background:#fff; border:1px solid var(--line); border-top:5px solid; border-radius:6px; padding:.6rem .8rem; font-size:.9rem; }
+  .flow .w { border-top-color:var(--wet) } .flow .b { border-top-color:var(--besluit) } .flow .r { border-top-color:var(--regeling) }
+  .flow strong { display:block; }
+  .flow .arrow { flex:0 0 auto; align-self:center; border:0; background:none; padding:0; font-size:1.5rem; min-width:0; color:#667 }
+  .toolbar { position:sticky; top:0; z-index:5; background:var(--bg); padding:.5rem 0; display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; border-bottom:1px solid var(--line); }
+  .toolbar input[type=search], .toolbar select { padding:.4rem .6rem; border:1px solid var(--line); border-radius:4px; font:inherit; }
+  .toolbar input[type=search] { flex:1 1 220px; }
+  .progress { margin-left:auto; font-size:.9rem; }
+  nav.toc { background:#fff; border:1px solid var(--line); border-radius:6px; padding:.5rem 1rem; margin:1rem 0; columns:2 280px; font-size:.92rem; }
+  nav.toc a { display:block; color:var(--wet); text-decoration:none; padding:.1rem 0 }
+  nav.toc a:hover { text-decoration:underline }
+  section.topic { background:#fff; border:1px solid var(--line); border-radius:8px; margin:1.25rem 0; overflow:hidden; }
+  section.topic > h2 { margin:0; padding:.7rem 1rem; background:#eef1f5; font-size:1.15rem; border-bottom:1px solid var(--line); }
+  section.topic > h2 small { font-weight:400; color:#556; margin-left:.5rem; font-size:.85rem; }
+  .doel { padding:.6rem 1rem; font-size:.93rem; background:#fafbfc; border-bottom:1px solid var(--line); }
+  .doel strong { color:#333 }
+  .layer { padding:.7rem 1rem .7rem 1.1rem; border-left:6px solid; border-bottom:1px solid var(--line); }
+  .layer:last-child { border-bottom:0 }
+  .layer.wet { border-left-color:var(--wet) }
+  .layer.besluit { border-left-color:var(--besluit); margin-left:1rem }
+  .layer.regeling { border-left-color:var(--regeling); margin-left:2rem }
+  .layer h3 { margin:0 0 .3rem; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; }
+  .layer.wet h3 { color:var(--wet) } .layer.besluit h3 { color:var(--besluit) } .layer.regeling h3 { color:var(--regeling) }
+  .layer ul { list-style:none; margin:0; padding:0 }
+  .layer li { padding:.25rem 0; display:flex; gap:.5rem; align-items:flex-start }
+  .layer li input { margin-top:.35rem; flex:0 0 auto }
+  .layer li.done .ttl { text-decoration:line-through; color:#778 }
+  .item { flex:1 }
+  .item summary { cursor:pointer; list-style:none }
+  .item summary::-webkit-details-marker { display:none }
+  .item summary::before { content:"▸ "; color:#889 }
+  .item[open] summary::before { content:"▾ " }
+  .item.plain summary { cursor:default } .item.plain summary::before { content:"" }
+  .item ul.det { margin:.25rem 0 .4rem 1rem; padding:0; list-style:disc; font-size:.9rem; color:#2d333b }
+  .item ul.det li { display:list-item; padding:.05rem 0 }
+  .item .note { font-size:.88rem; color:#7a4b00; margin:.2rem 0 .3rem 1rem }
+  .art { display:inline-block; font-size:.78rem; background:#e8edf3; border-radius:3px; padding:0 .35rem; margin-right:.35rem; white-space:nowrap; color:#234; font-weight:600 }
+  .who, .tag { display:inline-block; font-size:.72rem; border:1px solid var(--line); border-radius:10px; padding:0 .45rem; margin-left:.3rem; color:#556; white-space:nowrap }
+  .tag.fys { background:#f3e8e8; border-color:#e0c3c3; color:#7a2a2a }
+  .tag.dig { background:#e6f1f8; border-color:#bcd7e8; color:#154273 }
+  .tag.hyb { background:#eef3ea; border-color:#c5d6bb; color:#2f5a1f }
+  .none { color:#667; font-style:italic; font-size:.92rem }
+  li.hidden, section.hidden { display:none }
+  section.hiaten { background:#fff; border:1px solid var(--line); border-top:5px solid #8a1f1f; border-radius:8px; margin:1.5rem 0; padding:.2rem 1rem 1rem }
+  section.hiaten h2 { font-size:1.2rem; margin:.8rem 0 .2rem }
+  section.hiaten h3 { font-size:1rem; margin:1rem 0 .3rem; color:#8a1f1f }
+  section.hiaten p.intro { font-size:.9rem; color:#445; margin:.2rem 0 .6rem }
+  section.hiaten details { border-top:1px solid var(--line); padding:.35rem 0 }
+  section.hiaten summary { cursor:pointer; font-weight:600 }
+  section.hiaten details > div { font-size:.92rem; margin:.3rem 0 .2rem 1rem }
+  section.hiaten .adv { color:#154273 }
+  footer { max-width:1100px; margin:2rem auto; padding:0 1rem 2rem; font-size:.88rem; color:#445 }
+  footer a { color:var(--wet) }
+  @media print { .toolbar, nav.toc { display:none } body { background:#fff } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Archiefwet 2026 – waar moet mijn organisatie aan werken?</h1>
+  <p>Per onderwerp van de Wet, via het Archiefbesluit, tot en met de Archiefregeling. Voorzien in werking per 1 januari 2027.</p>
+</header>
+<main>
+
+<div class="flow" aria-label="Volgorde">
+  <div class="w"><strong>1. Archiefwet 2026</strong>Hoofdlijnen en verplichtingen: <em>wat</em> moet er geregeld zijn</div>
+  <div class="arrow">→</div>
+  <div class="b"><strong>2. Archiefbesluit 2026</strong>Algemene maatregel van bestuur: <em>hoe</em> werkt dat uit (procedures, procesbeschrijvingen)</div>
+  <div class="arrow">→</div>
+  <div class="r"><strong>3. Archiefregeling 2026</strong>Ministeriële regeling: <em>welke</em> minimale inhoud, metadata, formaten en meldingen</div>
+</div>
+
+<div class="notice">
+  <strong>Bron en status.</strong> Alle artikelen zijn overgenomen uit de drie PDF's in deze map (Archiefwet 2026, Archiefbesluit 2026, Archiefregeling 2026). Besluit en Regeling zijn in die teksten nog aangeduid als "20XX": artikelnummers en eisen kunnen nog wijzigen, controleer ze in de definitieve versie.
+  Elke regel is gelabeld als <span class="tag dig">digitaal</span>, <span class="tag fys">fysiek</span> of <span class="tag hyb">beide</span> (geldt voor digitale én fysieke documenten); regels zonder label zijn algemeen en gelden voor alle vormen. Kies bij "Soort archief" digitaal, fysiek of beide. Klik op een regel voor de details. Dit is een hulpmiddel, geen juridisch advies.
+</div>
+
+<div class="toolbar">
+  <input type="search" id="q" placeholder="Zoek op trefwoord of artikel, bijvoorbeeld metadata, 2.5, migratie…" aria-label="Zoeken">
+  <label>Type organisatie:
+    <select id="org">
+      <option value="all">Alle</option>
+      <option value="rijk">Rijk / ZBO / privaatrechtelijk met openbaar gezag</option>
+      <option value="decentraal">Gemeente, provincie, waterschap</option>
+      <option value="gr">Gemeenschappelijke regeling</option>
+      <option value="archiefdienst">Archiefdienst / archivaris</option>
+    </select>
+  </label>
+  <label>Soort archief:
+    <select id="kind">
+      <option value="dig" selected>Digitaal</option>
+      <option value="fys">Fysiek</option>
+      <option value="all">Beide</option>
+      <option value="all">Alles</option>
+    </select>
+  </label>
+  <label><input type="checkbox" id="hideDone"> Verberg afgevinkt</label>
+  <span class="progress" id="progress"></span>
+</div>
+
+<nav class="toc" id="toc" aria-label="Inhoud"></nav>
+<div id="topics"></div>
+
+<section class="hiaten" id="hiaten">
+  <h2>Hiaten en onduidelijkheden in Wet, Besluit en Regeling</h2>
+  <p class="intro">Eigen analyse op basis van de PDF's en de toelichtingen daarin. Waar het mijn interpretatie is en niet letterlijk in de stukken staat, is dat aangegeven. Controleer dit in de definitieve teksten.</p>
+
+  <h3>Grote hiaten</h3>
+  <details><summary>1. Informatiebeveiliging is nauwelijks ingevuld</summary><div>
+    Besluit 2.1 lid 2 vraagt alleen "passende maatregelen ter beveiliging". Besluit 2.5 lid 1 sub e geeft een grondslag voor regels over beveiliging, maar de Regeling gebruikt die niet. Volgens de toelichting is het BIO-artikel uit de Regeling geschrapt (onder meer vanwege NIS-2) en vervangen door een inspanningsverplichting in het Besluit.<br>
+    <span class="adv">Advies: kies zelf een kader (BIO of ISO 27001) en leg dat vast in uw beheerregels (Wet 4.2).</span></div></details>
+  <details><summary>2. Digitale kwaliteitseisen en bewaaromgeving zijn niet uitgewerkt</summary><div>
+    Besluit 2.5 lid 1 sub a en b noemen ze, maar de Regeling heeft er geen artikelen over. Wat er staat is globaal: opslag in EU/EER (2.1), een "duurzaam bestandsformaat" zonder lijst (2.9), "ongewijzigd en onbeschadigd" zonder maatstaf (2.10). Alleen de toelichting noemt redundante opslag, back-ups en foutcorrectie. Concrete normen kunnen komen via de Minister (Wet 4.1 lid 5), maar die gelden alleen voor de centrale overheid.</div></details>
+  <details><summary>3. Data, databases, algoritmes en dynamische informatie</summary><div>
+    Gemeenten, provincies, waterschappen en de Inspectie signaleren dat houvast ontbreekt. De toelichting erkent dat er "nog minder ervaring" is en verwijst naar een evaluatie elke 5 jaar (Regeling 8.1). E-mail, chat en websites worden niet in de Regeling geregeld maar via modelselectiebesluiten en normen.</div></details>
+  <details><summary>4. Aanvullende digitale eisen gelden alleen bij een bewaartermijn langer dan 10 jaar</summary><div>
+    Regeling 2.7: duurzaam formaat, ongewijzigde opslag, integriteitschecks, aanvullende technische metadata en permanent uniek id (2.8–2.11) gelden niet voor documenten die tot 10 jaar bewaard blijven. Besluit 2.1 lid 1 sub f (geen informatieverlies) geldt wel voor alle documenten. Mijn lezing: voor tijdelijke documenten is de invulling onduidelijk.</div></details>
+  <details><summary>5. "Adequate voorziening" bij ontheffing van overbrenging</summary><div>
+    Besluit 2.5 lid 2 geeft een grondslag voor nadere regels, maar de Regeling regelt niets; een handreiking is aangekondigd. Regeling 5.2 heet ook "Ontheffing" maar gaat over depoteisen, niet over Wet 5.6; dat geeft verwarring.</div></details>
+  <details><summary>6. Ongelijke regels voor Rijk en decentrale overheden</summary><div>
+    Meldplicht (Regeling 7.1), normstelling (Wet 4.1 lid 5) en handhaving met aanwijzing en bestuurlijke boete (Wet 10.3) gelden alleen voor de centrale overheid. Decentraal loopt het via de archivaris en een verordening (Wet 10.4); een incidentregeling ontbreekt daar.</div></details>
+  <details><summary>7. Uitbesteding en cloud (eigen waarneming)</summary><div>
+    Alleen de EU/EER-eis (Regeling 2.1) en een zin in de toelichting over leveranciersafhankelijkheid. Eisen aan exit, verantwoordelijkheid bij verwerkers en bewijs van vernietiging in de cloud ontbreken.</div></details>
+  <details><summary>8. Metadata blijft abstract</summary><div>
+    Regeling 2.5 verplicht een schema volgens NEN-ISO 23081-1 (principes) plus een minimale lijst. Richtlijnen als MDTO worden bewust niet verplicht; het aggregatieniveau (bestand, document, dossier, database, dataset) is vrij. Welk schema voldoet moet u zelf beoordelen.</div></details>
+
+  <h3>Grote onduidelijkheden</h3>
+  <details><summary>Open normen</summary><div>
+    "Passende maatregelen" (Wet 4.1, 4.2), "redelijke termijn" (Besluit 2.1 a–c), "juiste en volledige weergave" (Besluit 2.2–2.4), "zo vroeg mogelijk" (Regeling 2.9), "veelvuldig gebruik" (Wet 5.5), "aanmerkelijk belang" (Wet 10.2). De Inspectie noemt dit zelf een handhaafbaarheidsrisico en wil het via toezichtbeleid en normen invullen.</div></details>
+  <details><summary>Meldplicht: onverwijld of 72 uur?</summary><div>
+    De Wet (10.2) zegt "onverwijld", de Regeling (7.1) "binnen 72 uur na ontdekking". Het is onduidelijk wanneer een dreiging "ontdekt" is. De Inspectie gaat de categorieën incidenten nog uitwerken.</div></details>
+  <details><summary>Vervanging en migratie lopen door elkaar (mijn lezing)</summary><div>
+    Besluit 4.2: migratie of conversie waarbij originelen worden vernietigd is vervanging (Wet 4.3). Maar de procesbeschrijving en het archivarisadvies (Besluit 2.3) gelden alleen voor analoge documenten. Welk regime geldt voor digitale vervanging? Advies bij vervanging van analoog is verplicht, bij migratie van blijvend digitaal archief niet.</div></details>
+  <details><summary>Overbrenging zonder fysieke verplaatsing</summary><div>
+    Besluit 5.1 lid 3 vraagt toestemming van de archivaris en gezamenlijke maatregelen, maar noemt geen technische eisen en laat de verdeling van verantwoordelijkheid na overbrenging open. Provincies en waterschappen vroegen hier al om verduidelijking.</div></details>
+  <details><summary>Tweesporig overgangsrecht en onzekere data</summary><div>
+    Oude documenten pas bij 20 jaar overbrengen, nieuwe bij 10 (Wet 12.3); selectielijsten maximaal 20 jaar (Besluit 7.2); Regeling 2.12 niet voor oude documenten. Het Besluit verplicht migratieplan en -verklaring (2.2) vanaf inwerkingtreding, terwijl de invulling in Regeling 3.2 en 3.3 pas "per het derde kalenderjaar" daarna geldt (2029 of 2030, niet eenduidig). Het Besluit treedt per artikel bij koninklijk besluit in werking.</div></details>
+  <details><summary>"Op elk moment te vernietigen" en digitale vernietiging</summary><div>
+    Wet 5.1 lid 4: de Inspectie maakt zich zorgen; criteria horen in de beheerregels. Voor digitale vernietiging is volgens de toelichting beperkte ervaring en zijn normen er niet; het Nationaal Archief heeft een handreiking.</div></details>
+  <details><summary>Beheerregels zonder model</summary><div>
+    Wet 4.2 verplicht en publiceert ze, maar Besluit en Regeling geven geen model of toetsingskader. Ze worden uw belangrijkste bewijsstuk.</div></details>
+
+  <h3>Wat u nu kunt doen</h3>
+  <ol class="adv">
+    <li>Leg in uw beheerregels vast hoe u de open normen invult (redelijke termijn, beveiliging, formaten, aggregatieniveau metadata).</li>
+    <li>Doe een gap-analyse op Regeling 2.2, 2.3 en 2.5: die zijn het concreetst en direct toetsbaar.</li>
+    <li>Behandel documenten met een bewaartermijn tot 10 jaar niet als vrijgesteld; pas minimaal Besluit 2.1 toe.</li>
+    <li>Spreek met de archivaris af hoe vervanging, migratie en overbrenging zonder verplaatsing werken.</li>
+    <li>Volg de Minister-normen, Inspectie-uitwerking, de handreiking ontheffing en het definitieve tijdpad van de inwerkingtreding.</li>
+  </ol>
+</section>
+
+</main>
+<footer>
+  Bronnen: Archiefwet 2026 (Stb. 2026, 149), concept Archiefbesluit en concept Archiefregeling (PDF's in deze map) en de
+  <a href="https://nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026">kennisbank Archiefwet 2026 van het Nationaal Archief</a>.
+</footer>
+
+<script>
+// k: "dig" = digitaal, "fys" = alleen fysiek, weglaten = algemeen. w: doelgroepen (leeg = iedereen).
+// d: detailregels (uitklapbaar). n: let-op-notitie.
+const NA = "https://nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-";
+const topics = [
+{
+  id:"verantwoordelijkheid", title:"Verantwoordelijkheid en samenwerking",
+  links:[["Aanwijzing archiefdienst en archivaris", NA+"aanwijzing-archiefdienst-en-archivaris"]],
+  doel:"Weten wie verantwoordelijk is voor welke documenten, ook bij samenwerking en reorganisaties.",
+  wet:[
+    {a:"2.1–2.5", t:"Bepaal wie het verantwoordelijk overheidsorgaan is (Staat, provincie/gemeente/waterschap, gemeenschappelijke regeling, publiekrechtelijke en privaatrechtelijke organen met openbaar gezag)."},
+    {a:"2.2", t:"Provincie, gemeente, waterschap: verantwoordelijkheid volgens een door raad/staten/algemeen bestuur vast te stellen verordening.", w:["decentraal"]},
+    {a:"2.3, 2.6, 12.1", t:"Gemeenschappelijke regeling: verantwoordelijk orgaan aanwijzen en regeling uiterlijk 2 jaar na inwerkingtreding aanpassen.", w:["gr"]},
+    {a:"3.4", t:"Samenwerkingsverbanden: gezamenlijke regeling over taken, overbrenging, toezicht en beheer van de documenten."},
+    {a:"3.5", t:"Reorganisatie, samenvoeging of overdracht van taken aan een niet-overheidsorgaan: voorziening treffen voor de documenten."},
+    {a:"1.1", k:"hyb", t:"Een 'document' is een schriftelijk stuk of ander geheel van vastgelegde gegevens: de wet geldt dus voor digitale en fysieke informatie."},
+    {a:"1.3", t:"Houd bij uw taken rekening met het belang van documenten: verantwoording, rechten en plichten, onderzoek en cultureel erfgoed."},
+    {a:"3.1–3.3", t:"De Minister kan taken en bevoegdheden voor documenten na overbrenging naar het Nationaal Archief overdragen aan een gemeenschappelijke regeling, provincie of gemeente (met specifieke uitkering); intrekking kan bij gebrekkig beheer.", w:["rijk","gr","decentraal"]}
+  ],
+  besluit:[], regeling:[]
+},
+{
+  id:"duurzaam", title:"Duurzame toegankelijkheid (algemene eisen)",
+  links:[["Duurzame toegankelijkheid", NA+"duurzame-toegankelijkheid"]],
+  doel:"Documenten vanaf het ontstaan vindbaar, beschikbaar, leesbaar, betrouwbaar en beveiligd houden zolang het selectiebesluit voorschrijft.",
+  wet:[
+    {a:"4.1 lid 1–3", k:"hyb", t:"Treft passende maatregelen om documenten duurzaam toegankelijk te maken en te houden; zorg dat documenten bij het juiste overheidsorgaan berusten.", d:["Uitwerking: Archiefbesluit 2.1 en volgende, Archiefregeling hoofdstuk 2."]},
+    {a:"4.1 lid 4–5", t:"Grondslag voor nadere regels (AMvB) en door de Minister vast te stellen normen voor eenheid, kwaliteit of doelmatigheid; afwijken alleen gemotiveerd.", w:["rijk"]},
+    {a:"11.17", t:"Wet open overheid art. 2.4 lid 1 wordt aangepast: een bestuursorgaan treft passende maatregelen om documenten in duurzaam toegankelijke staat te brengen en te houden."}
+  ],
+  besluit:[
+    {a:"2.1 lid 1", k:"hyb", t:"Beheer documenten zo dat ze zolang het selectiebesluit voorschrijft aan zes eisen voldoen.", d:[
+      "a. binnen redelijke termijn te vinden",
+      "b. binnen redelijke termijn beschikbaar",
+      "c. binnen redelijke termijn weer te geven in mens- of machineleesbare vorm",
+      "d. vast te stellen wanneer, door wie en uit hoofde van welke taak opgemaakt/ontvangen, en relatie met andere documenten",
+      "e. oorspronkelijke inhoud betrouwbaar en volledig vast te stellen en beschermd tegen ongecontroleerde verandering",
+      "f. geen aanmerkelijke fysieke of digitale achteruitgang of informatieverlies"]},
+    {a:"2.1 lid 2", k:"hyb", t:"Passende maatregelen ter beveiliging van de documenten."},
+    {a:"2.5", k:"hyb", t:"Grondslag voor de Archiefregeling over: digitale kwaliteitseisen, digitale bewaaromgevingen, ordening en overzicht, metadata, beveiliging, migratieplan, migratieverklaring, procesbeschrijving vervanging, fysieke ruimten en materialen.", n:"De Regeling bevat (nog) geen aparte artikelen over digitale kwaliteitseisen, digitale bewaaromgevingen en beveiliging; die staan alleen als algemene eis in Besluit 2.1. Houd dit in de gaten bij de definitieve teksten."}
+  ],
+  regeling:[
+    {a:"2.1", k:"dig", t:"Opslag en verwerking van documenten binnen de EU/EER, of in een land met adequaatheidsbesluit van de Europese Commissie (tenzij verdragen anders vereisen).", n:"Relevant bij cloud, SaaS en uitbesteding."},
+    {a:"2.4", k:"dig", t:"Beschikbaarheid betekent op verzoek een juiste en volledige weergave of export van inhoud én metadata.", d:["Bevat het document persoonsgegevens, vertrouwelijke informatie of openbaarheidsbeperkingen: ook een gedeeltelijke weergave of export beschikbaar."]},
+    {a:"2.9", k:"dig", t:"Sla een document zo vroeg mogelijk op in een duurzaam bestandsformaat; compressie alleen zonder onaanvaardbaar informatieverlies.", n:"Alleen voor documenten die volgens het selectiebesluit langer dan 10 jaar bewaard blijven (art. 2.7)."},
+    {a:"2.10", k:"dig", t:"Maatregelen zodat elk document ongewijzigd en onbeschadigd wordt opgeslagen en bewaard.", n:"Alleen voor documenten die langer dan 10 jaar worden bewaard (art. 2.7)."},
+    {a:"2.11", k:"dig", t:"Gebruikt u een andere preserveringshandeling dan migratie, conversie of emulatie: leg vast hoe aan de kwaliteitseisen voor duurzame toegankelijkheid is voldaan.", n:"Alleen voor documenten die langer dan 10 jaar worden bewaard (art. 2.7)."},
+    {a:"5.12 lid 2", k:"hyb", t:"Magnetische dragers (digitale informatie op fysieke dragers) bewaren in een gesloten constructie die elektromagnetische straling tegenhoudt."},
+    {a:"2.7", k:"dig", t:"Reikwijdte: de aanvullende eisen van 2.8 t/m 2.11 gelden voor documenten in digitale vorm die op basis van het selectiebesluit langer dan tien jaar worden bewaard."},
+    {a:"1.2–1.3, bijlage 1", t:"Technische eisen uit andere EU/EER-staten en nieuwere versies van genoemde NEN/ISO/DIN-normen zijn gelijkgesteld; afwijken mag bij minimaal gelijke kwaliteit.", d:["Voor digitale informatie is vooral NEN-ISO 23081-1:2017 (metadata) relevant; de overige normen in bijlage 1 gaan over depots (brand, inbraak, constructie) en papier."]},
+    {a:"1.1", k:"dig", t:"Begrippen: emulatie is een techniek waarmee een computer of toepassingsprogrammatuur zich gedraagt als een oudere generatie; vindplaats omvat zowel de fysieke als de logische vindplaats."}
+  ]
+},
+{
+  id:"beheerregels", title:"Beheerregels, ordening en overzicht informatiehuishouding",
+  links:[["Beheerregels", NA+"beheerregels"],["Overzicht Informatiehuishouding", NA+"overzicht-informatiehuishouding"]],
+  doel:"Weten wat u in huis heeft, waar het staat en hoe het wordt beheerd; en dat openbaar verantwoorden.",
+  wet:[
+    {a:"4.2 lid 1", k:"hyb", t:"Stel beheerregels vast voor alle niet-overgebrachte documenten."},
+    {a:"4.2 lid 2", k:"hyb", t:"Beschrijf in de beheerregels minimaal:", d:["welke organen of dienstonderdelen het feitelijke beheer doen","per categorie documenten de passende maatregelen voor duurzame toegankelijkheid (en vernietiging volgens 5.3)","hoe het beheer periodiek wordt onderzocht, geëvalueerd en bijgesteld"]},
+    {a:"4.2 lid 3", t:"Maak de beheerregels openbaar."}
+  ],
+  besluit:[
+    {a:"2.5 lid 1 sub c", t:"Grondslag voor nadere regels over ordening en overzicht (uitgewerkt in de Regeling)."}
+  ],
+  regeling:[
+    {a:"2.2", k:"hyb", t:"Ordening: minimaal één ordeningsstructuur die aansluit bij taken en werkprocessen.", d:["De structuur bevat waarden die de logische plaats van documenten aangeven","De plaats van een document wordt vastgelegd via metadata of een externe registratie","Volgens de toelichting is een externe registratie vooral van toepassing op fysieke documenten; organisaties met zowel fysieke als digitale documenten ordenen beide typen en moeten de ordening van het hele archief inzichtelijk houden"]},
+    {a:"2.3", k:"hyb", t:"Actueel overzicht van de informatiehuishouding met minimaal:", d:["a. taken van het orgaan en bijbehorende documenten","b. per organisatieonderdeel de applicaties en andere systemen per werkproces waarmee documenten worden opgemaakt of ontvangen","c. vindplaats (fysieke of logische) van documenten en samenhang tussen documenten","d. bij meerdere ordeningsstructuren: beschrijving, toepassing en onderlinge relaties"]}
+  ]
+},
+{
+  id:"metadata", title:"Metadata",
+  links:[],
+  doel:"Documenten voorzien van vastgelegde metadata volgens een eigen metadataschema; aanvullende eisen voor langdurig te bewaren en over te brengen documenten.",
+  wet:[
+    {a:"4.1 lid 1 en 4", k:"hyb", t:"Duurzame toegankelijkheid vraagt om context en beheer door de tijd; de nadere eisen aan metadata staan in Besluit en Regeling."}
+  ],
+  besluit:[
+    {a:"1.1", t:"Definitie: metadata zijn gegevens die de inhoud, structuur en context van documenten en het beheer ervan door de tijd heen beschrijven."},
+    {a:"2.1 lid 1 sub d–e", k:"hyb", t:"Metadata moeten kunnen aantonen wanneer, door wie en uit hoofde van welke taak een document is opgemaakt of ontvangen, de relatie met andere documenten en de betrouwbaarheid van de inhoud."},
+    {a:"2.5 lid 1 sub d", t:"Grondslag voor de Regeling over de aan documenten te verbinden metadata."}
+  ],
+  regeling:[
+    {a:"2.5", k:"hyb", t:"Metadata algemeen: stel een of meer metadataschema's vast volgens NEN-ISO 23081-1:2017 en koppel metadata aan documenten.", n:"Het artikel maakt geen onderscheid tussen digitale en fysieke documenten. Volgens de toelichting bij 2.2 worden metadata van fysieke documenten doorgaans in een externe registratie bijgehouden.", d:[
+      "Minimaal vast te leggen:",
+      "a. de inhoud",
+      "b. de structuur",
+      "c. indien relevant, de verschijningsvorm",
+      "d. indien beschikbaar, het bestandsformaat waarin het document is ontvangen of opgemaakt",
+      "e. een uniek identificatiekenmerk",
+      "f. wanneer, door wie en uit hoofde van welke taak ontvangen of opgemaakt",
+      "g. samenhang en aard daarvan met andere documenten",
+      "h. de plaats in een ordeningsstructuur",
+      "i. de uitgevoerde beheeractiviteiten",
+      "j. de toepasselijke categorie uit het selectiebesluit",
+      "k. de bewaartermijn"]},
+    {a:"2.6", k:"dig", t:"Elektronische handtekening: leg aanvullend vast de ondertekenaar en, afhankelijk van het type, de koppeling tussen document en ondertekenaar of het gekwalificeerde middel en certificaat.", d:["Geavanceerde handtekening: gegevens die de koppeling tussen document en ondertekenaar bewijzen","Gekwalificeerde handtekening: identificatie van het gekwalificeerde middel en het certificaat"]},
+    {a:"2.8", k:"dig", t:"Langdurig te bewaren digitale documenten (selectiebesluit > 10 jaar): leg aanvullend vast:", d:["omschrijving van gebruikte hardware, besturingsprogrammatuur en toepassingsprogrammatuur","resultaten van uitgevoerde integriteitschecks","een permanent uniek identificatiekenmerk"]},
+    {a:"2.12", k:"hyb", t:"Over te brengen documenten: leg uiterlijk bij overbrenging vast:", d:["a. status openbaar of beperkt openbaar","b. duur van de openbaarheidsbeperking","c. datum waarop de beperking afloopt","d. de beperkingsgrond uit artikel 7.2 van de wet"], n:"Geldt niet voor documenten die vóór inwerkingtreding zijn opgemaakt of ontvangen (art. 8.2)."}
+  ]
+},
+{
+  id:"migratie", title:"Migratie, conversie en vervanging",
+  links:[],
+  doel:"Wijzigingen aan bestandsformaten, systemen en dragers beheerst uitvoeren zonder informatieverlies, en daarover verantwoording afleggen.",
+  wet:[
+    {a:"4.3", k:"hyb", t:"Vervanging: documenten mogen worden vervangen door reproducties zodat het origineel kan worden vernietigd; de reproductie geldt daarna als origineel."}
+  ],
+  besluit:[
+    {a:"2.2", k:"dig", t:"Migratie (overzetten naar andere toepassing of platform): juiste en volledige weergave van inhoud en metadata; werk met een door u vastgesteld migratieplan en maak een migratieverklaring.", n:"Geen migratieplan nodig als alleen de opslaglocatie verandert."},
+    {a:"2.4", k:"dig", t:"Conversie (omzetten naar een ander bestandsformaat): passende maatregelen voor juiste en volledige weergave van inhoud en metadata."},
+    {a:"2.3", k:"hyb", t:"Vervanging van analoge documenten (bijvoorbeeld digitaliseren): werk met een vastgestelde procesbeschrijving; vraag advies aan de archivaris als blijvend te bewaren, nog niet overgebrachte documenten worden vervangen.", d:["Advies niet nodig voor categorieën waarvoor de rijksarchivaris een algemeen advies heeft vastgesteld"]},
+    {a:"4.2", k:"dig", t:"Worden bij migratie of conversie originele documenten vernietigd, dan is dat vervanging in de zin van artikel 4.3 van de wet; de vernietigingsregels van artikel 4.1 zijn dan niet van toepassing."}
+  ],
+  regeling:[
+    {a:"3.2", k:"dig", t:"Het migratieplan bevat minimaal:", d:["a. hoe de duurzame toegankelijkheid wordt geborgd","b. hoe de bewaartermijnen uit het selectiebesluit worden geborgd","c. een beschrijving van de systemen waaruit en waarnaartoe wordt gemigreerd"], n:"Treedt pas in werking per het derde kalenderjaar na inwerkingtreding van de Regeling (art. 8.4)."},
+    {a:"3.3", k:"dig", t:"De migratieverklaring bevat minimaal:", d:["a. omschrijving van de gemigreerde documenten","b. vermelding van documenten die niet of niet volledig zijn gemigreerd","c. hoe de documenten onder b raadpleegbaar blijven tot het einde van de bewaartermijn"], n:"Treedt pas in werking per het derde kalenderjaar na inwerkingtreding van de Regeling (art. 8.4)."},
+    {a:"3.1", k:"hyb", t:"De procesbeschrijving voor vervanging bevat minimaal:", d:["a. de documenten waarop zij van toepassing is","b. inhoud, structuur en vorm van de documenten","c. gronden voor vervanging","d. wanneer en hoe de archivaris om advies wordt gevraagd, waar dat wordt vastgelegd en hoe analoge documenten met erfgoedwaarde worden bewaard","e. uitzonderingen van vervanging","f. technische infrastructuur","g. procesinrichting","h. kwaliteitsprocedures","i. hoe vervangen documenten worden vernietigd","j. periodieke evaluatie van de procesbeschrijving","k. minimale beeldkwaliteit en metadatering van de vervangende documenten"]}
+  ]
+},
+{
+  id:"selectie", title:"Waardering en selectiebesluiten",
+  links:[["Waardering en selectie", NA+"waardering-en-selectie"]],
+  doel:"Per categorie documenten vastleggen wat blijvend en wat tijdelijk bewaard wordt. Zonder selectiebesluit geen vernietiging of overbrenging.",
+  wet:[
+    {a:"5.1", t:"Ontwerp selectiebesluit(en) voor uw documenten en pas vastgestelde selectiebesluiten toe.", d:["Minimaal: categorieën documenten en per categorie blijvend of tijdelijk (met bewaartermijn)","Vaststelling door de Minister in overeenstemming met het verantwoordelijk orgaan"]},
+    {a:"5.2", t:"Groepsselectiebesluit voor privaatrechtelijke verantwoordelijke organen, via een representatieve organisatie.", w:["rijk"]},
+    {a:"12.2", t:"Overgang: bestaande selectielijsten gelden als selectiebesluiten."}
+  ],
+  besluit:[
+    {a:"3.1", t:"Inhoud en toepassing van een selectiebesluit.", d:["Opschrift met betrokken orgaan/organen; omschrijving van taken en structuur; toepassingsperiode; afbakening met andere selectiebesluiten","Geldt in beginsel voor nieuwe documenten, in afwijking ook voor een eerdere periode","Toepassingsperiode maximaal 10 jaar na 1 januari volgend op inwerkingtreding"]},
+    {a:"3.2", t:"De rijksarchivaris kan modelselectiebesluiten vaststellen."},
+    {a:"3.3", t:"Voorbereiding via de uniforme openbare voorbereidingsprocedure (afd. 3.4 Awb); iedereen kan een zienswijze indienen."},
+    {a:"3.4", t:"Waardering: indeling in categorieën die aansluit bij taken en informatiebeheer; weeg ook de bescherming van persoonsgegevens mee.", d:["Altijd blijvend bewaren: strategische besluitvorming met verslaglegging, planvorming en verantwoording, cruciale processen, essentiële registraties"]},
+    {a:"3.5–3.6", t:"Betrek bij het ontwerp: een aangewezen persoon voor de informatiehuishouding, de archivaris van de archiefdienst en een onafhankelijke deskundige op het terrein van burger en overheid (benoeming max. 5 jaar, eenmalig herbenoembaar)."},
+    {a:"3.7", t:"Onderbouwing: motivering van indeling en waarderingen, plus een verslag van het overleg met de betrokken deskundigen."},
+    {a:"3.8", t:"De Minister publiceert vastgestelde selectiebesluiten en afwijkingen elektronisch."},
+    {a:"3.9–3.10", t:"Afwijken van een selectiebesluit alleen in bepaalde gevallen (bijvoorbeeld ingrijpende gebeurtenis, wettelijk voorschrift, ondergeschikte aanpassing); motiveer, leg vast en stuur naar de rijksarchivaris."},
+    {a:"3.11–3.13", t:"Gezamenlijke selectiebesluiten van meerdere organen en groepsselectiebesluiten voor privaatrechtelijke organen: vereenvoudigde betrokkenheid van deskundigen.", w:["rijk"]},
+    {a:"7.2", t:"Overgang: selectielijsten blijven maximaal 20 jaar van toepassing vanaf inwerkingtreding."}
+  ],
+  regeling:[
+    {a:"2.5 sub j en k", k:"hyb", t:"Leg bij elk document de toepasselijke selectiebesluitcategorie en de bewaartermijn vast als metadata (zie onderwerp Metadata)."}
+  ]
+},
+{
+  id:"vernietiging", title:"Vernietiging",
+  links:[],
+  doel:"Documenten waarvan de bewaartermijn is verstreken gecontroleerd en aantoonbaar vernietigen.",
+  wet:[
+    {a:"5.3 lid 1–2", k:"hyb", t:"Zorg dat documenten waarvan de bewaartermijn is verstreken worden vernietigd (tenzij uitgezonderd)."},
+    {a:"5.3 lid 3", t:"De Minister-President kan regels stellen om in buitengewone omstandigheden af te wijken van de vernietigingsregels."}
+  ],
+  besluit:[
+    {a:"4.1", k:"hyb", t:"Vernietig volgens een door u vastgestelde procesbeschrijving en maak een verklaring van vernietiging.", n:"Niet nodig voor categorieën die volgens het selectiebesluit op elk moment mogen worden vernietigd."}
+  ],
+  regeling:[
+    {a:"4.1", k:"hyb", t:"De procesbeschrijving vernietiging beschrijft minimaal:", d:["a. relatie met overzicht informatiehuishouding, beheerkeuzes en selectiebesluiten (welke documenten moeten gecontroleerd worden vernietigd)","b. beleid voor de wijze en het effect van vernietiging","c. rollen en verantwoordelijkheden","d. hoe u zich ervan vergewist dat documenten zijn vernietigd"]},
+    {a:"4.2", k:"hyb", t:"De verklaring van vernietiging bevat minimaal:", d:["a. omschrijving van de vernietigde documenten","b. het systeem waarin vernietigd is","c. de artikelen van het selectiebesluit op grond waarvan vernietigd is","d. de wijze van vernietiging"]}
+  ]
+},
+{
+  id:"vervreemding", title:"Vervreemding",
+  links:[],
+  doel:"Eigendomsoverdracht van documenten alleen met machtiging en met betrokkenheid van de juiste personen.",
+  wet:[
+    {a:"4.4", t:"Vervreemden alleen na machtiging van de Minister, tenzij een wettelijk voorschrift dit vereist."},
+    {a:"4.5, 10.6", k:"hyb", t:"Tijdelijke invordering: wie documenten van uw organisatie onder zich heeft moet ze binnen vier weken afstaan zodat u een reproductie kunt maken; teruggave binnen vier weken. Bij weigering kunt u een last onder bestuursdwang opleggen."}
+  ],
+  besluit:[
+    {a:"4.3", t:"Betrek bij de voorbereiding minimaal de persoon verantwoordelijk voor de informatiehuishouding en de archivaris van de archiefdienst waarnaar de documenten zouden worden overgebracht."}
+  ],
+  regeling:[]
+},
+{
+  id:"overbrenging", title:"Overbrenging, opschorting en ontheffing",
+  links:[["Overbrenging, opschorting en ontheffing", NA+"overbrenging-opschorting-en-ontheffing"]],
+  doel:"Blijvend te bewaren documenten na 10 jaar overbrengen naar de archiefdienst, met de juiste metadata, ontsleuteld en met openbaarheidsbeslissing.",
+  wet:[
+    {a:"5.4", k:"hyb", t:"Breng blijvend te bewaren documenten ouder dan 10 jaar over (was 20 jaar). Eerder overbrengen kan in overeenstemming met de archivaris (5.5 lid 1)."},
+    {a:"5.5 lid 2–4", t:"Opschorten bij veelvuldig gebruik kan met machtiging (max. 10 jaar, verlengbaar)."},
+    {a:"5.6", t:"Ontheffing alleen bij een omvangrijke, samenhangende verzameling en adequate voorzieningen; kosteloos raadplegen, openbaar overzicht en raadpleeginformatie."},
+    {a:"12.3", t:"Overgang: documenten van vóór inwerkingtreding hoeven pas over te worden gebracht bij 20 jaar; bestaande machtigingen blijven gelden."}
+  ],
+  besluit:[
+    {a:"5.1", k:"hyb", t:"Overleg tijdig met de archivaris en maak samen een overbrengingsverklaring met een specificatie van de documenten en, indien van toepassing, het besluit tot openbaarheidsbeperking.", d:["Overbrenging zonder fysieke verplaatsing (de documenten blijven waar ze zijn, bijvoorbeeld in uw systeem of depot, maar komen onder beheer van de archiefdienst): alleen met toestemming van de archivaris","Dan gezamenlijke maatregelen zodat de archivaris zijn beheer- en beschikbaarstellingstaken kan uitvoeren, uitgewerkt in de verklaring"]},
+    {a:"5.2", t:"Opschorting: aanvraag met beschrijving, periode en motivering van veelvuldig gebruik, met advies van de archivaris; besluit wordt actief openbaar gemaakt. Dit geldt ook bij verlenging."},
+    {a:"5.3", t:"Ontheffing: aanvraag met onder meer beschrijving van documenten en beheersysteem, naleving van hoofdstuk 2, openbaar overzicht, dienstverlening en reden waarom overbrenging afbreuk zou doen; besluit wordt actief openbaar gemaakt.", d:["Bij een decentrale archiefdienst: advies van de archivaris bijvoegen"]},
+    {a:"2.5 lid 2", t:"Grondslag voor nadere regels over de adequate voorziening bij ontheffing."}
+  ],
+  regeling:[
+    {a:"2.12", k:"hyb", t:"Leg uiterlijk bij overbrenging de openbaarheidsmetadata vast (status, duur, einddatum en grond van de beperking)."},
+    {a:"2.13", k:"dig", t:"Verwijder bij overbrenging van digitale documenten eventuele versleuteling."},
+    {a:"2.8 sub c", k:"dig", t:"Zorg voor een permanent uniek identificatiekenmerk bij langdurig te bewaren digitale documenten."}
+  ]
+},
+{
+  id:"openbaarheid", title:"Openbaarheid en toegang",
+  links:[["Openbaarheid en toegang", NA+"openbaarheid-en-toegang"]],
+  doel:"Bij overbrenging beslissen over openbaarheid en dat vastleggen; toegang tot beperkt openbare documenten regelen.",
+  wet:[
+    {a:"1.2", k:"hyb", t:"Afbakening: Woo en Wet hergebruik zijn niet van toepassing op overgebrachte documenten; bijzondere en strafrechtelijke persoonsgegevens mogen worden verwerkt bij vervanging, overbrenging en beheer van overgebrachte documenten; geheimhoudingsplichten staan overbrenging niet in de weg (met inachtneming van 7.2)."},
+    {a:"7.1", t:"Na overbrenging zijn documenten openbaar; kosteloos raadplegen, voor kopieën kan een vergoeding worden gevraagd."},
+    {a:"7.2–7.3", t:"Beperk de openbaarheid bij overbrenging als een beperkingsgrond geldt; vraag advies aan de archivaris en motiveer het besluit."},
+    {a:"7.4–7.6", t:"Beperkingstermijnen (75, 110 en 20 jaar), beperken na overbrenging alleen bij onaanvaardbaarheid, opheffen als de grond vervalt.", d:["Een langere geldingsduur is alleen mogelijk met instemming van gedeputeerde staten of de Minister"]},
+    {a:"8.1", t:"Begrip: in hoofdstuk 8 is 'archivaris' de (rijks)archivaris van de archiefdienst die de desbetreffende documenten blijvend bewaart.", w:["archiefdienst"]},
+    {a:"8.2–8.4, 8.6–8.7", t:"Toegang en verzoeken: de archivaris verleent toegang tot openbare en (na belangenafweging) beperkt openbare documenten, verstrekt informatie in andere vorm en geeft het overbrengende orgaan toegang tot eigen documenten.", w:["archiefdienst"]},
+    {a:"8.2 lid 2–3", k:"hyb", t:"De archivaris kan toegang weigeren als de toestand of veiligheid van documenten zich daartegen verzet, en biedt dan toegang tot kopieën.", w:["archiefdienst"]},
+    {a:"8.5", k:"fys", t:"Uitlening van documenten voor bepaalde tijd, mits deskundig beheer en veilige bewaring zijn gewaarborgd.", w:["archiefdienst"]},
+    {a:"12.8", t:"Overgang: bestaande beperkingen blijven van kracht."}
+  ],
+  besluit:[
+    {a:"5.1 lid 2 sub b", t:"Het besluit tot openbaarheidsbeperking maakt deel uit van de overbrengingsverklaring."},
+    {a:"6.1", t:"Toegang tot beperkt openbare documenten met bijzondere persoonsgegevens, strafrechtelijke gegevens of identificatienummers: de verzoeker toont een uitzonderingsgrond aan (overlijden, toestemming of motivering), met waarborgen bij onderzoek.", w:["archiefdienst"]},
+    {a:"6.2", t:"Bij beperkt openbare documenten met persoonsgegevens worden in beginsel geen kopieën verstrekt (uitzonderingen: rechtsvordering, onderzoek naar genocide en oorlogsmisdrijven).", w:["archiefdienst"]}
+  ],
+  regeling:[
+    {a:"2.12", k:"hyb", t:"Metadata over openbaarheid vastleggen voor inzage (8.3) en informatie in andere vorm (8.4)."},
+    {a:"2.4 sub b", k:"hyb", t:"Zorg voor een gedeeltelijke weergave of export als documenten persoonsgegevens, vertrouwelijke informatie of openbaarheidsbeperkingen bevatten."}
+  ]
+},
+{
+  id:"toezicht", title:"Toezicht, incidenten en handhaving",
+  links:[["Toezicht en handhaving", NA+"toezicht-en-handhaving"]],
+  doel:"Toezicht ondergaan en incidenten met documenten tijdig melden.",
+  wet:[
+    {a:"10.1", t:"Rijk, ZBO's en privaatrechtelijke organen: toezicht door de Inspectie Overheidsinformatie en Erfgoed.", w:["rijk"]},
+    {a:"10.2", k:"hyb", t:"Meld onverwijld aan de hoofdinspecteur: beschadiging, vermissing, verlies of ontoegankelijk worden van belangrijke documenten (ook dreiging) en calamiteiten met veel documenten.", w:["rijk"]},
+    {a:"10.3", t:"Aanwijzing, last onder bestuursdwang of bestuurlijke boete bij niet voldoen aan de wet.", w:["rijk"]},
+    {a:"10.4", t:"Gemeente, provincie, waterschap: toezicht door de archivaris; verordening met minimaal tweejaarlijkse verslaglegging.", w:["decentraal"]},
+    {a:"10.5", t:"Gemeenschappelijke regeling: toezicht door de archivaris van de aangewezen archiefdienst.", w:["gr"]}
+  ],
+  besluit:[],
+  regeling:[
+    {a:"7.1", k:"hyb", t:"Meld een incident binnen 72 uur na ontdekking bij de hoofdinspecteur. De melding bevat minimaal:", d:["a. contactgegevens van het verantwoordelijk overheidsorgaan","b. omschrijving van het incident","c. indien van toepassing, het aanmerkelijk belang van de documenten (art. 1.3 wet)","d. de beschadiging, het verlies of de vermissing, of hoe de documenten ontoegankelijk zijn geworden","e. reeds getroffen of voorgenomen maatregelen","f. het aantal getroffen documenten"], w:["rijk"]}
+  ]
+},
+{
+  id:"archiefdienst", title:"Archiefdienst en archivaris",
+  links:[["Aangewezen archivaris en diploma-eis", NA+"aangewezen-archivaris-en-diploma-eis"]],
+  doel:"Zorgen voor een archiefdienst en een aangewezen archivaris met het vereiste diploma.",
+  wet:[
+    {a:"6.1", t:"Het Nationaal Archief is de enige archiefdienst van het Rijk, dus het ene digitale depot voor rijksdocumenten.", w:["rijk"]},
+    {a:"6.2–6.3", t:"Decentrale overheden voorzien in een decentrale archiefdienst met een aangewezen archivaris (diploma en professionele kwaliteiten); ontbreekt die, wijs binnen 2 jaar een archivaris aan.", w:["decentraal"]},
+    {a:"12.4–12.7", t:"Overgang: bestaande archiefbewaarplaatsen en archivarissen gelden als aangewezen.", w:["decentraal","archiefdienst"]}
+  ],
+  besluit:[
+    {a:"2.3 lid 3, 3.5, 4.3, 5.1–5.3", t:"De archivaris speelt een rol bij advies, selectiebesluiten, vervreemding, overbrenging, opschorting en ontheffing (zie de betreffende onderwerpen)."}
+  ],
+  regeling:[]
+},
+{
+  id:"overgang", title:"Overgangsrecht en inwerkingtreding",
+  links:[],
+  doel:"Weten wanneer wat geldt.",
+  wet:[
+    {a:"12.14", t:"Inwerkingtreding bij koninklijk besluit; volgens het Nationaal Archief per 1 januari 2027."},
+    {a:"12.1, 12.3, 12.6", t:"Gemeenschappelijke regelingen en archivarissen binnen 2 jaar in orde; overbrengingstermijn voor bestaande documenten pas bij 20 jaar."},
+    {a:"12.9", t:"Overgang: de op grond van de Archiefwet 1995 aangewezen hoofdinspecteur en inspecteurs gelden als aangewezen volgens artikel 10.1.", w:["rijk"]},
+    {a:"12.10", t:"Overgang: archiefbescheiden die op grond van artikel 46 van de Archiefwet 1995 aan een gemeente in bewaring zijn gegeven, gelden als aan die gemeente vervreemd; de Minister vervreemdt de overige onder dat artikel vallende stukken op verzoek.", w:["decentraal","rijk"]},
+    {a:"11.1–11.26", t:"Wijzigingen in andere wetgeving; vooral relevant zijn de Woo (11.17), de Uitvoeringswet AVG (11.6), de Wet basisregistratie personen (11.10), de Wet op het notarisambt (11.16), de Wet politiegegevens (11.20) en de Wet op de inlichtingen- en veiligheidsdiensten 2017 (11.15, eigen overgangsregeling overbrengingstermijn).", d:["11.1 Algemene wet bestuursrecht; 11.2 Boek 1 BW (burgerlijke stand: overbrengen naar decentrale archiefdienst); 11.3 Erfgoedwet; 11.4 Jeugdwet","11.5 Machtigingswet Invest-NL; 11.5a Machtigingswet Invest International (terbeschikkingstelling documenten bij ontbinding)","11.6 Uitvoeringswet AVG art. 45; 11.7 Uitvoeringswet EGTS-verordening; 11.8 Visserijwet 1963; 11.9 Wet algemene regels herindeling","11.10 Wet basisregistratie personen; 11.11 Wet gebruik Friese taal; 11.12 t/m 11.14 indelingswetten Flevoland, Lelystad en provincie Flevoland; 11.15 Wiv 2017","11.16 Wet op het notarisambt; 11.17 Woo; 11.18 Wet opheffing bedrijfslichamen; 11.19 Wet opheffing openbaar lichaam Rijnmond; 11.20 Wet politiegegevens","11.21 Wet stichting administratiekantoor beheer financiële instellingen; 11.22 Wet gemeentelijke indeling Waddenzee; 11.23 Wet tot instelling gemeenten Almere en Zeewolde; 11.24 DUO-wet; 11.25 Wijzigingswet financiële markten 2014","11.26 Verwerking definitieve citeertitel (de aanduiding '20..' wordt vervangen door het jaartal van het Staatsblad)"]},
+    {a:"12.11", t:"Evaluatie van de wet binnen 5 en 15 jaar na inwerkingtreding."},
+    {a:"12.12", t:"De Archiefwet 1995 wordt ingetrokken."},
+    {a:"12.13", t:"Citeertitel: Archiefwet met vermelding van het jaartal van het Staatsblad (Stb. 2026, 149)."}
+  ],
+  besluit:[
+    {a:"7.1", t:"Evaluatie: de Minister zendt binnen 5 en 15 jaar na inwerkingtreding een verslag aan de Staten-Generaal."},
+    {a:"7.2", t:"Selectielijsten gelden maximaal 20 jaar; artikel 9 lid 1 van het Archiefbesluit 1995 blijft gelden voor documenten van vóór inwerkingtreding."},
+    {a:"7.3", t:"Het Archiefbesluit 1995 wordt ingetrokken."},
+    {a:"7.4", t:"Inwerkingtreding bij koninklijk besluit, per artikel verschillend vast te stellen."},
+    {a:"7.5", t:"Citeertitel: Archiefbesluit met vermelding van het jaartal van het Staatsblad."}
+  ],
+  regeling:[
+    {a:"8.1", t:"Evaluatie: aansluitend op de evaluaties van wet en besluit, daarnaast elke vijf jaar de doeltreffendheid en effecten van de Regeling."},
+    {a:"8.2", t:"Artikel 2.12 (openbaarheidsmetadata) geldt niet voor documenten van vóór inwerkingtreding; bestaande ontheffingen voor depots blijven van kracht."},
+    {a:"8.4", t:"De Regeling treedt in werking met het Besluit; de artikelen 3.2 (migratieplan) en 3.3 (migratieverklaring) pas per het derde kalenderjaar daarna."},
+    {a:"8.3", t:"De Archiefregeling (de vorige) wordt ingetrokken."},
+    {a:"8.5", t:"Citeertitel: Archiefregeling met vermelding van het jaartal van de Staatscourant."}
+  ]
+},
+{
+  id:"fysiek", title:"Fysieke archieven: depots, verpakking en materialen",
+  links:[],
+  doel:"Alleen relevant voor fysieke (papieren en andere analoge) documenten. Zichtbaar bij 'Fysiek' of 'Beide'.",
+  wet:[],
+  besluit:[
+    {a:"2.5 lid 1 sub i en j", k:"fys", t:"Grondslag voor regels over de fysieke ruimten waar documenten worden bewaard en over materialen."}
+  ],
+  regeling:[
+    {a:"5.1–5.2", k:"fys", t:"Buitentoepassingstelling bij gelijkwaardige bescherming; ontheffing voor bestaande depots door de Minister."},
+    {a:"1.1", k:"fys", t:"Een fysiek depot is een depot waar blijvend te bewaren fysieke documenten worden bewaard die nog niet naar een archiefdienst zijn overgebracht; de eisen van hoofdstuk 5 en 6 gelden voor uw depot als verantwoordelijk orgaan."},
+    {a:"5.3–5.10", k:"fys", t:"Gebouweisen: locatie en risico's, brandveiligheid (klasse A2, 60 minuten), blusmiddelen, watermelders, constructie (CC4, geen ramen), beveiliging tegen inbraak.", d:["Beheers- en calamiteitenplan, periodiek geëvalueerd"]},
+    {a:"5.11–5.15", k:"fys", t:"Bewaaromstandigheden: stellingen en luchtcirculatie, klimaat (35–60% RV, 13–22 °C) met sensoren, klimaatevaluatieprotocol en logboek, depothygiëne.", d:["Magnetische dragers: zie het onderwerp Duurzame toegankelijkheid (art. 5.12 lid 2)"]},
+    {a:"5.16", k:"fys", t:"Aanvullende gebouweisen voor depots met overgebrachte documenten (A1, 120 minuten, rookdoorgang R200, communicatiemiddel).", w:["archiefdienst"]},
+    {a:"5.17–5.18", k:"fys", t:"Quarantaineruimte voor besmet materiaal en afwijkend klimaat voor kleurenprocedés en cellulosenitraat/-acetaat."},
+    {a:"6.1–6.8, bijlage 2", k:"fys", t:"Verpakkingen en materialen: omslagen, archiefdozen en etiketten volgens ICN-kwaliteitseisen (bijlage 2), papier volgens NEN 2728 of NEN-EN-ISO 9706, duurzame inkt en toners.", d:["Nieuw te vormen blijvend te bewaren fysieke documenten maken van duurzaam materiaal (6.7 lid 1)","Reeds gevormde, niet verouderingsbestendige blijvende documenten zoveel mogelijk vervangen (6.7 lid 2)"]}
+  ]
+},
+{
+  id:"overgebracht", title:"Overgebracht archief: bijzondere bepalingen",
+  links:[],
+  doel:"Bepalingen voor documenten die al bij een archiefdienst berusten, inclusief documenten van particulieren die een archiefdienst opneemt.",
+  wet:[
+    {a:"9.1–9.2", t:"Vervreemden of vernietigen van overgebrachte rijksdocumenten door de Minister kan alleen met machtiging van het orgaan dat de documenten heeft overgebracht.", w:["archiefdienst","rijk"]},
+    {a:"9.3", k:"fys", t:"De archivaris kan afschriften afgeven van bij de archiefdienst berustende authentieke akten.", w:["archiefdienst"]},
+    {a:"9.4", k:"hyb", t:"Een archiefdienst kan schriftelijke stukken of andere gehelen van vastgelegde gegevens die een particulier of rechtspersoon beschikbaar stelt in bewaring nemen of blijvend opnemen, met een overeenkomst en eventueel tijdelijke openbaarheidsbeperking.", w:["archiefdienst"]}
+  ],
+  besluit:[], regeling:[]
+}
+];
+
+const orgLabels = {rijk:"Rijk/ZBO/privaat", decentraal:"Decentraal", gr:"Gem. regeling", archiefdienst:"Archiefdienst"};
+const store = JSON.parse(localStorage.getItem("archiefwet2026-checks-v2") || "{}");
+const save = () => localStorage.setItem("archiefwet2026-checks-v2", JSON.stringify(store));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function layer(cls, label, items, tid) {
+  const body = items.length ? "<ul>" + items.map((it, i) => {
+    const id = `${tid}-${cls}-${i}`;
+    const who = (it.w || []).map(x => `<span class="who">${orgLabels[x]}</span>`).join("");
+    const tag = it.k === "fys" ? `<span class="tag fys">fysiek</span>` : it.k === "dig" ? `<span class="tag dig">digitaal</span>` : it.k === "hyb" ? `<span class="tag hyb">beide</span>` : "";
+    const det = (it.d && it.d.length) ? `<ul class="det">${it.d.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
+    const note = it.n ? `<div class="note">Let op: ${esc(it.n)}</div>` : "";
+    const plain = (det || note) ? "" : " plain";
+    return `<li data-w="${(it.w||[]).join(" ")}" data-k="${it.k || ""}" class="${store[id] ? "done" : ""}">
+      <input type="checkbox" id="${id}" ${store[id] ? "checked" : ""} aria-label="Afvinken">
+      <details class="item${plain}"><summary><span class="art">${esc(it.a)}</span><span class="ttl">${esc(it.t)}</span>${tag}${who}</summary>${det}${note}</details></li>`;
+  }).join("") + "</ul>" : `<p class="none">Geen aparte uitwerking op dit niveau.</p>`;
+  return `<div class="layer ${cls}"><h3>${label}</h3>${body}</div>`;
+}
+
+document.getElementById("topics").innerHTML = topics.map((tp, n) => {
+  const links = tp.links.length ? `<small>${tp.links.map(l => `<a href="${l[1]}">${esc(l[0])}</a>`).join(" · ")}</small>` : "";
+  return `<section class="topic" id="${tp.id}"><h2>${n + 1}. ${esc(tp.title)} ${links}</h2>
+    <div class="doel"><strong>Waar werkt u aan:</strong> ${esc(tp.doel)}</div>
+    ${layer("wet", "1. Archiefwet 2026 – wat", tp.wet, tp.id)}
+    ${layer("besluit", "2. Archiefbesluit 2026 – hoe", tp.besluit, tp.id)}
+    ${layer("regeling", "3. Archiefregeling 2026 – minimale invulling", tp.regeling, tp.id)}</section>`;
+}).join("");
+
+document.getElementById("toc").innerHTML = topics.map((tp, n) => `<a href="#${tp.id}">${n + 1}. ${esc(tp.title)}</a>`).join("") + `<a href="#hiaten"><strong>Hiaten en onduidelijkheden</strong></a>`;
+
+function apply() {
+  const q = document.getElementById("q").value.toLowerCase();
+  const org = document.getElementById("org").value;
+  const kind = document.getElementById("kind").value;
+  const hideDone = document.getElementById("hideDone").checked;
+  document.querySelectorAll("section.topic").forEach(sec => {
+    let visible = 0;
+    const head = sec.querySelector("h2").textContent.toLowerCase();
+    sec.querySelectorAll("li").forEach(li => {
+      const w = li.dataset.w.split(" ").filter(Boolean);
+      const okOrg = org === "all" || !w.length || w.includes(org);
+      const k = li.dataset.k;
+      const okDig = kind === "all" || (kind === "dig" && k !== "fys") || (kind === "fys" && k !== "dig");
+      const okQ = !q || (li.textContent.toLowerCase() + head).includes(q);
+      const okDone = !(hideDone && li.classList.contains("done"));
+      const show = okOrg && okDig && okQ && okDone;
+      li.classList.toggle("hidden", !show);
+      if (show) visible++;
+    });
+    sec.classList.toggle("hidden", visible === 0);
+  });
+  document.querySelectorAll("#toc a").forEach(a => {
+    const sec = document.querySelector(a.getAttribute("href"));
+    a.style.display = sec.classList.contains("hidden") ? "none" : "";
+  });
+  const boxes = [...document.querySelectorAll("li:not(.hidden) input")];
+  const done = boxes.filter(b => b.checked).length;
+  document.getElementById("progress").textContent = `${done} van ${boxes.length} afgevinkt`;
+}
+
+document.addEventListener("change", e => {
+  if (e.target.matches("li input[type=checkbox]")) {
+    store[e.target.id] = e.target.checked;
+    e.target.closest("li").classList.toggle("done", e.target.checked);
+    save();
+  }
+  apply();
+});
+document.getElementById("q").addEventListener("input", apply);
+apply();
+</script>
+</body>
+</html>
