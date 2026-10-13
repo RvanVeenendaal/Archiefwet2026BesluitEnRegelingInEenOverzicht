@@ -124,21 +124,13 @@
   .none { margin:.25rem 0 0; color:var(--muted); font-style:italic; font-size:.88rem; }
   .none[hidden] { display:none; }
 
-  section.hiaten { background:var(--surface); border:1px solid var(--line); border-top:5px solid var(--danger); border-radius:var(--radius); margin:2rem 0 0; padding:.2rem 1.1rem 1.1rem; scroll-margin-top:6rem; }
-  section.hiaten h2 { font-size:1.25rem; margin:.9rem 0 .2rem; }
-  section.hiaten h3 { font-size:1rem; margin:1.1rem 0 .3rem; color:var(--danger); }
-  section.hiaten p.intro { font-size:.9rem; color:var(--muted); margin:.2rem 0 .6rem; max-width:80ch; }
-  section.hiaten details { border-top:1px solid var(--line); padding:.4rem 0; }
-  section.hiaten summary { cursor:pointer; font-weight:600; min-height:28px; }
-  section.hiaten details > div { font-size:.92rem; margin:.3rem 0 .2rem 1rem; max-width:90ch; }
-  section.hiaten .adv { color:var(--accent); }
   footer { max-width:1400px; margin:1.5rem auto 3rem; padding:0 1rem; font-size:.88rem; color:var(--muted); }
   mark { background:#ffe27a; color:#000; border-radius:2px; }
 
   @media print {
     .toolbar, aside.side, .skip, .notice { display:none; }
     body { background:#fff; color:#000; }
-    section.topic, section.hiaten { break-inside:avoid-page; box-shadow:none; }
+    section.topic { break-inside:avoid-page; box-shadow:none; }
     .layout { display:block; }
   }
 </style>
@@ -209,56 +201,6 @@
     </details>
     <div id="topics"></div>
 
-    <section class="hiaten" id="hiaten">
-      <h2>Hiaten en onduidelijkheden in Wet, Besluit en Regeling</h2>
-      <p class="intro">Eigen analyse op basis van de PDF's en de toelichtingen daarin. Waar het mijn interpretatie is en niet letterlijk in de stukken staat, is dat aangegeven. Controleer dit in de definitieve teksten.</p>
-
-      <h3>Grote hiaten</h3>
-      <details><summary>1. Informatiebeveiliging is nauwelijks ingevuld</summary><div>
-        Besluit 2.1 lid 2 vraagt alleen "passende maatregelen ter beveiliging". Besluit 2.5 lid 1 sub e geeft een grondslag voor regels over beveiliging, maar de Regeling gebruikt die niet. Volgens de toelichting is het BIO-artikel uit de Regeling geschrapt (onder meer vanwege NIS-2) en vervangen door een inspanningsverplichting in het Besluit.<br>
-        <span class="adv">Advies: kies zelf een kader (BIO of ISO 27001) en leg dat vast in uw beheerregels (Wet 4.2).</span></div></details>
-      <details><summary>2. Digitale kwaliteitseisen en bewaaromgeving zijn niet uitgewerkt</summary><div>
-        Besluit 2.5 lid 1 sub a en b noemen ze, maar de Regeling heeft er geen artikelen over. Wat er staat is globaal: opslag in EU/EER (2.1), een "duurzaam bestandsformaat" zonder lijst (2.9), "ongewijzigd en onbeschadigd" zonder maatstaf (2.10). Concrete normen kunnen komen via de Minister (Wet 4.1 lid 5), maar die gelden alleen voor de centrale overheid.</div></details>
-      <details><summary>3. Data, databases, algoritmes en dynamische informatie</summary><div>
-        Gemeenten, provincies, waterschappen en de Inspectie signaleren dat houvast ontbreekt. De toelichting erkent dat er "nog minder ervaring" is en verwijst naar een evaluatie elke 5 jaar (Regeling 8.1). E-mail, chat en websites worden niet in de Regeling geregeld maar via modelselectiebesluiten en normen.</div></details>
-      <details><summary>4. Aanvullende digitale eisen gelden alleen bij een bewaartermijn langer dan 10 jaar</summary><div>
-        Regeling 2.7: duurzaam formaat, ongewijzigde opslag, integriteitschecks, aanvullende technische metadata en permanent uniek id (2.8 tot en met 2.11) gelden niet voor documenten die tot 10 jaar bewaard blijven. Besluit 2.1 lid 1 sub f (geen informatieverlies) geldt wel voor alle documenten. Mijn lezing: voor tijdelijke documenten is de invulling onduidelijk.</div></details>
-      <details><summary>5. "Adequate voorziening" bij ontheffing van overbrenging</summary><div>
-        Besluit 2.5 lid 2 geeft een grondslag voor nadere regels, maar de Regeling regelt niets; een handreiking is aangekondigd. Regeling 5.2 heet ook "Ontheffing" maar gaat over depoteisen, niet over Wet 5.6; dat geeft verwarring.</div></details>
-      <details><summary>6. Ongelijke regels voor Rijk en decentrale overheden</summary><div>
-        Meldplicht (Regeling 7.1), normstelling (Wet 4.1 lid 5) en handhaving met aanwijzing en bestuurlijke boete (Wet 10.3) gelden alleen voor de centrale overheid. Decentraal loopt het via de archivaris en een verordening (Wet 10.4); een incidentregeling ontbreekt daar.</div></details>
-      <details><summary>7. Uitbesteding en cloud (eigen waarneming)</summary><div>
-        Alleen de EU/EER-eis (Regeling 2.1) en een zin in de toelichting over leveranciersafhankelijkheid. Eisen aan exit, verantwoordelijkheid bij verwerkers en bewijs van vernietiging in de cloud ontbreken.</div></details>
-      <details><summary>8. Metadata blijft abstract</summary><div>
-        Regeling 2.5 verplicht een schema volgens NEN-ISO 23081-1 (principes) plus een minimale lijst. Richtlijnen als MDTO worden bewust niet verplicht; het aggregatieniveau (bestand, document, dossier, database, dataset) is vrij. Welk schema voldoet moet u zelf beoordelen.</div></details>
-      <details><summary>9. Een grondslag uit de Wet is niet nader uitgewerkt</summary><div>
-        Wet 3.2 lid 2 (specifieke uitkering) vraagt om een ministeriële regeling die niet in de Archiefregeling is opgenomen; de aanhef noemt alleen Wet 4.1 en 10.2 lid 2. De diploma-eisen uit Wet 6.3 lid 5 zijn wel uitgewerkt in het afzonderlijke Besluit diploma’s archivarissen (Staatsblad 2026, 303).</div></details>
-
-      <h3>Grote onduidelijkheden</h3>
-      <details><summary>Open normen</summary><div>
-        "Passende maatregelen" (Wet 4.1, 4.2), "redelijke termijn" (Besluit 2.1 a tot en met c), "juiste en volledige weergave" (Besluit 2.2 tot en met 2.4), "zo vroeg mogelijk" (Regeling 2.9), "veelvuldig gebruik" (Wet 5.5), "aanmerkelijk belang" (Wet 10.2). De Inspectie noemt dit zelf een handhaafbaarheidsrisico en wil het via toezichtbeleid en normen invullen.</div></details>
-      <details><summary>Meldplicht: onverwijld of 72 uur?</summary><div>
-        De Wet (10.2) zegt "onverwijld", de Regeling (7.1) "binnen 72 uur na ontdekking". Het is onduidelijk wanneer een dreiging "ontdekt" is. De Inspectie gaat de categorieën incidenten nog uitwerken.</div></details>
-      <details><summary>Vervanging en migratie lopen door elkaar (mijn lezing)</summary><div>
-        Besluit 4.2: migratie of conversie waarbij originelen worden vernietigd is vervanging (Wet 4.3). Maar de procesbeschrijving en het archivarisadvies (Besluit 2.3) gelden alleen voor analoge documenten. Welk regime geldt voor digitale vervanging? Advies bij vervanging van analoog is verplicht, bij migratie van blijvend digitaal archief niet.</div></details>
-      <details><summary>Overbrenging zonder fysieke verplaatsing</summary><div>
-        Besluit 5.1 lid 3 vraagt toestemming van de archivaris en gezamenlijke maatregelen, maar noemt geen technische eisen en laat de verdeling van verantwoordelijkheid na overbrenging open. Provincies en waterschappen vroegen hier al om verduidelijking.</div></details>
-      <details><summary>Tweesporig overgangsrecht en onzekere data</summary><div>
-        Oude documenten pas bij 20 jaar overbrengen, nieuwe bij 10 (Wet 12.3); selectielijsten maximaal 20 jaar (Besluit 7.2); Regeling 2.12 niet voor oude documenten. Het Besluit verplicht migratieplan en -verklaring (2.2) vanaf inwerkingtreding, terwijl de invulling in Regeling 3.2 en 3.3 pas "per het derde kalenderjaar" daarna geldt (2029 of 2030, niet eenduidig). Het Besluit treedt per artikel bij koninklijk besluit in werking.</div></details>
-      <details><summary>"Op elk moment te vernietigen" en digitale vernietiging</summary><div>
-        Wet 5.1 lid 4: de Inspectie maakt zich zorgen; criteria horen in de beheerregels. Voor digitale vernietiging is volgens de toelichting beperkte ervaring en zijn normen er niet; het Nationaal Archief heeft een handreiking.</div></details>
-      <details><summary>Beheerregels zonder model</summary><div>
-        Wet 4.2 verplicht en publiceert ze, maar Besluit en Regeling geven geen model of toetsingskader. Ze worden uw belangrijkste bewijsstuk.</div></details>
-
-      <h3>Wat u nu kunt doen</h3>
-      <ol class="adv">
-        <li>Leg in uw beheerregels vast hoe u de open normen invult (redelijke termijn, beveiliging, formaten, aggregatieniveau metadata).</li>
-        <li>Doe een gap-analyse op Regeling 2.2, 2.3 en 2.5: die zijn het concreetst en direct toetsbaar.</li>
-        <li>Behandel documenten met een bewaartermijn tot 10 jaar niet als vrijgesteld; pas minimaal Besluit 2.1 toe.</li>
-        <li>Spreek met de archivaris af hoe vervanging, migratie en overbrenging zonder verplaatsing werken.</li>
-        <li>Volg de Minister-normen, Inspectie-uitwerking, de handreiking ontheffing en het definitieve tijdpad van de inwerkingtreding.</li>
-      </ol>
-    </section>
   </main>
 </div>
 
@@ -628,7 +570,6 @@ phases.forEach((ph, pi) => {
   });
   tocHtml += "</ol>";
 });
-tocHtml += `<h2>Naslag</h2><ol><li><a href="#hiaten"><span>Hiaten en onduidelijkheden</span></a></li></ol>`;
 toc.innerHTML = tocHtml;
 
 // ---------- filtering ----------
@@ -717,7 +658,7 @@ const spy = new IntersectionObserver(entries => {
     }
   });
 }, { rootMargin:"-15% 0px -75% 0px" });
-$$("section.topic, section.hiaten").forEach(s => spy.observe(s));
+$$("section.topic").forEach(s => spy.observe(s));
 
 addEventListener("beforeprint", () => $$("details").forEach(d => d.open = true));
 apply();
