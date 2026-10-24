@@ -19,4 +19,4 @@ De `.txt`-bestanden zijn bedoeld om de bronteksten doorzoekbaar te maken. Het Ar
 
 ## Status en disclaimer
 
-Het hulpmiddel is door de maker als privépersoon beschikbaar gesteld, niet namens of in opdracht van het Nationaal Archief. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. De bronnen en het overzicht zijn gecontroleerd en bijgewerkt op 24 oktober 2026. De Archiefregeling is nog een concept; ook de samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten.
+Het hulpmiddel is door de maker als privépersoon beschikbaar gesteld, niet namens of in opdracht van het Nationaal Archief, diens werkgever. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. De bronnen en het overzicht zijn gecontroleerd en bijgewerkt op 24 oktober 2026. De Archiefregeling is nog een concept; ook de samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten.

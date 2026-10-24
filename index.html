@@ -534,6 +534,12 @@ const LAYERS = [
   { key:"diploma", letter:"D", cls:"d", name:"Besluit diploma’s", sub:"Welke diploma’s voldoen", none:"noteD", optional:true }
 ];
 const KIND_LABEL = { dig:"digitaal", fys:"fysiek" };
+const articleOrder = ref => {
+  const match = String(ref).match(/\d+(?:\.\d+)?/);
+  if (!match) return [Infinity, Infinity];
+  const [chapter, article = "0"] = match[0].split(".");
+  return [Number(chapter), Number(article)];
+};
 
 let n = 0;
 const topicsEl = $("#topics"), toc = $("#toc");
@@ -551,7 +557,11 @@ phases.forEach((ph, pi) => {
     const layers = LAYERS.filter(L => !L.optional || t[L.key]).map(L => {
       const items = t[L.key] || [];
       const fallback = L.none ? (t[L.none] || (L.key === "besluit" ? NONE_B : NONE_R)) : "";
-      const lis = items.map((it, idx) => {
+      const lis = items.map((it, idx) => ({ it, idx })).sort((a, b) => {
+        const [aChapter, aArticle] = articleOrder(a.it.a);
+        const [bChapter, bArticle] = articleOrder(b.it.a);
+        return aChapter - bChapter || aArticle - bArticle || a.idx - b.idx;
+      }).map(({ it, idx }) => {
         const id = `${t.id}:${L.key}:${idx}`;
         const txt = [it.a, it.t, ...(it.d || []), it.n || ""].join(" ").toLowerCase();
         const tag = it.k ? `<span class="tag ${it.k}">${KIND_LABEL[it.k]}</span>` : "";
