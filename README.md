@@ -8,6 +8,8 @@ Open `index.html` in een browser. Zoek op onderwerp of artikel, filter op organi
 
 ## Bronnen
 
+De centrale informatievoorziening over de Archiefwet 2026 is de pagina [Nieuwe Archiefwet: samen werken aan duurzaam toegankelijke informatie | Nationaal Archief](https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026).
+
 De map bevat de bron-PDF’s en bijbehorende tekstextracties:
 
 - Archiefwet 2026
