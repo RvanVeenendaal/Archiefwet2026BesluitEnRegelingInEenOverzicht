@@ -11,12 +11,12 @@ Open `index.html` in een browser. Zoek op onderwerp of artikel, filter op organi
 De map bevat de bron-PDF’s en bijbehorende tekstextracties:
 
 - Archiefwet 2026
-- Archiefbesluit 2026 (concept)
+- Archiefbesluit 2026 (definitieve tekst uit [Staatsblad 2026, 321](https://zoek.officielebekendmakingen.nl/stb-2026-321.html), inclusief nota van toelichting)
 - Archiefregeling 2026 (concept)
 - Besluit diploma’s archivarissen
 
-De `.txt`-bestanden zijn bedoeld om de bronteksten doorzoekbaar te maken. Raadpleeg bij twijfel de officiële PDF en de actuele publicatie.
+De `.txt`-bestanden zijn bedoeld om de bronteksten doorzoekbaar te maken. Het Archiefbesluit is vastgesteld op 23 september 2026 en gepubliceerd op 16 oktober 2026. Raadpleeg bij twijfel de officiële [publicatie](https://zoek.officielebekendmakingen.nl/stb-2026-321.html) en de actuele regelgeving.
 
 ## Status en disclaimer
 
-Het hulpmiddel is door de maker als privépersoon beschikbaar gesteld, niet namens of in opdracht van het Nationaal Archief. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. De inhoud is gebaseerd op bronnen zoals beschikbaar op 13 oktober 2026 en kan onvolledig of verouderd zijn; met name het Archiefbesluit en de Archiefregeling zijn concepten. Controleer altijd de actuele officiële teksten.
+Het hulpmiddel is door de maker als privépersoon beschikbaar gesteld, niet namens of in opdracht van het Nationaal Archief. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. De bronnen en het overzicht zijn gecontroleerd en bijgewerkt op 24 oktober 2026. De Archiefregeling is nog een concept; ook de samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten.
