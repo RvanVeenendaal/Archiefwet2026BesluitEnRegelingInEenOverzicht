@@ -2,6 +2,8 @@
 
 Statisch, Nederlandstalig overzicht dat per onderwerp de bepalingen uit de Archiefwet 2026, het Archiefbesluit 2026, de concept-Archiefregeling en het Besluit diploma’s archivarissen naast elkaar zet: wat moet geregeld zijn, hoe de wet dat uitwerkt en welke minimale eisen gelden.
 
+De aanleiding voor dit hulpmiddel was mijn constatering dat er over de afzonderlijke onderwerpen van de Archiefwet 2026 al veel uitleg bestaat, maar dat die nergens op één pagina overzichtelijk bij elkaar staat. Zo'n totaaloverzicht leek me nuttig. De vinkjes, het exporteren en importeren van de voortgang en het filteren zijn later toegevoegd, voor de gebruikerservaring.
+
 ## Gebruik
 
 Open `index.html` in een browser. Zoek op trefwoord of artikel, filter op soort archief (digitaal of fysiek) en type organisatie, en vink afgeronde punten af. De voortgang wordt lokaal in de browser opgeslagen en kan als bestand worden geëxporteerd om elders (bijvoorbeeld bij een collega) te worden geïmporteerd; met de knop "Wissen" zet u alles terug. Installatie of buildstap is niet nodig.
