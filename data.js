@@ -28,7 +28,7 @@ const phases = [
       I("2.2","Provincie, gemeente, waterschap: gedeputeerde staten, college van B&W, respectievelijk dagelijks bestuur zijn verantwoordelijk, volgens een verordening van de volksvertegenwoordiging.",{w:["decentraal"]}),
       I("2.3","Gemeenschappelijke regeling: dagelijks bestuur (openbaar lichaam), bestuur (bedrijfsvoeringsorganisatie), deelnemers gezamenlijk (gemeenschappelijk orgaan).",{w:["gr"]}),
       I("2.4, 2.5","Andere publiekrechtelijke rechtspersonen: het orgaan dat het dagelijks bestuur voert. Privaatrechtelijke personen met openbaar gezag: zijzelf.",{w:["rijk"]}),
-      I("2.6","Na overbrenging naar het Nationaal Archief is de Minister verantwoordelijk. Bij een gemeenschappelijke regeling wijst u een orgaan aan (alleen Minister of een orgaan uit 2.2) dat ook voor de niet-overgebrachte documenten van minstens één deelnemer verantwoordelijk is.",{w:["gr"]}),
+      I("2.6","Na overbrenging naar het Nationaal Archief is de Minister verantwoordelijk. Bij een gemeenschappelijke regeling wijst u een orgaan aan (alleen Minister of een orgaan uit 2.2) dat ook voor de niet-overgebrachte documenten van minstens één deelnemer verantwoordelijk is.",{w:["rijk","gr"]}),
       I("3.1 – 3.3","De Minister kan taken na overbrenging overdragen aan een gemeenschappelijke regeling, provincie of gemeente, met specifieke uitkering. Intrekking kan op verzoek, bij gebrekkig beheer of na beleidsheroverweging (dan pas na 5 jaar).",{w:["gr","decentraal"],d:["Het besluit geldt voor onbepaalde tijd en leidt niet tot eigendomsoverdracht (3.1 lid 4, 5).","Specifieke uitkering: 3.2; nadere regels bij ministeriële regeling."]}),
       I("12.1","Pas bestaande gemeenschappelijke regelingen uiterlijk twee jaar na inwerkingtreding aan op 2.3, 2.6 en 10.5.",{w:["gr"]})
     ], besluit:[], regeling:[], noteB:"Besluit en Regeling bevatten hier geen bepalingen: de uitwerking zit in uw eigen verordening." },
@@ -146,7 +146,7 @@ const phases = [
   { id:"vernietiging", title:"Vernietiging",
     doel:"Documenten na het verstrijken van de bewaartermijn gecontroleerd en aantoonbaar vernietigen.",
     wet:[
-      I("5.3 lid 1","Zorg dat documenten waarvan de bewaartermijn is verstreken, worden vernietigd."),
+      I("5.3 lid 1","Zorg dat documenten waarvan de bewaartermijn is verstreken, worden vernietigd, tenzij zij op grond van een toegestane afwijking (Wet 5.1 lid 5 sub c) van vernietiging zijn uitgezonderd."),
       I("5.1 lid 4","Het selectiebesluit kan bepalen dat categorieën tijdelijk te bewaren documenten op elk moment vernietigd mogen worden."),
       I("5.3 lid 3","In buitengewone omstandigheden kan de Minister-President afwijkende regels stellen.")
     ],
