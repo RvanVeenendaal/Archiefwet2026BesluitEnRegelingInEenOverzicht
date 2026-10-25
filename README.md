@@ -29,6 +29,8 @@ De PDF’s en tekstversies worden niet meegepubliceerd (zie `.gitignore`) en bli
 
 De onderwerpen, samenvattingen en bronlinks staan in `data.js`; `index.html` bevat de weergave en logica. Voor een inhoudelijke update volstaat het aanpassen van `data.js`.
 
+Bij de ontwikkeling van deze webpagina zijn achtereenvolgens Copilot Pro en Mistral gebruikt.
+
 ## Status en disclaimer
 
 Het hulpmiddel is door de maker als privépersoon beschikbaar gesteld, niet namens of in opdracht van het Nationaal Archief, diens werkgever. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. De bronnen en het overzicht zijn gecontroleerd en bijgewerkt op 24 oktober 2026. De Archiefregeling is nog een concept; ook de samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten.
