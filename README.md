@@ -6,7 +6,9 @@ De aanleiding voor dit hulpmiddel was mijn constatering dat er over de afzonderl
 
 ## Gebruik
 
-Open `index.html` in een browser. Zoek op trefwoord of artikel, filter op soort archief (digitaal of fysiek) en type organisatie, en vink afgeronde punten af. De voortgang wordt lokaal in de browser opgeslagen en kan als bestand worden geëxporteerd om elders (bijvoorbeeld bij een collega) te worden geïmporteerd. Met de knop "Wissen" zet u alles terug. Installatie of buildstap is niet nodig.
+De eenvoudigste manier is de online versie: [rvanveenendaal.github.io/Archiefwet2026checks](https://rvanveenendaal.github.io/Archiefwet2026checks/). Wilt u het overzicht op uw eigen computer, download dan de bestanden: klik op de GitHub-pagina op de groene knop "Code" en kies "Download ZIP", pak het zipbestand uit en open daarna `index.html` in een browser. Het overzicht bestaat uit twee bestanden: `index.html` (de pagina) en `data.js` (de inhoud). Laat die samen in één map. Zonder `data.js` verschijnen de onderwerpen niet. Een installatie of buildstap is niet nodig.
+
+Zoek op trefwoord of artikel, filter op soort archief (digitaal of fysiek) en type organisatie, en vink afgeronde punten af. De voortgang wordt lokaal in de browser opgeslagen en kan als bestand worden geëxporteerd om elders (bijvoorbeeld bij een collega) te worden geïmporteerd. Met de knop "Wissen" zet u alles terug.
 
 Elk onderwerp rangschikt de regels in vier lagen: de Archiefwet (wat moet geregeld zijn), het Archiefbesluit (hoe werkt dat uit), de Archiefregeling (welke minimale eisen) en het Besluit diploma’s archivarissen (diploma-eisen). De artikelverwijzingen linken rechtstreeks naar de officiële publicaties. De onderwerpen zijn gegroepeerd in zes fasen, van organisatie en verantwoordelijkheid tot toezicht en overgang. Bij het afdrukken print de pagina het kader "Bron, leeswijzer en status" en de onderwerpen automatisch uitgeklapt.
 
