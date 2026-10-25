@@ -6,7 +6,7 @@ Statisch, Nederlandstalig overzicht dat per onderwerp de bepalingen uit de Archi
 
 Open `index.html` in een browser. Zoek op trefwoord of artikel, filter op soort archief (digitaal of fysiek) en type organisatie, en vink afgeronde punten af. De voortgang wordt lokaal in de browser opgeslagen en kan als bestand worden geëxporteerd om elders (bijvoorbeeld bij een collega) te worden geïmporteerd; met de knop "Wissen" zet u alles terug. Installatie of buildstap is niet nodig.
 
-Elk onderwerp rangschikt de regels in vier lagen: de Archiefwet (wat moet geregeld zijn), het Archiefbesluit (hoe werkt dat uit), de Archiefregeling (welke minimale eisen) en het Besluit diploma’s archivarissen (diploma-eisen). De artikelverwijzingen linken rechtstreeks naar de officiële publicaties. De onderwerpen zijn gegroepeerd in zes fasen, van organisatie en verantwoordelijkheid tot toezicht en overgang. Bij het afdrukken print de pagina het kader "Bron, leeswijzer en status" en de onderwerpen automatisch uitgeklapt.
+Elk onderwerp rangschikt de regels in vier lagen: de Archiefwet (wat moet geregeld zijn), het Archiefbesluit (hoe werkt dat uit), de Archiefregeling (welke minimale eisen) en het Besluit diploma’s archivarissen (diploma-eisen). De artikelverwijzingen linken rechtstreeks naar de officiële publicaties. De onderwerpen zijn gegroepeerd in zes fasen, van organisatie en verantwoordelijkheid tot toezicht en overgang. Bij het afdrukken print de pagina het kader "Bron, leeswijzer en status" en de onderwerpen automatisch uitgeklapt. Boven de onderwerpen verwijst de pagina naar de kennisbank Archiefwet 2026 en naar praktische hulpmiddelen per thema.
 
 De Archiefregeling is nog een concept; die laag is in het overzicht daarom als zodanig gemarkeerd.
 

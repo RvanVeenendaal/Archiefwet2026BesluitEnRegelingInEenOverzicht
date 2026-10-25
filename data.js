@@ -11,6 +11,18 @@ const SOURCES = {
   diploma:  { url: "https://zoek.officielebekendmakingen.nl/stb-2026-303.html", name: "Besluit diploma's archivarissen (Staatsblad 2026, 303)" }
 };
 
+const PRACTICAL = [
+  { thema: "Aanwijzing archiefdienst en archivaris", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-aanwijzing-archiefdienst-en-archivaris" },
+  { thema: "Aangewezen archivaris en diploma-eis", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-aangewezen-archivaris-en-diploma-eis" },
+  { thema: "Regionaal Historische Centra", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-regionaal-historische-centra" },
+  { thema: "Duurzame Toegankelijkheid", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-duurzame-toegankelijkheid" },
+  { thema: "Waardering en selectie", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-waardering-en-selectie" },
+  { thema: "Overbrenging, opschorting en ontheffing", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-overbrenging-opschorting-en-ontheffing" },
+  { thema: "Openbaarheid en toegang", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-openbaarheid-en-toegang" },
+  { thema: "Toezicht en handhaving", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-toezicht-en-handhaving" },
+  { thema: "Veelgestelde vragen", url: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-veelgestelde-vragen" }
+];
+
 // k: "dig" | "fys" (weglaten = geldt voor alle vormen). w: doelgroepen (weglaten = iedereen).
 // d: details (uitklapbaar). n: let-op-notitie.
 const I = (a, t, o = {}) => ({ a, t, ...o });
