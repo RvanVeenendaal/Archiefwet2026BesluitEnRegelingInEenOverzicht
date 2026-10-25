@@ -238,7 +238,7 @@ const phases = [
       I("6.3","Aanwijzing en kwalificaties van (rijks)archivaris: diploma en professionele kwaliteiten; aanwijzing eindigt als de functie vervalt.",{w:["rijk","decentraal","archiefdienst"]}),
       I("9.1, 9.2","De Minister vervreemdt of vernietigt overgebrachte documenten alleen na machtiging van het overbrengende orgaan.",{w:["archiefdienst"]}),
       I("9.3, 9.4","De archivaris kan afschriften van authentieke akten afgeven; een archiefdienst kan bescheiden van particulieren in bewaring of blijvende bewaring nemen (met beperking van openbaarheid mogelijk).",{w:["archiefdienst"]}),
-      I("12.4 – 12.7","Overgangsrecht: bestaande archiefbewaarplaatsen en archivarissen blijven bestaan; gemeenten zonder archivaris wijzen er binnen twee jaar een aan.",{w:["decentraal","archiefdienst"]})
+      I("12.4 – 12.7","Overgangsrecht: bestaande archiefbewaarplaatsen en archivarissen blijven bestaan; provincies, gemeenten en waterschappen zonder archivaris wijzen er binnen twee jaar een aan.",{w:["decentraal","archiefdienst"]})
     ],
     besluit:[], regeling:[], diploma:[
       I("2 lid 1","Archivistiek A en B gelden als diploma; de Minister wijst de opleidingen of cursus aan.",{w:["rijk","decentraal","archiefdienst"],d:["Archivistiek A: een aangewezen masteropleiding.","Archivistiek B: een aangewezen bacheloropleiding, associate degree of cursus."]}),
