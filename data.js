@@ -173,7 +173,7 @@ const phases = [
     wet:[
       I("5.4 lid 1, 2","Breng blijvend te bewaren documenten ouder dan tien jaar over (ook documenten die via een afwijking blijvend bewaard worden)."),
       I("5.5 lid 1","Eerder overbrengen kan in overeenstemming met de archivaris of rijksarchivaris."),
-      I("12.3 lid 1","Overgangsrecht: documenten van vóór inwerkingtreding hoeven pas bij twintig jaar over."),
+      I("12.3 lid 1","Overgangsrecht: documenten van vóór inwerkingtreding hoeven pas bij twintig jaar over.",{n:"De eerste overbrengingen onder de nieuwe tienjaarstermijn volgen vanaf 1 januari 2037; tot 2047 lopen beide termijnen nog door elkaar (duiding op de kennisbankpagina Overbrenging van het Nationaal Archief)."}),
       I("5.4 lid 3","Nadere regels in de AMvB.")
     ],
     besluit:[
@@ -291,7 +291,7 @@ const phases = [
   { id:"toezicht", title:"Toezicht, meldplicht en handhaving",
     doel:"Meldingen van incidenten, toezicht door Inspectie of archivaris en de gevolgen bij niet-naleving.",
     wet:[
-      I("10.1","Rijk, andere publiekrechtelijke en privaatrechtelijke organen: toezicht door de hoofdinspecteur en inspecteurs van de Minister, met jaarverslag aan de Staten-Generaal.",{w:["rijk"]}),
+      I("10.1","Rijk, andere publiekrechtelijke en privaatrechtelijke organen: toezicht door de hoofdinspecteur en inspecteurs van de Minister, met jaarverslag aan de Staten-Generaal.",{w:["rijk"],n:"De hoofdinspecteur moet bij aanwijzing eveneens voldoen aan de eisen van Wet 6.3 lid 4: een diploma en de juiste professionele kwaliteiten (Wet 10.1 lid 2)."}),
       I("10.2","Meld onverwijld aan de hoofdinspecteur: beschadiging, verlies of ontoegankelijkheid (of dreiging) van documenten met aanmerkelijk belang, en calamiteiten met veel documenten.",{w:["rijk"]}),
       I("10.3","Bij niet-naleving kan de Minister een aanwijzing, last onder bestuursdwang of bestuurlijke boete (maximaal vijfde categorie) opleggen, na overleg.",{w:["rijk"]}),
       I("10.4","Decentraal toezicht door de archivaris, die rechtstreeks rapporteert; de volksvertegenwoordiging stelt een verordening vast met minstens tweejaarlijkse verslaglegging.",{w:["decentraal","archiefdienst"]}),
