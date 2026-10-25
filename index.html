@@ -137,7 +137,6 @@
   .panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:.75rem 1rem; margin:0 0 1.25rem; font-size:.92rem; }
   .panel p { margin:0; }
   .panel p + p { margin-top:.5rem; }
-  .panel ul { margin:.5rem 0 0; padding-left:1.2rem; display:grid; gap:.35rem; }
   #empty { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.25rem; margin:0 0 1.25rem; text-align:center; display:grid; gap:.6rem; justify-items:center; }
   #empty[hidden] { display:none; }
   .io { display:flex; gap:.5rem; }
@@ -228,11 +227,6 @@
     <div class="panel">
       <p><strong>Kennisbank Archiefwet 2026</strong> — Wat er verandert en wanneer de nieuwe wet in werking treedt, staat op de kennisbankpagina <a href="https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026">Nieuwe Archiefwet: samen werken aan duurzaam toegankelijke informatie | Nationaal Archief</a>. Die pagina van het Nationaal Archief bundelt de achtergrond bij de nieuwe wet, een factsheet over de veranderingen, de officiële publicaties en actuele informatie over het invoeringstraject. De teksten op de kennisbank over de Archiefwet 2026 zijn geschreven door de beleidsmedewerkers van het Ministerie van OCW, in samenwerking met medewerkers van het Nationaal Archief en de Inspectie Overheidsinformatie en Erfgoed.</p>
     </div>
-    <details class="panel">
-      <summary>Praktische hulpmiddelen</summary>
-      <p>Per thema wijst de kennisbank van het Nationaal Archief praktische hulpmiddelen:</p>
-      <ul id="practical"></ul>
-    </details>
     <div id="topics"></div>
     <div id="empty" hidden>
       <p>Geen regels gevonden voor deze zoekterm en filters.</p>
@@ -394,9 +388,8 @@ toggleAll.addEventListener("click", () => {
   toggleAll.textContent = open ? "Alles inklappen" : "Alles uitklappen";
 });
 
-// ---------- panelen en voortgang ----------
+// ---------- voortgang ----------
 $$(".js-updated").forEach(el => el.textContent = LAST_UPDATED);
-$("#practical").innerHTML = PRACTICAL.map(p => `<li><a href="${p.url}">${esc(p.thema)}</a></li>`).join("");
 
 $("#clearFilters").addEventListener("click", () => {
   q.value = ""; state.kind = "all"; state.org = "all"; state.hideDone = false;
