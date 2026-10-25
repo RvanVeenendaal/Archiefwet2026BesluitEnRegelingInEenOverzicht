@@ -1,4 +1,4 @@
-# Archiefwet 2026 checks
+# Archiefwet 2026 in één overzicht
 
 Statisch, Nederlandstalig overzicht dat per onderwerp de bepalingen uit de Archiefwet 2026, het Archiefbesluit 2026, de concept-Archiefregeling en het Besluit diploma’s archivarissen naast elkaar zet: wat moet geregeld zijn, hoe de wet dat uitwerkt en welke minimale eisen gelden. De inwerkingtreding is voorzien op 1 januari 2027.
 
