@@ -14,7 +14,7 @@ const SOURCES = {
 // k: "dig" | "fys" (weglaten = geldt voor alle vormen). w: doelgroepen (weglaten = iedereen).
 // d: details (uitklapbaar). n: let-op-notitie.
 const I = (a, t, o = {}) => ({ a, t, ...o });
-const NONE_B = "Geen aparte bepaling in het Besluit; de Wet is hier direct van toepassing.";
+const NONE_B = "Geen aparte bepaling in het Besluit. De Wet is hier direct van toepassing.";
 const NONE_R = "Geen aparte bepaling in de Regeling.";
 
 const phases = [
@@ -65,13 +65,13 @@ const phases = [
     ],
     besluit:[
       I("2.1 lid 1","Beheer documenten zodat zij zolang het selectiebesluit vereist:",{d:["a-c. binnen redelijke termijn vindbaar, beschikbaar en weer te geven (mens- of machineleesbaar);","d. vast te stellen is wanneer, door wie en uit hoofde van welke taak zij zijn opgemaakt, en hun relatie tot andere documenten;","e. de oorspronkelijke inhoud betrouwbaar, volledig en beschermd tegen ongecontroleerde wijziging is;","f. geen aanmerkelijke fysieke of digitale achteruitgang of informatieverlies optreedt."]}),
-      I("2.1 lid 2","Neem passende maatregelen ter beveiliging van uw documenten.",{n:"Verdere invulling ontbreekt in de Regeling (grondslag 2.5 lid 1 sub e); kies zelf een kader en leg het vast in uw beheerregels."}),
+      I("2.1 lid 2","Neem passende maatregelen ter beveiliging van uw documenten.",{n:"Verdere invulling ontbreekt in de Regeling (grondslag 2.5 lid 1 sub e). Kies zelf een kader en leg het vast in uw beheerregels."}),
       I("2.5 lid 1","Grondslag voor ministeriële regels over digitale kwaliteitseisen, bewaaromgeving, beveiliging, fysieke ruimten en materialen.")
     ],
     regeling:[
       I("2.1","Opslag en verwerking binnen de EU, EER of een land met adequaatheidsbesluit, tenzij een verdrag anders vereist.",{k:"dig"}),
       I("2.4","Zorg dat u op verzoek een juiste en volledige weergave of export (inhoud en metadata) kunt leveren, zo nodig gedeeltelijk als er persoonsgegevens, vertrouwelijke informatie of openbaarheidsbeperkingen zijn.",{k:"dig"}),
-      I("1.2, 1.3","Gelijkwaardige normen uit een andere EU/EER-staat en nieuwere versies van genoemde normen zijn toegestaan; afwijken kan als dezelfde kwaliteit wordt bereikt.")
+      I("1.2, 1.3","Gelijkwaardige normen uit een andere EU/EER-staat en nieuwere versies van genoemde normen zijn toegestaan. Afwijken kan als dezelfde kwaliteit wordt bereikt.")
     ]},
   { id:"metadata", title:"Ordening en metadata",
     doel:"Documenten voorzien van metadata en een plek in een ordeningsstructuur, zodat ze vindbaar en te verantwoorden zijn.",
@@ -82,21 +82,21 @@ const phases = [
       I("2.5 lid 1 sub c, d","Grondslag voor Regeling 2.2 tot en met 2.6 en 2.8.")
     ],
     regeling:[
-      I("2.2","Heb een of meer ordeningsstructuren (minstens één aansluitend op taken en werkprocessen); leg de plaats van een document vast via metadata of externe registratie."),
+      I("2.2","Heb een of meer ordeningsstructuren (minstens één aansluitend op taken en werkprocessen). Leg de plaats van een document vast via metadata of externe registratie."),
       I("2.5","Stel een of meer metadataschema's vast conform NEN-ISO 23081-1:2017 nl en leg minimaal vast:",{d:["inhoud, structuur, verschijningsvorm, ontvangen bestandsformaat;","uniek identificatiekenmerk;","wanneer, door wie en uit hoofde van welke taak;","samenhang met andere documenten en plaats in de ordeningsstructuur;","uitgevoerde beheeractiviteiten, categorie uit het selectiebesluit en bewaartermijn."]}),
       I("2.6","Bij een elektronische handtekening ook: ondertekenaar; bij geavanceerde handtekening het bewijs van koppeling; bij gekwalificeerde handtekening het middel en certificaat.",{k:"dig"}),
       I("2.8","Aanvullend vastleggen: gebruikte hard- en software, resultaten van integriteitschecks en een permanent uniek identificatiekenmerk.",{k:"dig",n:"Alleen voor digitale documenten met een bewaartermijn langer dan 10 jaar (Regeling 2.7)."})
     ]},
   { id:"digitaal10", title:"Digitale bewaring langer dan 10 jaar",
     doel:"Aanvullende eisen aan digitale documenten die op basis van het selectiebesluit langer dan tien jaar bewaard worden.",
-    wet:[ I("4.1 lid 1, 4","Passende maatregelen; de AMvB en ministeriële regeling werken de digitale eisen uit.",{k:"dig"}) ],
+    wet:[ I("4.1 lid 1, 4","Passende maatregelen. De AMvB en ministeriële regeling werken de digitale eisen uit.",{k:"dig"}) ],
     besluit:[
-      I("2.5 lid 1 sub a, b","Grondslag voor digitale kwaliteitseisen en digitale bewaaromgevingen.",{k:"dig",n:"De Regeling gebruikt deze grondslag alleen in algemene zin (2.7 tot en met 2.11); concrete normen ontbreken."}),
-      I("2.1 lid 1 sub f","Geen aanmerkelijke digitale achteruitgang of informatieverlies; geldt voor alle digitale documenten.",{k:"dig"})
+      I("2.5 lid 1 sub a, b","Grondslag voor digitale kwaliteitseisen en digitale bewaaromgevingen.",{k:"dig",n:"De Regeling gebruikt deze grondslag alleen in algemene zin (2.7 tot en met 2.11). Concrete normen ontbreken."}),
+      I("2.1 lid 1 sub f","Geen aanmerkelijke digitale achteruitgang of informatieverlies. Dit geldt voor alle digitale documenten.",{k:"dig"})
     ],
     regeling:[
       I("2.7","Artikelen 2.8 tot en met 2.11 gelden voor digitale documenten met een bewaartermijn van meer dan tien jaar.",{k:"dig"}),
-      I("2.9","Sla documenten zo vroeg mogelijk op in een duurzaam bestandsformaat; compressie alleen zonder onaanvaardbaar informatieverlies.",{k:"dig"}),
+      I("2.9","Sla documenten zo vroeg mogelijk op in een duurzaam bestandsformaat. Compressie alleen zonder onaanvaardbaar informatieverlies.",{k:"dig"}),
       I("2.10","Waarborg dat elk document ongewijzigd en onbeschadigd wordt opgeslagen en bewaard.",{k:"dig"}),
       I("2.11","Bij een andere preserveringshandeling dan migratie, conversie of emulatie: leg vast hoe aan de kwaliteitseisen is voldaan.",{k:"dig"}),
       I("2.8","Aanvullende metadata voor deze documenten.",{k:"dig",n:"Zie onderwerp 'Ordening en metadata'."})
@@ -104,14 +104,14 @@ const phases = [
   { id:"migratie", title:"Migratie, conversie en vervanging",
     doel:"Documenten veilig overzetten, omzetten of door reproducties vervangen zonder verlies van inhoud of metadata.",
     wet:[
-      I("4.3 lid 1, 2","U kunt documenten vervangen door reproducties en de originelen vernietigen; de reproducties gelden daarna als origineel."),
+      I("4.3 lid 1, 2","U kunt documenten vervangen door reproducties en de originelen vernietigen. De reproducties gelden daarna als origineel."),
       I("4.3 lid 3","Nadere regels staan in het Besluit en de Regeling.")
     ],
     besluit:[
-      I("2.2","Migratie: juiste en volledige weergave van inhoud en metadata; werk met een vastgesteld migratieplan (niet nodig bij alleen een andere opslaglocatie) en maak een migratieverklaring.",{k:"dig"}),
+      I("2.2","Migratie: juiste en volledige weergave van inhoud en metadata. Werk met een vastgesteld migratieplan (niet nodig bij alleen een andere opslaglocatie) en maak een migratieverklaring.",{k:"dig"}),
       I("2.4","Conversie (ander bestandsformaat): juiste en volledige weergave van inhoud en metadata.",{k:"dig"}),
       I("2.3","Vervanging van analoge documenten: juiste en volledige weergave en een vastgestelde procesbeschrijving.",{k:"fys",d:["Voor nog niet overgebrachte blijvend te bewaren documenten vraagt u advies aan de archivaris (lid 3).","Niet nodig voor categorieën met algemeen advies van de rijksarchivaris (lid 4)."]}),
-      I("4.2","Worden bij migratie of conversie originelen vernietigd, dan is dat vervanging in de zin van Wet 4.3; de vernietigingsprocedure (Besluit 4.1) is dan niet van toepassing.",{k:"dig"}),
+      I("4.2","Worden bij migratie of conversie originelen vernietigd, dan is dat vervanging in de zin van Wet 4.3. De vernietigingsprocedure (Besluit 4.1) is dan niet van toepassing.",{k:"dig"}),
       I("2.5 lid 1 sub f, g, h","Grondslag voor Regeling 3.1 tot en met 3.3.")
     ],
     regeling:[
@@ -126,20 +126,20 @@ const phases = [
     doel:"Per categorie documenten vastleggen wat blijvend en wat tijdelijk bewaard wordt, via een openbare procedure met onafhankelijke inbreng.",
     wet:[
       I("5.1 lid 1 – 3","Ontwerp een of meer selectiebesluiten en pas ze toe. Een selectiebesluit beschrijft de categorieën en geeft aan wat blijvend en wat tijdelijk (met bewaartermijn) wordt bewaard. De Minister stelt het vast in overeenstemming met u."),
-      I("5.1 lid 5","De AMvB regelt procedure, inhoud en afwijking; afwijking mag nooit leiden tot vernietiging van blijvend te bewaren documenten."),
+      I("5.1 lid 5","De AMvB regelt procedure, inhoud en afwijking. Afwijking mag nooit leiden tot vernietiging van blijvend te bewaren documenten."),
       I("5.2","Groepsselectiebesluit voor privaatrechtelijke organen: de Minister stelt het vast op een ontwerp van een representatieve organisatie. Het geldt alleen voor organen zonder eigen selectiebesluit.",{w:["rijk"]}),
       I("12.2","Bestaande selectielijsten gelden als selectiebesluiten.")
     ],
     besluit:[
       I("3.1","Inhoud en looptijd:",{d:["Opschrift, taken en structuur bij vaststelling, toepassingsperiode en afbakening met andere besluiten.","In beginsel voor documenten na vaststelling; terugwerkend deels mogelijk.","Toepassingsperiode maximaal tien jaar na 1 januari volgend op inwerkingtreding."]}),
       I("3.2","De rijksarchivaris kan modelselectiebesluiten vaststellen."),
-      I("3.3","Uniforme openbare voorbereidingsprocedure (Awb afdeling 3.4); eenieder kan een zienswijze indienen."),
+      I("3.3","Uniforme openbare voorbereidingsprocedure (Awb afdeling 3.4). Eenieder kan een zienswijze indienen."),
       I("3.4","Indeling in categorieën die aansluit bij taken en informatiebeheer. Weeg ook het belang van gegevensbescherming (AVG). Altijd blijvend bewaren: strategische besluitvorming, planvorming en verantwoording, cruciale processen en essentiële registraties."),
       I("3.5, 3.6","Betrek de verantwoordelijke voor de informatiehuishouding, de archivaris en een onafhankelijke deskundige voor de relatie burger-overheid.",{d:["De deskundige wordt op voordracht van de eerste twee personen benoemd door het orgaan dat na overbrenging verantwoordelijk is.","De deskundige mag niet regelmatig voor de betrokken organen werken (behalve voor deze benoeming) en mag geen belangen of functies hebben die de onafhankelijkheid aantasten.","Benoeming is maximaal vijf jaar en kan één keer met maximaal vijf jaar worden verlengd."]}),
       I("3.7","Motiveer indeling en waardering en voeg een verslag van het overleg met de betrokken deskundigen toe."),
-      I("3.8","Publiceer de bijlage met categorieën en waarderingen via de website van het Nationaal Archief; de Minister publiceert vastgestelde selectiebesluiten en afwijkingen op een centrale digitale infrastructuur."),
+      I("3.8","Publiceer de bijlage met categorieën en waarderingen via de website van het Nationaal Archief. De Minister publiceert vastgestelde selectiebesluiten en afwijkingen op een centrale digitale infrastructuur."),
       I("3.9, 3.10","Afwijken kan voorlopig, onderbouwd en gemeld aan de rijksarchivaris:",{d:["Blijvend bewaren bij gebeurtenissen met grote gevolgen (archivaris betrekken).","Eerder vernietigen op grond van een wettelijk voorschrift, of langer bewaren op grond van wet of belangen.","Ondergeschikte aanpassing van categorieën.","Afwijkingen gaan mee in het volgende selectiebesluit."]}),
-      I("3.11 – 3.13","Gezamenlijke en groepsselectiebesluiten: één archivaris, één verantwoordelijke en één deskundige volstaat; afwijkingen volgens 3.9 en 3.10.",{w:["rijk","gr","decentraal"]}),
+      I("3.11 – 3.13","Gezamenlijke en groepsselectiebesluiten: één archivaris, één verantwoordelijke en één deskundige volstaat. Afwijkingen volgens 3.9 en 3.10.",{w:["rijk","gr","decentraal"]}),
       I("7.2 lid 1","Overgangsrecht: bestaande selectielijsten hebben een toepassingsperiode van maximaal twintig jaar.")
     ],
     regeling:[ I("2.5 sub j, k","Leg bij elk document de categorie uit het selectiebesluit en de bewaartermijn vast als metadata.",{n:"Zie ook onderwerp 'Ordening en metadata'."}) ]},
@@ -163,7 +163,7 @@ const phases = [
     doel:"Eigendomsoverdracht van documenten en het terughalen van documenten die bij derden berusten.",
     wet:[
       I("4.4","Vervreemden mag alleen na machtiging van de Minister, tenzij een wettelijk voorschrift het vereist."),
-      I("4.5, 10.6","Wie documenten onder zich heeft, moet ze binnen vier weken afstaan voor reproductie; u geeft ze binnen vier weken terug. Bij weigering kan een last onder bestuursdwang worden opgelegd."),
+      I("4.5, 10.6","Wie documenten onder zich heeft, moet ze binnen vier weken afstaan voor reproductie. U geeft ze binnen vier weken terug. Bij weigering kan een last onder bestuursdwang worden opgelegd."),
       I("12.10","Overgangsrecht: oude artikel-46-regelingen (in bewaring gegeven archiefbescheiden) gelden als vervreemd aan de gemeente.",{w:["decentraal"]})
     ],
     besluit:[ I("4.3","Betrek bij de voorbereiding van een vervreemdingsbesluit de verantwoordelijke voor informatiehuishouding en de archivaris (niet bij overgang tussen archiefdiensten).") ],
@@ -173,7 +173,7 @@ const phases = [
     wet:[
       I("5.4 lid 1, 2","Breng blijvend te bewaren documenten ouder dan tien jaar over (ook documenten die via een afwijking blijvend bewaard worden)."),
       I("5.5 lid 1","Eerder overbrengen kan in overeenstemming met de archivaris of rijksarchivaris."),
-      I("12.3 lid 1","Overgangsrecht: documenten van vóór inwerkingtreding hoeven pas bij twintig jaar over.",{n:"De eerste overbrengingen onder de nieuwe tienjaarstermijn volgen vanaf 1 januari 2037; tot 2047 lopen beide termijnen nog door elkaar (duiding op de kennisbankpagina Overbrenging van het Nationaal Archief)."}),
+      I("12.3 lid 1","Overgangsrecht: documenten van vóór inwerkingtreding hoeven pas bij twintig jaar over.",{n:"De eerste overbrengingen onder de nieuwe tienjaarstermijn volgen vanaf 1 januari 2037. Tot 2047 lopen beide termijnen nog door elkaar (duiding op de kennisbankpagina Overbrenging van het Nationaal Archief)."}),
       I("5.4 lid 3","Nadere regels in de AMvB.")
     ],
     besluit:[
@@ -187,11 +187,11 @@ const phases = [
     doel:"Overbrenging opschorten bij veelvuldig gebruik of in uitzonderlijke gevallen geheel van overbrenging ontheven worden.",
     wet:[
       I("5.5 lid 2 – 4","Opschorten bij veelvuldig gebruik kan met machtiging van gedeputeerde staten of de Minister, telkens voor maximaal tien jaar (verlengbaar)."),
-      I("5.6","Ontheffing door de rijksarchivaris alleen bij een omvangrijke samenhangende verzameling, ernstige afbreuk bij overbrenging en gelijkwaardige borging van bewaring en beschikbaarstelling.",{d:["Documenten zijn kosteloos te raadplegen; overzicht en raadpleeginformatie zijn openbaar.","Intrekking door de rijksarchivaris als de redenen vervallen of de voorzieningen tekortschieten."]}),
+      I("5.6","Ontheffing door de rijksarchivaris alleen bij een omvangrijke samenhangende verzameling, ernstige afbreuk bij overbrenging en gelijkwaardige borging van bewaring en beschikbaarstelling.",{d:["Documenten zijn kosteloos te raadplegen. Overzicht en raadpleeginformatie zijn openbaar.","Intrekking door de rijksarchivaris als de redenen vervallen of de voorzieningen tekortschieten."]}),
       I("12.3 lid 2","Bestaande machtigingen blijven gelden als machtigingen op grond van 5.5 lid 2.")
     ],
     besluit:[
-      I("5.2","Machtiging tot opschorting aanvragen met omschrijving, periode, motivering van veelvuldig gebruik en advies van de archivaris; besluit wordt actief openbaar gemaakt."),
+      I("5.2","Machtiging tot opschorting aanvragen met omschrijving, periode, motivering van veelvuldig gebruik en advies van de archivaris. Het besluit wordt actief openbaar gemaakt."),
       I("5.3","Ontheffingsaanvraag bevat o.a. documenten, systeem of ruimte, verzameling, naleving van hoofdstuk 2 (Duurzame toegankelijkheid), overzicht en dienstverlening voor raadpleging en redenen; bij een decentrale archiefdienst met advies van de archivaris; besluit wordt actief openbaar gemaakt."),
       I("2.5 lid 2","Grondslag voor regels over de 'adequate voorziening' bij ontheffing.")
     ],
@@ -207,7 +207,7 @@ const phases = [
       I("7.2","Beperk de openbaarheid bij overbrenging bij:",{d:["absolute gronden: eenheid van de Kroon, veiligheid van de Staat, vertrouwelijke bedrijfsgegevens, bijzondere en strafrechtelijke persoonsgegevens, identificatienummers;","relatieve gronden (belangenafweging): internationale betrekkingen, financiële belangen, opsporing, toezicht, privacy, concurrentiegevoelige gegevens, beveiliging, goed functioneren van de overheid;","milieu-informatie met aparte regels, emissies zijn uitgezonderd."]}),
       I("7.3","Vraag advies aan de archivaris en motiveer de beperking per grond, ondanks het tijdsverloop."),
       I("7.4","Beperkingstermijnen: 75 jaar (Kroon, Staat, internationale betrekkingen), 110 jaar (bijzondere persoonsgegevens, identificatienummers, privacy), anders 20 jaar. Langer kan met instemming van gedeputeerde staten of de Minister."),
-      I("7.5, 7.6","Na overbrenging nog beperken kan alleen als openbaarheid onaanvaardbaar is; opheffen kan als de gronden vervallen (bij Minister gehoord of in overeenstemming met het overbrengende orgaan)."),
+      I("7.5, 7.6","Na overbrenging nog beperken kan alleen als openbaarheid onaanvaardbaar is. Opheffen kan als de gronden vervallen (bij Minister gehoord of in overeenstemming met het overbrengende orgaan)."),
       I("12.8","Beperkingen op grond van de Archiefwet 1995 blijven gelden.")
     ],
     besluit:[ I("5.1 lid 2 sub b","Het besluit tot openbaarheidsbeperking maakt deel uit van de verklaring van overbrenging.") ],
@@ -218,12 +218,12 @@ const phases = [
   { id:"toegang", title:"Toegang tot overgebracht archief",
     doel:"Verzoeken om raadpleging, informatie in andere vorm en uitlening afhandelen.",
     wet:[
-      I("7.1 lid 2 – 5","Raadplegen is kosteloos; voor kopieën kan een vergoeding gevraagd worden volgens regels van het verantwoordelijke orgaan. De archivaris kan uit eigen beweging publiceren.",{w:["archiefdienst"]}),
+      I("7.1 lid 2 – 5","Raadplegen is kosteloos. Voor kopieën kan een vergoeding gevraagd worden volgens regels van het verantwoordelijke orgaan. De archivaris kan uit eigen beweging publiceren.",{w:["archiefdienst"]}),
       I("8.2","Openbare documenten: toegang op verzoek, tenzij de toestand of veiligheid zich verzet; bij bedreiging kopieën; hergebruik volgens de Wet hergebruik.",{w:["archiefdienst"]}),
-      I("8.3","Beperkt openbare documenten: toegang na belangenafweging, eventueel met voorwaarden; bij de gronden Kroon, Staat en internationale betrekkingen beslist het overbrengende orgaan.",{w:["archiefdienst"]}),
+      I("8.3","Beperkt openbare documenten: toegang na belangenafweging, eventueel met voorwaarden. Bij de gronden Kroon, Staat en internationale betrekkingen beslist het overbrengende orgaan.",{w:["archiefdienst"]}),
       I("8.4","Als toegang niet mogelijk is: informatie in andere vorm, mits geen onevenredige inspanning.",{w:["archiefdienst"]}),
       I("8.5, 8.6","Uitlenen aan verzoekers of aan het overbrengende orgaan, mits veilige bewaring gewaarborgd is.",{w:["archiefdienst"]}),
-      I("8.7","Verzoeken: mondeling of schriftelijk (openbaar), schriftelijk bij beperkt openbaar of uitlening; de archivaris kan nadere specificatie vragen.",{w:["archiefdienst"]})
+      I("8.7","Verzoeken: mondeling of schriftelijk (openbaar), schriftelijk bij beperkt openbaar of uitlening. De archivaris kan nadere specificatie vragen.",{w:["archiefdienst"]})
     ],
     besluit:[
       I("6.1","Toegang tot documenten met bijzondere of strafrechtelijke persoonsgegevens of identificatienummers: verzoeker toont een uitzonderingsgrond aan (overlijdensbewijs, toestemming of motivering); bij onderzoek of statistiek ook de waarborgen voor gegevensbescherming.",{w:["archiefdienst"]}),
@@ -233,15 +233,15 @@ const phases = [
   { id:"archiefdiensten", title:"Archiefdiensten, archivarissen en beheer na overbrenging",
     doel:"Inrichten van de archiefdienst en de archivaris, en regels voor beheer van overgebrachte documenten.",
     wet:[
-      I("6.1","Het Nationaal Archief bewaart en stelt beschikbaar; de rijksarchivaris is verantwoordelijk voor beheer.",{w:["archiefdienst"]}),
+      I("6.1","Het Nationaal Archief bewaart en stelt beschikbaar. De rijksarchivaris is verantwoordelijk voor beheer.",{w:["archiefdienst"]}),
       I("6.2","Provincie, gemeente en waterschap voorzien in een decentrale archiefdienst met een archivaris.",{w:["decentraal","archiefdienst"]}),
-      I("6.3","Aanwijzing en kwalificaties van (rijks)archivaris: diploma en professionele kwaliteiten; aanwijzing eindigt als de functie vervalt.",{w:["rijk","decentraal","archiefdienst"]}),
+      I("6.3","Aanwijzing en kwalificaties van (rijks)archivaris: diploma en professionele kwaliteiten. Aanwijzing eindigt als de functie vervalt.",{w:["rijk","decentraal","archiefdienst"]}),
       I("9.1, 9.2","De Minister vervreemdt of vernietigt overgebrachte documenten alleen na machtiging van het overbrengende orgaan.",{w:["archiefdienst"]}),
-      I("9.3, 9.4","De archivaris kan afschriften van authentieke akten afgeven; een archiefdienst kan bescheiden van particulieren in bewaring of blijvende bewaring nemen (met beperking van openbaarheid mogelijk).",{w:["archiefdienst"]}),
-      I("12.4 – 12.7","Overgangsrecht: bestaande archiefbewaarplaatsen en archivarissen blijven bestaan; provincies, gemeenten en waterschappen zonder archivaris wijzen er binnen twee jaar een aan.",{w:["decentraal","archiefdienst"]})
+      I("9.3, 9.4","De archivaris kan afschriften van authentieke akten afgeven. Een archiefdienst kan bescheiden van particulieren in bewaring of blijvende bewaring nemen (met beperking van openbaarheid mogelijk).",{w:["archiefdienst"]}),
+      I("12.4 – 12.7","Overgangsrecht: bestaande archiefbewaarplaatsen en archivarissen blijven bestaan. Provincies, gemeenten en waterschappen zonder archivaris wijzen er binnen twee jaar een aan.",{w:["decentraal","archiefdienst"]})
     ],
     besluit:[], regeling:[], diploma:[
-      I("2 lid 1","Archivistiek A en B gelden als diploma; de Minister wijst de opleidingen of cursus aan.",{w:["rijk","decentraal","archiefdienst"],d:["Archivistiek A: een aangewezen masteropleiding.","Archivistiek B: een aangewezen bacheloropleiding, associate degree of cursus."]}),
+      I("2 lid 1","Archivistiek A en B gelden als diploma. De Minister wijst de opleidingen of cursus aan.",{w:["rijk","decentraal","archiefdienst"],d:["Archivistiek A: een aangewezen masteropleiding.","Archivistiek B: een aangewezen bacheloropleiding, associate degree of cursus."]}),
       I("2 lid 2, 3","Een ander hbo- of wo-diploma kan ook voldoen: minimaal twee relevante onderwijseenheden van elk ten minste vijf studiepunten en motivering van de geschiktheid in het aanwijzingsbesluit.",{w:["rijk","decentraal","archiefdienst"],d:["De onderwijseenheden betreffen archivistiek, collectiebeheer, informatiebeheer (digitaal of anders), informatie- of data-architectuur, informatie- of datamanagement, informatierecht of toezicht op informatiebeheer."]}),
       I("2 lid 4 – 6","De Minister kan opleidingen of cursussen aanwijzen voor de diploma’s Archivistiek A en B.",{w:["rijk","decentraal","archiefdienst"]}),
       I("3","Overgangsrecht voor aangewezen opleidingen en oudere diploma’s.",{w:["rijk","decentraal","archiefdienst"],d:["Opleidingen die onder het Archiefbesluit 1995 waren aangewezen, blijven aangewezen.","Voor relevante diploma’s van vóór 1 augustus 1993 (wo) of 1 september 1993 (hbo) geldt de eis van twee examenonderdelen in plaats van twee onderwijseenheden van vijf studiepunten."]}),
@@ -257,7 +257,7 @@ const phases = [
     regeling:[
       I("5.1","Een voorschrift hoeft niet gevolgd te worden als op andere wijze minimaal dezelfde veiligheid, bescherming tegen water, klimaat en hygiëne wordt geboden.",{k:"fys"}),
       I("5.2","Ontheffing door de minister voor depots van vóór de inwerkingtreding waaraan redelijkerwijs niet kan worden voldaan.",{k:"fys",n:"Bestaande ontheffingen blijven gelden (Regeling 8.2 lid 2)."}),
-      I("5.3","Beperk risico's van brand, overstroming, vocht en verzakking bij ligging en bouw; heb een actueel beheers- en calamiteitenplan.",{k:"fys"}),
+      I("5.3","Beperk risico's van brand, overstroming, vocht en verzakking bij ligging en bouw. Heb een actueel beheers- en calamiteitenplan.",{k:"fys"}),
       I("5.4 – 5.6","Brandveiligheid: voorzieningen voor vertragen en doven, geen onnodig brandgevaarlijke materialen, brand- en rookwerende scheidingen (60 minuten), zelfsluitende deuren, brandmelding met doormelding, blusmiddelen (geen open sprinklers of poederblussers).",{k:"fys"}),
       I("5.7, 5.8","Watermelders met doormelding; kabels en leidingen alleen als opbouw.",{k:"fys"}),
       I("5.9","Constructie: gevolgklasse CC4, waterdicht, bestand tegen natuurgeweld, vloerbelasting berekend, geen ramen.",{k:"fys"}),
@@ -282,7 +282,7 @@ const phases = [
     regeling:[
       I("6.1 – 6.4","Adequate verpakkingen die beschermen en zelf geen schade veroorzaken; omslagen, dozen en etiketten volgens de ICN-kwaliteitseisen.",{k:"fys"}),
       I("6.5, 6.6","Geen schadelijke stoffen (metaal, lignine, weekmakers, PVC-copolymeren) in contact met documenten; reactieve documenten apart verpakken.",{k:"fys"}),
-      I("6.7","Nieuw te vormen blijvende documenten van duurzaam materiaal; vervang bestaande niet-verouderingsbestendige documenten zoveel mogelijk.",{k:"fys"}),
+      I("6.7","Nieuw te vormen blijvende documenten van duurzaam materiaal. Vervang bestaande niet-verouderingsbestendige documenten zoveel mogelijk.",{k:"fys"}),
       I("6.8","Papier volgens NEN 2728 of NEN-EN-ISO 9706; inkt en toner watervast, lichtecht en niet doordrukkend.",{k:"fys"})
     ]}
  ]},
@@ -294,7 +294,7 @@ const phases = [
       I("10.1","Rijk, andere publiekrechtelijke en privaatrechtelijke organen: toezicht door de hoofdinspecteur en inspecteurs van de Minister, met jaarverslag aan de Staten-Generaal.",{w:["rijk"],n:"De hoofdinspecteur moet bij aanwijzing eveneens voldoen aan de eisen van Wet 6.3 lid 4: een diploma en de juiste professionele kwaliteiten (Wet 10.1 lid 2)."}),
       I("10.2","Meld onverwijld aan de hoofdinspecteur: beschadiging, verlies of ontoegankelijkheid (of dreiging) van documenten met aanmerkelijk belang, en calamiteiten met veel documenten.",{w:["rijk"]}),
       I("10.3","Bij niet-naleving kan de Minister een aanwijzing, last onder bestuursdwang of bestuurlijke boete (maximaal vijfde categorie) opleggen, na overleg.",{w:["rijk"]}),
-      I("10.4","Decentraal toezicht door de archivaris, die rechtstreeks rapporteert; de volksvertegenwoordiging stelt een verordening vast met minstens tweejaarlijkse verslaglegging.",{w:["decentraal","archiefdienst"]}),
+      I("10.4","Decentraal toezicht door de archivaris, die rechtstreeks rapporteert. De volksvertegenwoordiging stelt een verordening vast met minstens tweejaarlijkse verslaglegging.",{w:["decentraal","archiefdienst"]}),
       I("10.5","Gemeenschappelijke regelingen: toezicht door de archivaris van de aangewezen decentrale archiefdienst, of de Inspectie als de Minister verantwoordelijk is.",{w:["gr"]}),
       I("12.9","Bestaande hoofdinspecteur en inspecteurs blijven aangewezen.",{w:["rijk"]})
     ],
@@ -305,18 +305,18 @@ const phases = [
     doel:"Wanneer gelden de regels, welke overgangsbepalingen zijn er en hoe wordt de regelgeving geëvalueerd.",
     wet:[
       I("12.11","Evaluatie binnen vijf en binnen vijftien jaar na inwerkingtreding."),
-      I("12.12 – 12.14","De Archiefwet 1995 wordt ingetrokken; inwerkingtreding bij koninklijk besluit, per artikel verschillend.",{n:"Voorzien: 1 januari 2027."}),
+      I("12.12 – 12.14","De Archiefwet 1995 wordt ingetrokken. Inwerkingtreding bij koninklijk besluit, per artikel verschillend.",{n:"Voorzien: 1 januari 2027."}),
       I("12.1 – 12.10","Overgangsbepalingen: zie bij de betreffende onderwerpen (gemeenschappelijke regelingen, selectielijsten, overbrenging, archiefdiensten, openbaarheid)."),
     ],
     besluit:[
       I("7.1","Evaluatie binnen vijf en binnen vijftien jaar."),
       I("7.2","Overgangsrecht:",{d:["Bestaande selectielijsten hebben maximaal twintig jaar toepassingsperiode vanaf hun inwerkingtreding.","Een op grond van artikel 3a van het Archiefbesluit 1995 benoemde deskundige geldt na inwerkingtreding als benoemd op grond van artikel 3.6.","Artikel 9, eerste lid, van het Archiefbesluit 1995 blijft gelden voor documenten van vóór de inwerkingtreding van dit besluit."]}),
-      I("7.3 – 7.5","Het Archiefbesluit 1995 wordt ingetrokken; inwerkingtreding volgt bij koninklijk besluit en kan per artikel verschillen. De citeertitel is Archiefbesluit met het jaartal van het Staatsblad waarin het wordt geplaatst.")
+      I("7.3 – 7.5","Het Archiefbesluit 1995 wordt ingetrokken. Inwerkingtreding volgt bij koninklijk besluit en kan per artikel verschillen. De citeertitel is Archiefbesluit met het jaartal van het Staatsblad waarin het wordt geplaatst.")
     ],
     regeling:[
       I("8.1","De minister evalueert mee met Wet en Besluit en daarnaast elke vijf jaar."),
-      I("8.2","Regeling 2.12 geldt niet voor oude documenten; bestaande depotontheffingen blijven gelden."),
-      I("8.3, 8.4","Intrekking van de Archiefregeling; inwerkingtreding gelijk met het Besluit, behalve 3.2 en 3.3 (migratieplan en -verklaring) per het derde kalenderjaar daarna.")
+      I("8.2","Regeling 2.12 geldt niet voor oude documenten. Bestaande depotontheffingen blijven gelden."),
+      I("8.3, 8.4","Intrekking van de Archiefregeling. Inwerkingtreding gelijk met het Besluit, behalve 3.2 en 3.3 (migratieplan en -verklaring) per het derde kalenderjaar daarna.")
     ]}
  ]}
 ];
