@@ -1,7 +1,7 @@
 // Brondata en instellingen voor het Archiefwet 2026-overzicht.
 // Laatst gecontroleerd en bijgewerkt op: zie LAST_UPDATED.
 
-const LAST_UPDATED = "24 oktober 2026";
+const LAST_UPDATED = "25 oktober 2026";
 const KEY = "archiefwet2026.v2";
 
 const SOURCES = {
