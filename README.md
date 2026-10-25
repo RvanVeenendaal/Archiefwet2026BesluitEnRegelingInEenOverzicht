@@ -1,6 +1,6 @@
 # Archiefwet 2026 checks
 
-Statisch, Nederlandstalig overzicht dat per onderwerp de bepalingen uit de Archiefwet 2026, het Archiefbesluit 2026, de concept-Archiefregeling en het Besluit diploma’s archivarissen naast elkaar zet: wat moet geregeld zijn, hoe de wet dat uitwerkt en welke minimale eisen gelden.
+Statisch, Nederlandstalig overzicht dat per onderwerp de bepalingen uit de Archiefwet 2026, het Archiefbesluit 2026, de concept-Archiefregeling en het Besluit diploma’s archivarissen naast elkaar zet: wat moet geregeld zijn, hoe de wet dat uitwerkt en welke minimale eisen gelden. De inwerkingtreding is voorzien op 1 januari 2027.
 
 De aanleiding voor dit hulpmiddel was mijn constatering dat er over de afzonderlijke onderwerpen van de Archiefwet 2026 al veel uitleg bestaat, maar dat die nergens op één pagina overzichtelijk bij elkaar staat. Zo'n totaaloverzicht leek me nuttig. De vinkjes, het exporteren en importeren van de voortgang en het filteren zijn later toegevoegd, voor de gebruikerservaring.
 
@@ -39,4 +39,4 @@ Bij de ontwikkeling van deze webpagina zijn achtereenvolgens Copilot Pro en Mist
 
 ## Status en disclaimer
 
-Het hulpmiddel is door de maker als privépersoon beschikbaar gesteld, niet namens of in opdracht van het Nationaal Archief, diens werkgever. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. De maker heeft het ontwikkeltraject van de Archiefwet 2026 als medewerker van het Nationaal Archief van dichtbij meegemaakt en de samenvattingen gecontroleerd op eigen kennis van de wet. De bronnen en het overzicht zijn gecontroleerd en bijgewerkt op 25 oktober 2026. De Archiefregeling is nog een concept; ook de samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten.
+Het hulpmiddel is door de maker als privépersoon beschikbaar gesteld, niet namens of in opdracht van het Nationaal Archief, diens werkgever. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. De maker heeft het ontwikkeltraject van de Archiefwet 2026 als medewerker van het Nationaal Archief van dichtbij meegemaakt en de samenvattingen gecontroleerd op eigen kennis van de wet. De bronnen en het overzicht zijn gecontroleerd en bijgewerkt op 25 oktober 2026. De Archiefregeling is nog een concept; ook de samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten en laat de toepassing op uw situatie zo nodig juridisch beoordelen.
