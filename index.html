@@ -135,11 +135,7 @@
   a.art { text-decoration:none; }
   a.art:hover, a.art:focus-visible { text-decoration:underline; }
   .panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:.75rem 1rem; margin:0 0 1.25rem; font-size:.92rem; }
-  .panel summary { cursor:pointer; font-weight:600; }
-  .panel ul { margin:.5rem 0 .3rem; padding-left:1.2rem; display:grid; gap:.5rem; }
-  .panel .small { margin:.5rem 0 0; font-size:.85rem; color:var(--muted); }
-  .panel .when { white-space:nowrap; }
-  .panel a.ref { white-space:nowrap; }
+  .panel p { margin:0; }
   #empty { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.25rem; margin:0 0 1.25rem; text-align:center; display:grid; gap:.6rem; justify-items:center; }
   #empty[hidden] { display:none; }
   .io { display:flex; gap:.5rem; }
@@ -227,16 +223,9 @@
       <p>Regels zonder label gelden voor alle vormen van archief; <span class="tag dig">digitaal</span> en <span class="tag fys">fysiek</span> gelden alleen voor die vorm. Klik op een regel met een driehoekje voor details.</p>
       <p>Ik stel dit hulpmiddel beschikbaar als privépersoon, niet namens of in opdracht van mijn werkgever, het Nationaal Archief. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. De bronnen en het overzicht zijn gecontroleerd en bijgewerkt op <span class="js-updated"></span>. De Archiefregeling is nog een concept; ook de samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten en laat de toepassing op uw situatie zo nodig juridisch beoordelen.</p>
     </details>
-    <details class="panel">
-      <summary>Wat verandert er t.o.v. de Archiefwet 1995?</summary>
-      <ul id="changes"></ul>
-      <p class="small">Belangrijkste veranderingen, niet uitputtend; zie de nota’s van toelichting bij wet en besluit voor details.</p>
-    </details>
-    <details class="panel" open>
-      <summary>Tijdlijn: wat moet wanneer?</summary>
-      <ul id="milestones"></ul>
-      <p class="small">Data na 2027 zijn verwachtingen op basis van de voorziene inwerkingtreding; het besluit tot inwerkingtreding bepaalt de definitieve data.</p>
-    </details>
+    <div class="panel">
+      <p><strong>Veranderingen en tijdlijn</strong> — Wat er verandert ten opzichte van de Archiefwet 1995 en welke termijnen en data gelden, staat op de kennisbankpagina <a href="https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026">Nieuwe Archiefwet: samen werken aan duurzaam toegankelijke informatie | Nationaal Archief</a>. Die pagina van het Nationaal Archief bundelt de achtergrond bij de nieuwe wet, de tijdlijn van de invoering, de officiële publicaties en actuele informatie over het invoeringstraject.</p>
+    </div>
     <div id="topics"></div>
     <div id="empty" hidden>
       <p>Geen regels gevonden voor deze zoekterm en filters.</p>
@@ -403,11 +392,7 @@ toggleAll.addEventListener("click", () => {
   toggleAll.textContent = open ? "Alles inklappen" : "Alles uitklappen";
 });
 
-// ---------- panelen, bronlinks en voortgang ----------
-$("#changes").innerHTML = CHANGES.map(c => `<li>${esc(c)}</li>`).join("");
-const topicById = {};
-phases.forEach(ph => ph.topics.forEach(t => topicById[t.id] = t));
-$("#milestones").innerHTML = MILESTONES.map(m => `<li><strong class="when">${esc(m.d)}.</strong> ${esc(m.t)}${m.refs.filter(id => topicById[id]).map(id => ` <a class="ref" href="#${id}">${esc(topicById[id].title)}</a>`).join("")}</li>`).join("");
+// ---------- voortgang ----------
 $$(".js-updated").forEach(el => el.textContent = LAST_UPDATED);
 
 $("#clearFilters").addEventListener("click", () => {

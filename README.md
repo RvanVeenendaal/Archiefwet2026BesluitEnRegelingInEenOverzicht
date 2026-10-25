@@ -4,7 +4,7 @@ Statisch, Nederlandstalig overzicht om onderwerpen uit de Archiefwet 2026 en bij
 
 ## Gebruik
 
-Open `index.html` in een browser. Zoek op onderwerp of artikel, filter op organisatie en type archief, en vink afgeronde punten af. De pagina opent met een tijdlijn van termijnen en een overzicht van de grootste veranderingen t.o.v. de Archiefwet 1995. De voortgang wordt lokaal in de browser opgeslagen en kan als bestand worden geëxporteerd om elders (bijvoorbeeld bij een collega) te worden geïmporteerd; met de knop "Wissen" zet u alles terug. Installatie of buildstap is niet nodig.
+Open `index.html` in een browser. Zoek op onderwerp of artikel, filter op organisatie en type archief, en vink afgeronde punten af. De voortgang wordt lokaal in de browser opgeslagen en kan als bestand worden geëxporteerd om elders (bijvoorbeeld bij een collega) te worden geïmporteerd; met de knop "Wissen" zet u alles terug. Installatie of buildstap is niet nodig.
 
 ## Bronnen
 
@@ -27,7 +27,7 @@ Voor het samenstellen van dit overzicht zijn de PDF-versies van de vier regeling
 
 De PDF’s en tekstversies worden niet meegepubliceerd (zie `.gitignore`) en blijven alleen lokaal aanwezig; raadpleeg de officiële teksten via de bronnen hierboven.
 
-De onderwerpen, samenvattingen, tijdlijn, veranderingen en bronlinks staan in `data.js`; `index.html` bevat de weergave en logica. Voor een inhoudelijke update volstaat het aanpassen van `data.js`.
+De onderwerpen, samenvattingen en bronlinks staan in `data.js`; `index.html` bevat de weergave en logica. Voor een inhoudelijke update volstaat het aanpassen van `data.js`.
 
 ## Status en disclaimer
 

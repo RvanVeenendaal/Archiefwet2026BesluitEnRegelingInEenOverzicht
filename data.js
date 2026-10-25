@@ -11,26 +11,6 @@ const SOURCES = {
   diploma:  { url: "https://zoek.officielebekendmakingen.nl/stb-2026-303.html", name: "Besluit diploma's archivarissen (Staatsblad 2026, 303)" }
 };
 
-const MILESTONES = [
-  { d: "1 januari 2027 (voorzien)", t: "Inwerkingtreding van Archiefwet, Archiefbesluit en Archiefregeling; de meeste verplichtingen gelden vanaf dat moment.", refs: ["overgang"] },
-  { d: "1 januari 2029 (verwacht)", t: "Uiterlijk twee jaar na inwerkingtreding: bestaande gemeenschappelijke regelingen zijn aangepast (Wet 12.1) en gemeenten zonder archivaris hebben er een aangewezen (Wet 12.4-12.7).", refs: ["verantwoordelijkheid", "archiefdiensten"] },
-  { d: "2030 (verwacht)", t: "Migratieplan en migratieverklaring zijn verplicht per het derde kalenderjaar na inwerkingtreding (Regeling 8.4).", refs: ["migratie"] },
-  { d: "Lopend", t: "Bestaande selectielijsten gelden als selectiebesluit, met een toepassingsperiode van maximaal twintig jaar vanaf de inwerkingtreding van de lijst (Besluit 7.2).", refs: ["selectie"] },
-  { d: "2032 en 2042 (verwacht)", t: "Evaluatie van wet, besluit en regeling binnen vijf en binnen vijftien jaar na inwerkingtreding.", refs: ["overgang"] }
-];
-
-const CHANGES = [
-  "Digitaal-first en technologisch neutraal: 'archiefbescheiden' zijn vervangen door 'documenten' (digitaal en fysiek), met uitgewerkte regels voor metadata, duurzame formaten, migratie, export en opslag binnen de EU/EER.",
-  "Vernietigen is een plicht geworden: wie de bewaartermijn laat verstrijken, moet vernietigen (Wet 5.3), volgens een vastgestelde procesbeschrijving en met een verklaring van vernietiging.",
-  "Beveiliging is een expliciete verplichting (Besluit 2.1 lid 2), met een meldplicht voor incidenten binnen 72 uur aan de hoofdinspecteur (Regeling 7.1).",
-  "Ruimere handhaving: de Minister kan naast een aanwijzing en last onder bestuursdwang ook een bestuurlijke boete opleggen (Wet 10.3).",
-  "Selectiebesluiten liggen (deels) bij het eigen orgaan, met openbare voorbereiding (Awb afdeling 3.4), betrokkenheid van een onafhankelijke deskundige en mogelijkheden voor model- en groepsselectiebesluiten.",
-  "De overbrengingstermijn wordt tien jaar (was twintig jaar voor het Rijk en vijftig jaar voor decentraal), met een overgangsregeling van twintig jaar voor documenten van vóór inwerkingtreding; overbrenging zonder fysieke verplaatsing is mogelijk.",
-  "De wet regelt expliciet de verantwoordelijkheid van andere publiekrechtelijke rechtspersonen en privaatrechtelijke personen met openbaar gezag (Wet 2.4, 2.5).",
-  "De gronden en termijnen van openbaarheidsbeperking na overbrenging (standaard 20 jaar, 75 en 110 jaar voor gevoelige categorieën) staan nu in de wet zelf (Wet 7.4).",
-  "Gemeenten zonder archivaris wijzen binnen twee jaar na inwerkingtreding een archivaris aan (Wet 12.4-12.7); de diploma-eisen staan in een apart besluit."
-];
-
 // k: "dig" | "fys" (weglaten = geldt voor alle vormen). w: doelgroepen (weglaten = iedereen).
 // d: details (uitklapbaar). n: let-op-notitie.
 const I = (a, t, o = {}) => ({ a, t, ...o });
