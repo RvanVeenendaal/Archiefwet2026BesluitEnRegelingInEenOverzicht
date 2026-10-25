@@ -10,14 +10,14 @@ Open `index.html` in een browser. Zoek op onderwerp of artikel, filter op organi
 
 De centrale informatievoorziening over de Archiefwet 2026 is de pagina [Nieuwe Archiefwet: samen werken aan duurzaam toegankelijke informatie | Nationaal Archief](https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026).
 
-De map bevat de bron-PDF’s en bijbehorende tekstextracties:
+Het overzicht is gebaseerd op de volgende regelgeving:
 
 - Archiefwet 2026
 - Archiefbesluit 2026 (definitieve tekst uit [Staatsblad 2026, 321](https://zoek.officielebekendmakingen.nl/stb-2026-321.html), inclusief nota van toelichting)
 - Archiefregeling 2026 (concept)
 - Besluit diploma’s archivarissen
 
-De `.txt`-bestanden zijn bedoeld om de bronteksten doorzoekbaar te maken. Het Archiefbesluit is vastgesteld op 23 september 2026 en gepubliceerd op 16 oktober 2026. Raadpleeg bij twijfel de officiële [publicatie](https://zoek.officielebekendmakingen.nl/stb-2026-321.html) en de actuele regelgeving.
+De bronteksten worden niet meegepubliceerd; raadpleeg ze via de officiële publicaties. Het Archiefbesluit is vastgesteld op 23 september 2026 en gepubliceerd op 16 oktober 2026. Raadpleeg bij twijfel de officiële [publicatie](https://zoek.officielebekendmakingen.nl/stb-2026-321.html) en de actuele regelgeving.
 
 ## Status en disclaimer
 
