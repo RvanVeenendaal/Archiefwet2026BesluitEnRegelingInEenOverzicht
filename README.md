@@ -17,7 +17,13 @@ Het overzicht is gebaseerd op de volgende regelgeving:
 - Archiefregeling 2026 (concept)
 - Besluit diploma’s archivarissen
 
-De bronteksten worden niet meegepubliceerd; raadpleeg ze via de officiële publicaties. Het Archiefbesluit is vastgesteld op 23 september 2026 en gepubliceerd op 16 oktober 2026. Raadpleeg bij twijfel de officiële [publicatie](https://zoek.officielebekendmakingen.nl/stb-2026-321.html) en de actuele regelgeving.
+Het Archiefbesluit is vastgesteld op 23 september 2026 en gepubliceerd op 16 oktober 2026. Raadpleeg bij twijfel de officiële [publicatie](https://zoek.officielebekendmakingen.nl/stb-2026-321.html) en de actuele regelgeving.
+
+## Aanpak
+
+Voor het samenstellen van dit overzicht zijn de PDF-versies van de vier regelingen gedownload via de officiële publicatie- en kennisbankbronnen. Van elke PDF is per pagina de tekst geëxtraheerd naar een platte-tekstversie (`.txt`), met per pagina een markering (`=====PAGE n=====`). Deze tekstversies vormden de basis van het overzicht: de artikelen per onderwerp in `index.html` zijn op grond van deze teksten geselecteerd en samengevat.
+
+De PDF’s en tekstversies worden niet meegepubliceerd (zie `.gitignore`) en blijven alleen lokaal aanwezig; raadpleeg de officiële teksten via de bronnen hierboven.
 
 ## Status en disclaimer
 
