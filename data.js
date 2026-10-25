@@ -108,7 +108,7 @@ const phases = [
       I("4.3 lid 3","Nadere regels staan in het Besluit en de Regeling.")
     ],
     besluit:[
-      I("2.2","Migratie: juiste en volledige weergave van inhoud en metadata. Werk met een vastgesteld migratieplan (niet nodig bij alleen een andere opslaglocatie) en maak een migratieverklaring.",{k:"dig"}),
+      I("2.2","Migratie: juiste en volledige weergave van inhoud en metadata. Werk met een vastgesteld migratieplan (niet nodig bij alleen een andere opslaglocatie) en maak een migratieverklaring.",{k:"dig",n:"Deze plicht geldt zelf vanaf inwerkingtreding; alleen de inhoudseisen uit Regeling 3.2 en 3.3 komen later (zie daar)."}),
       I("2.4","Conversie (ander bestandsformaat): juiste en volledige weergave van inhoud en metadata.",{k:"dig"}),
       I("2.3","Vervanging van analoge documenten: juiste en volledige weergave en een vastgestelde procesbeschrijving.",{k:"fys",d:["Voor nog niet overgebrachte blijvend te bewaren documenten vraagt u advies aan de archivaris (lid 3).","Niet nodig voor categorieën met algemeen advies van de rijksarchivaris (lid 4)."]}),
       I("4.2","Worden bij migratie of conversie originelen vernietigd, dan is dat vervanging in de zin van Wet 4.3. De vernietigingsprocedure (Besluit 4.1) is dan niet van toepassing.",{k:"dig"}),
@@ -116,7 +116,7 @@ const phases = [
     ],
     regeling:[
       I("3.1","Procesbeschrijving vervanging bevat minimaal:",{k:"fys",d:["documenten, inhoud, structuur en vorm; gronden voor vervanging;","wanneer en hoe de archivaris adviseert en hoe cultureel-erfgoeddocumenten bewaard blijven;","uitzonderingen, technische infrastructuur, procesinrichting en kwaliteitsprocedures;","hoe de vervangen documenten worden vernietigd en hoe de beschrijving periodiek wordt geëvalueerd;","minimale beeldkwaliteit en metadatering."]}),
-      I("3.2","Migratieplan bevat: borging van duurzame toegankelijkheid, borging van bewaartermijnen en een beschrijving van bron- en doelsystemen.",{k:"dig",n:"Treedt pas in werking per het derde kalenderjaar na inwerkingtreding (Regeling 8.4)."}),
+      I("3.2","Migratieplan bevat: borging van duurzame toegankelijkheid, borging van bewaartermijnen en een beschrijving van bron- en doelsystemen.",{k:"dig",n:"Treedt pas later in werking (Regeling 8.4): artikel 8.4 spreekt van het derde kalenderjaar na inwerkingtreding, de toelichting van twee jaar erna, mogelijk dus een jaar verschil. Tot die tijd geldt alleen de planplicht uit Besluit 2.2, zonder deze inhoudseisen."}),
       I("3.3","Migratieverklaring bevat: gemigreerde documenten, niet of niet volledig gemigreerde documenten en hoe die raadpleegbaar blijven tot einde bewaartermijn.",{k:"dig",n:"Zelfde latere inwerkingtreding als 3.2."})
     ]}
  ]},
@@ -316,7 +316,7 @@ const phases = [
     regeling:[
       I("8.1","De minister evalueert mee met Wet en Besluit en daarnaast elke vijf jaar."),
       I("8.2","Regeling 2.12 geldt niet voor oude documenten. Bestaande depotontheffingen blijven gelden."),
-      I("8.3, 8.4","Intrekking van de Archiefregeling. Inwerkingtreding gelijk met het Besluit, behalve 3.2 en 3.3 (migratieplan en -verklaring) per het derde kalenderjaar daarna.")
+      I("8.3, 8.4","Intrekking van de Archiefregeling. Inwerkingtreding gelijk met het Besluit, behalve 3.2 en 3.3 (migratieplan en -verklaring): volgens artikel 8.4 per het derde kalenderjaar daarna, volgens de toelichting twee jaar erna. Bedoeld om lopende migratietrajecten af te ronden.")
     ]}
  ]}
 ];
