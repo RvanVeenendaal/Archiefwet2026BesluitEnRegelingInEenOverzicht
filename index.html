@@ -38,6 +38,7 @@
   :focus-visible { outline:3px solid var(--focus); outline-offset:2px; border-radius:4px; }
   .skip { position:absolute; left:-999px; top:0; background:var(--surface); padding:.5rem 1rem; z-index:100; }
   .skip:focus { left:.5rem; top:.5rem; }
+  .vh { position:absolute; width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; }
 
   header.hero { background:var(--wet-bg); border-bottom:1px solid var(--line); padding:1.5rem 1rem 1.25rem; }
   header.hero .in { max-width:1400px; margin:0 auto; }
@@ -65,6 +66,8 @@
   .seg input:checked + span { background:var(--accent); color:var(--surface); font-weight:600; }
   .seg input:focus-visible + span { outline:3px solid var(--focus); outline-offset:-3px; }
   select, button { font:inherit; color:inherit; min-height:44px; border:1px solid var(--line); border-radius:8px; background:var(--bg); padding:.4rem .75rem; }
+  .orgsel { min-width:0; }
+  .orgsel select { width:100%; }
   button { cursor:pointer; }
   button:hover { background:var(--surface-2); }
   .toggle { display:flex; align-items:center; gap:.4rem; font-size:.92rem; min-height:44px; }
@@ -124,7 +127,8 @@
   .item summary::-webkit-details-marker { display:none; }
   .item summary .ttl::after { content:" ▸"; color:var(--muted); }
   .item[open] summary .ttl::after { content:" ▾"; }
-  .art { display:inline-block; font-size:.76rem; background:var(--surface-2); border:1px solid var(--line); border-radius:4px; padding:0 .35rem; margin-right:.35rem; font-weight:600; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .art { display:inline-block; font-size:.76rem; background:var(--surface-2); border:1px solid var(--line); border-radius:4px; padding:0 .35rem; margin-right:.35rem; min-height:24px; line-height:24px; font-weight:600; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .srcline { margin:.35rem 0 .2rem; }
   .layer.wet .art { color:var(--wet); } .layer.besluit .art { color:var(--besluit); } .layer.regeling .art { color:var(--regeling); } .layer.diploma .art { color:var(--diploma); }
   ul.det { margin:.3rem 0 .2rem 1.1rem; padding:0; font-size:.88rem; color:var(--muted); }
   .item .note { margin:.3rem 0 0; font-size:.85rem; color:var(--besluit); }
@@ -186,7 +190,7 @@
         <label><input type="radio" name="kind" value="fys"><span>Fysiek</span></label>
       </div>
     </fieldset>
-    <div>
+    <div class="orgsel">
       <label class="lbl" for="org">Type organisatie</label><br>
       <select id="org">
         <option value="all">Alle organisaties</option>
@@ -289,17 +293,19 @@ phases.forEach((ph, pi) => {
         const tag = it.k ? `<span class="tag ${it.k}">${KIND_LABEL[it.k]}</span>` : "";
         const src = SOURCES[L.key];
         const art = `<a class="art" href="${src.url}" target="_blank" rel="noopener" title="Officiële tekst: ${esc(src.name)}">${L.letter} ${esc(it.a)}</a>`;
-        const head = `${art}<span class="ttl">${esc(it.t)}</span>${tag}`;
+        const badge = `<span class="art" aria-hidden="true">${L.letter} ${esc(it.a)}</span>`;
+        const head = `<span class="head" id="${esc(id)}-lbl"><span class="vh">${esc(L.name)} artikel ${esc(it.a)}. </span><span class="ttl">${esc(it.t)}</span>${tag}</span>`;
         const extra = (it.d || it.n);
+        const srcLine = `<p class="srcline"><a class="art" href="${src.url}" target="_blank" rel="noopener">Officiële tekst: artikel ${esc(it.a)}</a></p>`;
         const body = extra
-          ? `<details class="item"><summary>${head}</summary>${it.d ? `<ul class="det">${it.d.map(d => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}${it.n ? `<p class="note">${esc(it.n)}</p>` : ""}</details>`
-          : `<div class="item">${head}</div>`;
-        return `<li data-id="${esc(id)}" data-kind="${it.k || ""}" data-who="${(it.w || []).join(" ")}" data-text="${esc(txt)}"><input type="checkbox" aria-label="Afgevinkt: ${esc(L.name)} artikel ${esc(it.a)}" ${state.done[id] ? "checked" : ""}>${body}</li>`;
+          ? `<details class="item"><summary>${badge}${head}</summary>${srcLine}${it.d ? `<ul class="det">${it.d.map(d => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}${it.n ? `<p class="note">${esc(it.n)}</p>` : ""}</details>`
+          : `<div class="item">${art}${head}</div>`;
+        return `<li data-id="${esc(id)}" data-kind="${it.k || ""}" data-who="${(it.w || []).join(" ")}" data-text="${esc(txt)}"><input type="checkbox" aria-labelledby="${esc(t.id)}-h ${esc(id)}-lbl" ${state.done[id] ? "checked" : ""}>${body}</li>`;
       }).join("");
       const chip = L.key === "regeling" ? ` <span class="chip concept">concept</span>` : "";
       return `<div class="layer ${L.key}"><h3><span class="badge ${L.cls}" aria-hidden="true">${L.letter}</span>${L.name}${chip}</h3><p class="sub">${L.sub}</p>${items.length ? `<ul class="items">${lis}</ul>` : ""}<p class="none" data-static="${items.length ? "" : esc(fallback || (L.key === "wet" ? "" : ""))}" ${items.length ? "hidden" : ""}>${items.length ? "" : esc(fallback)}</p></div>`;
     }).join("");
-    sec.innerHTML = `<div class="thead"><div class="row"><span class="n">${t.n}.</span><h2>${esc(t.title)}</h2><span class="prog" data-prog></span></div><p>${esc(t.doel)}</p></div><div class="cols"><div class="grid">${layers}</div></div>`;
+    sec.innerHTML = `<div class="thead"><div class="row"><span class="n">${t.n}.</span><h2 id="${esc(t.id)}-h">${esc(t.title)}</h2><span class="prog" data-prog></span></div><p>${esc(t.doel)}</p></div><div class="cols"><div class="grid">${layers}</div></div>`;
     topicsEl.append(sec);
     tocHtml += `<li data-topic="${t.id}"><a href="#${t.id}"><span>${t.n}. ${esc(t.title)}</span><span class="cnt"></span></a></li>`;
   });
@@ -316,6 +322,7 @@ function syncUI() {
 syncUI();
 
 function apply() {
+  const activeLi = document.activeElement ? document.activeElement.closest(".items > li") : null;
   const words = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
   let shown = 0, total = 0, done = 0;
   const phaseCnt = {};
@@ -365,6 +372,14 @@ function apply() {
   const hasFilter = words.length || state.kind !== "all" || state.org !== "all" || state.hideDone;
   statusEl.textContent = hasFilter ? `${shown} ${shown === 1 ? "regel" : "regels"} getoond.` : "";
   emptyEl.hidden = !(hasFilter && shown === 0);
+  if (activeLi && activeLi.classList.contains("hidden")) {
+    const all = $$(".items > li");
+    const i = all.indexOf(activeLi);
+    const visible = li => li.getClientRects().length > 0;
+    const target = all.slice(i + 1).find(visible) || all.slice(0, i).reverse().find(visible);
+    const cb = target && target.querySelector("input[type=checkbox]");
+    if (cb) cb.focus();
+  }
   save();
 }
 
