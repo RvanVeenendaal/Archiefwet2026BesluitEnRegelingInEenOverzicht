@@ -6,7 +6,7 @@ De aanleiding voor dit hulpmiddel was mijn constatering dat er over de afzonderl
 
 ## Gebruik
 
-De eenvoudigste manier is de online versie: [rvanveenendaal.github.io/Archiefwet2026checks](https://rvanveenendaal.github.io/Archiefwet2026checks/). Wilt u het overzicht op uw eigen computer, download dan de bestanden: klik op de GitHub-pagina op de groene knop "Code" en kies "Download ZIP", pak het zipbestand uit en open daarna `index.html` in een browser. Het overzicht bestaat uit twee bestanden: `index.html` (de pagina) en `data.js` (de inhoud). Laat die samen in één map. Zonder `data.js` verschijnen de onderwerpen niet. Een installatie of buildstap is niet nodig.
+De eenvoudigste manier is de online versie: [https://rvanveenendaal.github.io/Archiefwet2026WaarMoetUwOrganisatieAanWerken/](https://rvanveenendaal.github.io/Archiefwet2026WaarMoetUwOrganisatieAanWerken/). Wilt u het overzicht op uw eigen computer, download dan de bestanden: klik op de GitHub-pagina op de groene knop "Code" en kies "Download ZIP", pak het zipbestand uit en open daarna `index.html` in een browser. Het overzicht bestaat uit twee bestanden: `index.html` (de pagina) en `data.js` (de inhoud). Laat die samen in één map. Zonder `data.js` verschijnen de onderwerpen niet. Een installatie of buildstap is niet nodig.
 
 Zoek op trefwoord of artikel, filter op soort archief (digitaal of fysiek) en type organisatie, en vink afgeronde punten af. De voortgang wordt lokaal in de browser opgeslagen en kan als bestand worden geëxporteerd om elders (bijvoorbeeld bij een collega) te worden geïmporteerd. Met de knop "Wissen" zet u alles terug.
 
