@@ -78,7 +78,7 @@ const U = {
 // Landelijk instrumentarium: dwarsdoorsnede over alle onderwerpen heen.
 const TOOLBOX = [
   { g:"Kapstok voor passende maatregelen", items:[
-    H("DUTO-raamwerk (Duurzaam Toegankelijke Overheidsinformatie)",{u:U.duto,d:"Vertaalt 'passende maatregelen' in modeleisen per proces (registreren, vernietigen, bewaren, migreren, ter beschikking stellen), inclusief een risicobeoordeling; toe te passen vanaf het ontwerp én op bestaande systemen."})
+    H("DUTO-raamwerk (Duurzaam Toegankelijke Overheidsinformatie)",{u:U.duto,d:"Vertaalt 'passende maatregelen' in modeleisen per proces (registreren, vernietigen, bewaren, migreren, ter beschikking stellen), inclusief een risicobeoordeling; toe te passen volgens archiving by design én op bestaande systemen."})
   ]},
   { g:"Metadata en ordening", items:[
     H("MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Normerend metadataschema (NEN-ISO 23081-1) met XML-schema en SIP-specificatie voor uitwisseling tussen systemen."})
@@ -215,7 +215,7 @@ const phases = [
     tools:[
       H("Risicobenadering, vastgelegd in de beheerregels",{u:U.duurzaam,d:"Differentieer de zwaarte van de maatregelen per categorie; documenten mogen nooit 'buiten beheer' raken. Verantwoord de differentiatie in de beheerregels."}),
       H("BIO2 (Baseline Informatiebeveiliging Overheid 2) als beveiligingskader",{u:U.bio2,d:"Normenkader voor de 'passende maatregelen ter beveiliging' (Besluit 2.1 lid 2). Het NA e-Depot gebruikt Baseline Rijk plus periodieke beveiligingsaudits als referentiepatroon."}),
-      H("DUTO (Duurzaam Toegankelijke Overheidsinformatie) vanaf het ontwerp en bij inkoop",{u:U.duto,d:"Pas het raamwerk toe bij (her)ontwerp van systemen; de DUTO-risicobeoordeling bepaalt hoe zwaar de maatregelen per categorie moeten zijn."}),
+      H("DUTO (Duurzaam Toegankelijke Overheidsinformatie) volgens archiving by design en bij inkoop",{u:U.duto,d:"Pas het raamwerk toe bij (her)ontwerp van systemen; de DUTO-risicobeoordeling bepaalt hoe zwaar de maatregelen per categorie moeten zijn."}),
       H("EU/EER-opslag vastleggen in verwerkersovereenkomsten",{d:"Concept-Regeling 2.1: opslag en verwerking binnen de EU/EER of een land met een adequaatheidsbesluit."}),
       H("Jaarlijkse steekproefexport",{d:"Test dat u op verzoek een juiste en volledige weergave of export kunt leveren (concept-Regeling 2.4)."})
     ]},
