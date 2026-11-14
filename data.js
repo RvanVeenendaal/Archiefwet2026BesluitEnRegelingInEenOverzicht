@@ -92,7 +92,7 @@ const TOOLBOX = [
   ]},
   { g:"Metadata en ordening", items:[
     H("MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Normerend metadataschema (NEN-ISO 23081-1) met XML-schema en SIP-specificatie voor uitwisseling tussen systemen." }),
-    H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst open standaarden (o.a. MDTO en TOOI)",{u:U.forumStandaarden,d:"MDTO is sinds september 2026 door het OBDO (Overheidsbreed Beleidsoverleg Digitale Overheid) verplicht gesteld voor de overheid. TOOI (Thesauri en Ontologieën Overheidsinformatie, beheerd door KOOP/Logius) is in procedure: begrippenkaders en URI's van overheidsorganisaties."})
+    H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst open standaarden (o.a. MDTO)",{u:U.forumStandaarden,d:"MDTO is sinds september 2026 door het OBDO (Overheidsbreed Beleidsoverleg Digitale Overheid) verplicht gesteld voor de overheid."})
   ]},
   { g:"Duurzame formaten", items:[
     H("Norm Voorkeursformaten",{u:U.voorkeurs,d:"Duurzame formaten bij creatie; geen massale conversie van bestaand archief vlak voor overbrenging." }),
@@ -259,7 +259,7 @@ const phases = [
       H("MDTO + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Nederlands normerend metadataschema conform NEN-ISO 23081-1, met XML-schema en SIP-specificatie voor uitwisseling tussen systemen; vult concept-Regeling 2.5 en 2.8 in."}),
       H("Ordeningsstructuren op taken en werkprocessen",{d:"Minstens één ordeningsstructuur aansluitend op taken en werkprocessen; leg de plaats van een document vast via metadata of externe registratie (concept-Regeling 2.2). Handtekeningmetadata volgens 2.6."}),
       H("EU DSS — Digital Signature Service (eIDAS, de EU-verordening voor elektronische identificatie en vertrouwensdiensten)",{u:U.dss,d:"Open source-bibliotheek (github.com/esig/dss) voor het aanmaken, uitbreiden en valideren van elektronische handtekeningen (handtekeningformaten XAdES, CAdES en PAdES); zie ook het eIDAS Dashboard-hulpmiddel voor validatie. Relevant voor de handtekeningmetadata uit concept-Regeling 2.6."}),
-      H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst (MDTO verplicht; TOOI in procedure)",{u:U.forumStandaarden,d:"MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) verplicht sinds september 2026. TOOI (Thesauri en Ontologieën Overheidsinformatie) voor begrippenkaders, ordeningsstructuren en URI's van overheidsorganisaties."})
+      H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst (MDTO verplicht)",{u:U.forumStandaarden,d:"MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) is sinds september 2026 verplicht voor de overheid."})
     ]},
   { id:"digitaal10", title:"Digitale bewaring langer dan 10 jaar",
     doel:"Aanvullende eisen aan digitale documenten die op basis van het selectiebesluit langer dan tien jaar bewaard worden.",
