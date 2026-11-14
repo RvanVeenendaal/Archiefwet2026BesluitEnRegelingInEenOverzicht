@@ -224,6 +224,15 @@
         <option value="toezichthouder">Toezichthouder (Inspectie e.d.)</option>
       </select>
     </div>
+    <div class="orgsel">
+      <label class="lbl" for="chg">Verschil t.o.v. Archiefwet 1995</label><br>
+      <select id="chg">
+        <option value="all">Alles</option>
+        <option value="gelijk">Grotendeels gelijk</option>
+        <option value="gewijzigd">Gewijzigd</option>
+        <option value="nieuw">Nieuw</option>
+      </select>
+    </div>
     <label class="toggle"><input type="checkbox" id="hideDone"> Verberg afgevinkt</label>
     <button type="button" id="toggleAll" aria-pressed="false">Alles uitklappen</button>
     <div class="overall"><progress id="bar" max="100" value="0" aria-label="Totale voortgang"></progress><span id="overall">0 / 0</span></div>
@@ -252,7 +261,7 @@
       <p>Dit overzicht richt zich uitsluitend op <strong>Nederland</strong>: alle wet- en regelgeving waarnaar wordt verwezen is Nederlands. De genoemde hulpmiddelen kunnen internationale open source-tools zijn; de verplichtingen zelf zijn dat niet.</p>
       <p>Heeft een regel geen label, dan geldt hij voor alle vormen van archief. De labels <span class="tag dig">digitaal</span> en <span class="tag fys">fysiek</span> betekenen dat de regel alleen voor die vorm geldt. Klik op een regel met een driehoekje voor meer details.</p>
       <p>Onderaan elk onderwerp klapt u een blok <strong>Passende maatregelen en hulpmiddelen</strong> uit: landelijk beschikbare standaarden, handreikingen en software (zoals DUTO (Duurzaam Toegankelijke Overheidsinformatie), MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie), BIO2 (Baseline Informatiebeveiliging Overheid 2) en het e-Depot) die bij dat onderwerp passen, inclusief publicaties van de koepels VNG, IPO en Unie van Waterschappen. Deze lijst is <strong>ter inspiratie en niet uitputtend</strong> — het is geen checklist. De hulpmiddelen zijn niet afvinkbaar en tellen niet mee in de voortgang, maar zijn wel doorzoekbaar via de zoekbalk. Boven de onderwerpen staat een verzamelblok met het landelijk instrumentarium.</p>
-      <p>Bij elk onderwerp staat een label dat aangeeft of het onderwerp <strong>grotendeels gelijk</strong> is aan de oude Archiefwet 1995 (met het oude Archiefbesluit en de oude Archiefregeling), <strong>gewijzigd</strong> is, of <strong>nieuw</strong>. De toelichting staat bij het label. Bij elk onderwerp staat ook de <strong>DUTO-categorie</strong> (indicatief). Heeft een regel een latere ingangsdatum dan 1 januari 2027, dan staat daar een tag <span class="tag dt">vanaf …</span> bij (volgens het inwerkingtredings-KB, het koninklijk besluit dat de inwerkingtreding regelt).</p>
+      <p>Bij elk onderwerp staat een label dat aangeeft of het onderwerp <strong>grotendeels gelijk</strong> is aan de oude Archiefwet 1995 (met het oude Archiefbesluit en de oude Archiefregeling), <strong>gewijzigd</strong> is, of <strong>nieuw</strong>. De toelichting staat bij het label. Met het filter <strong>Verschil t.o.v. Archiefwet 1995</strong> in de werkbalk toont u alleen de onderwerpen van één van die drie groepen. Bij elk onderwerp staat ook de <strong>DUTO-categorie</strong> (indicatief). Heeft een regel een latere ingangsdatum dan 1 januari 2027, dan staat daar een tag <span class="tag dt">vanaf …</span> bij (volgens het inwerkingtredings-KB, het koninklijk besluit dat de inwerkingtreding regelt).</p>
       <p>Ik stel dit hulpmiddel beschikbaar als privépersoon, niet namens of in opdracht van mijn werkgever, het Nationaal Archief. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. Als medewerker van het Nationaal Archief heb ik het ontwikkeltraject van de Archiefwet 2026 van dichtbij meegemaakt. Daardoor ken ik de inhoud, de context en de achtergrond van deze wet goed en kan ik de informatie in dit overzicht redelijk onderbouwen en verifiëren. Het overzicht is achtereenvolgens met behulp van de AI-assistenten Copilot Pro en Mistral Vibe gemaakt, op basis van openbare bronnen. Ik heb de resultaten gecontroleerd aan de hand van mijn eigen kennis van de Archiefwet 2026. De samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten, zeker als u beslissingen neemt of beleid ontwikkelt op basis van de Archiefwet 2026, en laat de toepassing op uw situatie zo nodig juridisch beoordelen.</p>
     </details>
     <div class="panel">
@@ -280,7 +289,7 @@
 <script>
 
 // ---------- rendering ----------
-const state = Object.assign({ done:{}, kind:"all", org:"all", hideDone:false }, (() => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } })());
+const state = Object.assign({ done:{}, kind:"all", org:"all", chg:"all", hideDone:false }, (() => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } })());
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {} };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
 const $ = (s, r = document) => r.querySelector(s);
@@ -318,7 +327,7 @@ phases.forEach((ph, pi) => {
     n++;
     t.n = n;
     const sec = document.createElement("section");
-    sec.className = "topic"; sec.id = t.id; sec.dataset.phase = "phase-" + pi;
+    sec.className = "topic"; sec.id = t.id; sec.dataset.phase = "phase-" + pi; sec.dataset.chg = t.change && t.change.s ? t.change.s : "";
     const layers = LAYERS.filter(L => !L.optional || t[L.key]).map(L => {
       const items = t[L.key] || [];
       const fallback = L.none ? (t[L.none] || (L.key === "besluit" ? NONE_B : NONE_R)) : "";
@@ -374,9 +383,9 @@ $("#toolboxList").innerHTML = TOOLBOX.map(g =>
 ).join("");
 
 // ---------- filtering ----------
-const q = $("#q"), org = $("#org"), hideDone = $("#hideDone"), statusEl = $("#status"), emptyEl = $("#empty");
+const q = $("#q"), org = $("#org"), chgSel = $("#chg"), hideDone = $("#hideDone"), statusEl = $("#status"), emptyEl = $("#empty");
 function syncUI() {
-  org.value = state.org; hideDone.checked = state.hideDone;
+  org.value = state.org; chgSel.value = state.chg; hideDone.checked = state.hideDone;
   const r = $(`input[name=kind][value=${state.kind}]`); if (r) r.checked = true;
 }
 syncUI();
@@ -388,13 +397,14 @@ function apply() {
   const phaseCnt = {};
   $$("section.topic").forEach(sec => {
     let secShown = 0, secTotal = 0, secDone = 0;
+    const chgOK = state.chg === "all" || sec.dataset.chg === state.chg;
     $$(".layer", sec).forEach(layer => {
       const lis = $$(".items > li", layer);
       let vis = 0;
       lis.forEach(li => {
         const kindOK = state.kind === "all" || !li.dataset.kind || li.dataset.kind === state.kind;
         const orgOK = state.org === "all" || !li.dataset.who || li.dataset.who.split(" ").includes(state.org);
-        const scoped = kindOK && orgOK;
+        const scoped = chgOK && kindOK && orgOK;
         const isDone = !!state.done[li.dataset.id];
         li.classList.toggle("done", isDone);
         if (scoped) { secTotal++; if (isDone) secDone++; }
@@ -423,7 +433,7 @@ function apply() {
       if (toolsOnly) toolsDet.open = true;
       if (words.length) toolsShown += toolsVis;
     }
-    const hide = secShown === 0 && !(words.length > 0 && toolsVis > 0);
+    const hide = !chgOK || (secShown === 0 && !(words.length > 0 && toolsVis > 0));
     sec.classList.toggle("hidden", hide);
     $("[data-prog]", sec).textContent = secTotal ? `${secDone} van ${secTotal} afgevinkt` : "";
     const link = $(`#toc li[data-topic="${sec.id}"]`);
@@ -443,7 +453,7 @@ function apply() {
   });
   $("#bar").max = total || 1; $("#bar").value = done;
   $("#overall").textContent = `${done} / ${total} afgevinkt`;
-  const hasFilter = words.length || state.kind !== "all" || state.org !== "all" || state.hideDone;
+  const hasFilter = words.length || state.kind !== "all" || state.org !== "all" || state.chg !== "all" || state.hideDone;
   statusEl.textContent = hasFilter
     ? (toolsShown ? `${shown} ${shown === 1 ? "regel" : "regels"} en ${toolsShown} ${toolsShown === 1 ? "hulpmiddel" : "hulpmiddelen"} getoond.` : `${shown} ${shown === 1 ? "regel" : "regels"} getoond.`)
     : "";
@@ -468,6 +478,7 @@ topicsEl.addEventListener("change", e => {
 });
 q.addEventListener("input", apply);
 org.addEventListener("change", () => { state.org = org.value; apply(); });
+chgSel.addEventListener("change", () => { state.chg = chgSel.value; apply(); });
 hideDone.addEventListener("change", () => { state.hideDone = hideDone.checked; apply(); });
 $$("input[name=kind]").forEach(r => r.addEventListener("change", () => { state.kind = r.value; apply(); }));
 
@@ -483,13 +494,13 @@ toggleAll.addEventListener("click", () => {
 $$(".js-updated").forEach(el => el.textContent = LAST_UPDATED);
 
 $("#clearFilters").addEventListener("click", () => {
-  q.value = ""; state.kind = "all"; state.org = "all"; state.hideDone = false;
+  q.value = ""; state.kind = "all"; state.org = "all"; state.chg = "all"; state.hideDone = false;
   syncUI(); apply();
 });
 
 const exportBtn = $("#exportBtn"), importBtn = $("#importBtn"), importFile = $("#importFile"), resetBtn = $("#resetBtn");
 exportBtn.addEventListener("click", () => {
-  const data = { app: KEY, exported: new Date().toISOString(), done: state.done, kind: state.kind, org: state.org, hideDone: state.hideDone };
+  const data = { app: KEY, exported: new Date().toISOString(), done: state.done, kind: state.kind, org: state.org, chg: state.chg, hideDone: state.hideDone };
   const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
   const a = document.createElement("a");
   a.href = url; a.download = "archiefwet2026-voortgang.json";
@@ -508,6 +519,7 @@ importFile.addEventListener("change", () => {
       state.done = d.done;
       state.kind = ["all", "dig", "fys"].includes(d.kind) ? d.kind : "all";
       state.org = ["all", "rijk", "decentraal", "gr", "archiefdienst", "toezichthouder"].includes(d.org) ? d.org : "all";
+      state.chg = ["all", "gelijk", "gewijzigd", "nieuw"].includes(d.chg) ? d.chg : "all";
       state.hideDone = !!d.hideDone;
       save(); syncUI(); apply();
     } catch { alert("In dit bestand staat geen herkenbare voortgang van dit overzicht."); }
@@ -516,7 +528,7 @@ importFile.addEventListener("change", () => {
 });
 resetBtn.addEventListener("click", () => {
   if (!confirm("Alle afgevinkte regels en filters wissen? Dit kan niet ongedaan worden gemaakt. Exporteer de voortgang eerst als u die wilt bewaren.")) return;
-  state.done = {}; state.kind = "all"; state.org = "all"; state.hideDone = false;
+  state.done = {}; state.kind = "all"; state.org = "all"; state.chg = "all"; state.hideDone = false;
   save(); syncUI(); q.value = ""; apply();
 });
 
