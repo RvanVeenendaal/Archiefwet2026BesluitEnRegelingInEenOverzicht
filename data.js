@@ -85,7 +85,7 @@ const U = {
   metamorfoze: "https://www.metamorfoze.nl/sites/default/files/documents/MM%20AC%20Richtlijnen%20conservering%202023.pdf"
 };
 
-// Landelijk instrumentarium: dwarsdoorsnede over alle onderwerpen heen.
+// Instrumentarium en hulpmiddelen: dwarsdoorsnede over alle onderwerpen heen.
 const TOOLBOX = [
   { g:"Kapstok voor passende maatregelen", items:[
     H("DUTO-raamwerk (Duurzaam Toegankelijke Overheidsinformatie)",{u:U.duto,d:"Vertaalt 'passende maatregelen' in modeleisen per proces (registreren, vernietigen, bewaren, migreren, ter beschikking stellen), inclusief een risicobeoordeling; toe te passen volgens archiving by design én op bestaande systemen."})
@@ -412,7 +412,7 @@ const phases = [
       H("Grootste gemene deler aanlevervoorwaarden Nederlandse archiefdiensten",{u:U.nha,d:"Wat bij het Nationaal Archief, RHC's en gemeentelijke archiefdiensten gangbaar is: SIP met MDTO-metadata (MDTO4; incidenteel TMLO (Toepassingsmodel Metadata Lokale Overheden)), duurzame/open bestandsformaten, checksums (pakbon) voor integriteitscontrole, geen versleuteling en openbaarheidsgegevens als metadata. Check altijd de actuele aanlever-/aansluitvoorwaarden van uw eigen archiefdienst."}),
       H("E-ARK SIP/CSIP als overdrachtsformaat",{u:U.earksip,d:"Europese specificatie voor Submission Information Packages, aansluitend bij de MDTO-SIP; inclusief referentie-implementatie earkweb."}),
       H("Termijnbewaking per object",{u:U.overbrengingOp,d:"De tienjaarstermijn telt per document vanaf creatie of ontvangst, niet per dossier."}),
-      H("Meerjarenplannen 2026–2030 van VNG, IPO en UvW",{u:U.uvwMJP,d:"De koepels bundelen hun implementatieaanpak voor de Archiefwet 2026; zie ook het landelijk instrumentarium bovenaan."})
+      H("Meerjarenplannen 2026–2030 van VNG, IPO en UvW",{u:U.uvwMJP,d:"De koepels bundelen hun implementatieaanpak voor de Archiefwet 2026; zie ook het blok 'Instrumentarium en hulpmiddelen' bovenaan."})
     ],
     noteR:"Metadata over openbaarheid bij overbrenging (Regeling 2.12): zie 'Openbaarheid bij overbrenging'." },
   { id:"uitstel", title:"Uitstel en ontheffing van overbrenging",
@@ -508,7 +508,7 @@ const phases = [
       H("OAIS (NEN-ISO 14721) met CoreTrustSeal als maatstaf",{u:U.edepot,d:"Praktijkstandaard voor het beheer van overgebracht digitaal archief, zoals het NA e-Depot die hanteert."}),
       H("NORA e-depot en ED3 (Eisen Duurzaam Digitaal Depot) voor een eigen e-depot",{u:U.noraEdepot,d:"NORA (Nederlandse Overheids Referentie Architectuur) beschrijft e-depots; ED3 is een toetsingskader voor de beheersomgeving. Zie ook de GEMMA (Gemeentelijke Model Architectuur)-handreiking 'In gebruik nemen e-depot' voor decentrale overheden."}),
       H("AtoM (Access to Memory)",{u:U.atom,d:"Open source voor archiefbeschrijving en online toegang."}),
-      H("Aangewezen opleidingen diploma Archivistiek A/B: UvA (wo), HvA en Reinwardt Academie (hbo)",{u:U.naDiploma,d:"Zie ook de groep 'Opleiding en vakbekwaamheid' in het landelijk instrumentarium bovenaan."})
+      H("Aangewezen opleidingen diploma Archivistiek A/B: UvA (wo), HvA en Reinwardt Academie (hbo)",{u:U.naDiploma,d:"Zie ook de groep 'Opleiding en vakbekwaamheid' in het blok 'Instrumentarium en hulpmiddelen' bovenaan."})
     ] }
  ]},
 
