@@ -94,7 +94,8 @@
   .notice { background:var(--warn-bg); border:1px solid var(--warn-line); border-radius:var(--radius); padding:.75rem 1rem; margin:0 0 1.25rem; font-size:.92rem; }
   .notice summary { cursor:pointer; font-weight:600; }
   .tag { display:inline-block; font-size:.72rem; border:1px solid var(--line); border-radius:10px; padding:0 .5rem; margin-left:.35rem; color:var(--muted); white-space:nowrap; vertical-align:middle; }
-  .tag.fys { border-color:#c98e8e; } .tag.dig { border-color:#7fa6cc; }
+  .tag.fys { border-color:#c98e8e; } .tag.dig { border-color:#7fa6cc; } .tag.dt { border-color:#9a86c8; color:var(--diploma); }
+  .chip.du { background:var(--surface-2); color:var(--muted); border:1px solid var(--line); font-weight:600; }
 
   .phase { margin:2rem 0 .5rem; font-size:.8rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); font-weight:700; }
   .phase:first-child { margin-top:0; }
@@ -136,6 +137,27 @@
   .none[hidden] { display:none; }
   .chip { display:inline-block; font-size:.72rem; border-radius:10px; padding:0 .5rem; margin-left:.3rem; vertical-align:middle; white-space:nowrap; }
   .chip.concept { background:var(--warn-bg); border:1px solid var(--warn-line); color:var(--besluit); }
+  .badge.pm { background:var(--accent); }
+  .tools { border-top:1px solid var(--line); background:var(--surface-2); padding:.55rem 1.1rem .9rem; }
+  .tools.hidden, .cols.hidden { display:none; }
+  .tools summary { cursor:pointer; font-weight:600; display:flex; align-items:center; gap:.5rem; list-style:none; min-height:32px; }
+  .tools summary::-webkit-details-marker { display:none; }
+  .tools summary::after { content:" ▸"; color:var(--muted); font-weight:400; }
+  .tools[open] summary::after { content:" ▾"; }
+  .tools .cnt { color:var(--muted); font-weight:400; font-size:.8rem; }
+  .tlist { list-style:none; margin:.55rem 0 0; padding:0; display:grid; gap:.4rem; }
+  .tlist li { font-size:.9rem; padding-left:2.1rem; }
+  .tlist li.hidden { display:none; }
+  .tlist .td { color:var(--muted); }
+  .toolbox summary { cursor:pointer; }
+  .toolbox h3 { font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin:.9rem 0 .3rem; }
+  .toolbox ul { margin:0; padding-left:1.15rem; display:grid; gap:.3rem; font-size:.92rem; }
+  .change { margin:.2rem 0 0; font-size:.85rem; color:var(--muted); display:flex; gap:.45rem; align-items:baseline; flex-wrap:wrap; }
+  .chip.chg { font-weight:600; border:1px solid; }
+  .chip.chg-gelijk { background:var(--regeling-bg); color:var(--regeling); border-color:var(--regeling); }
+  .chip.chg-gewijzigd { background:var(--warn-bg); color:var(--besluit); border-color:var(--warn-line); }
+  .chip.chg-nieuw { background:var(--wet-bg); color:var(--wet); border-color:var(--wet); }
+  .tdisc { margin:.55rem 0 0; font-size:.8rem; color:var(--muted); font-style:italic; }
   a.art { text-decoration:none; }
   a.art:hover, a.art:focus-visible { text-decoration:underline; }
   .panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:.75rem 1rem; margin:0 0 1.25rem; font-size:.92rem; }
@@ -154,6 +176,7 @@
     .toolbar, aside.side, .skip, #empty { display:none; }
     body { background:#fff; color:#000; }
     section.topic { break-inside:avoid-page; box-shadow:none; }
+    .tools { break-inside:avoid; }
     .layout { display:block; }
   }
 </style>
@@ -198,6 +221,7 @@
         <option value="decentraal">Gemeente, provincie, waterschap</option>
         <option value="gr">Gemeenschappelijke regeling</option>
         <option value="archiefdienst">Archiefdienst / archivaris</option>
+        <option value="toezichthouder">Toezichthouder (Inspectie e.d.)</option>
       </select>
     </div>
     <label class="toggle"><input type="checkbox" id="hideDone"> Verberg afgevinkt</label>
@@ -225,12 +249,20 @@
     <details class="notice">
       <summary>Bron, leeswijzer en status</summary>
       <p>Dit overzicht combineert de <a href="https://zoek.officielebekendmakingen.nl/stb-2026-149.html">Archiefwet 2026 (Staatsblad 2026, 149)</a>, het <a href="https://zoek.officielebekendmakingen.nl/stb-2026-321.html">Archiefbesluit 2026 (Staatsblad 2026, 321, inclusief nota van toelichting)</a>, de <a href="https://technical-regulation-information-system.ec.europa.eu/nl/notification/27387">concept-Archiefregeling (EU-notificatie 27387)</a> en het <a href="https://zoek.officielebekendmakingen.nl/stb-2026-303.html">Besluit diploma’s archivarissen (Staatsblad 2026, 303)</a>. De artikel-badges in de onderwerpen linken rechtstreeks naar deze officiële teksten. De Archiefregeling is nog een concept en spreekt over "20XX". Controleer die bepalingen daarom in de definitieve regeling, zodra die beschikbaar is. De checklist is een samenvatting, niet de volledige wettekst.</p>
+      <p>Dit overzicht richt zich uitsluitend op <strong>Nederland</strong>: alle wet- en regelgeving waarnaar wordt verwezen is Nederlands. De genoemde hulpmiddelen kunnen internationale open source-tools zijn; de verplichtingen zelf zijn dat niet.</p>
       <p>Heeft een regel geen label, dan geldt hij voor alle vormen van archief. De labels <span class="tag dig">digitaal</span> en <span class="tag fys">fysiek</span> betekenen dat de regel alleen voor die vorm geldt. Klik op een regel met een driehoekje voor meer details.</p>
+      <p>Onderaan elk onderwerp klapt u een blok <strong>Passende maatregelen en hulpmiddelen</strong> uit: landelijk beschikbare standaarden, handreikingen en software (zoals DUTO (Duurzaam Toegankelijke Overheidsinformatie), MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie), BIO2 (Baseline Informatiebeveiliging Overheid 2) en het e-Depot) die bij dat onderwerp passen, inclusief publicaties van de koepels VNG, IPO en Unie van Waterschappen. Deze lijst is <strong>ter inspiratie en niet uitputtend</strong> — het is geen checklist. De hulpmiddelen zijn niet afvinkbaar en tellen niet mee in de voortgang, maar zijn wel doorzoekbaar via de zoekbalk. Boven de onderwerpen staat een verzamelblok met het landelijk instrumentarium.</p>
+      <p>Bij elk onderwerp staat een label dat aangeeft of het onderwerp <strong>grotendeels gelijk</strong> is aan de oude Archiefwet 1995 (met het oude Archiefbesluit en de oude Archiefregeling), <strong>gewijzigd</strong> is, of <strong>nieuw</strong>. De toelichting staat bij het label. Bij elk onderwerp staat ook de <strong>DUTO-categorie</strong> (indicatief). Heeft een regel een latere ingangsdatum dan 1 januari 2027, dan staat daar een tag <span class="tag dt">vanaf …</span> bij (volgens het inwerkingtredings-KB, het koninklijk besluit dat de inwerkingtreding regelt).</p>
       <p>Ik stel dit hulpmiddel beschikbaar als privépersoon, niet namens of in opdracht van mijn werkgever, het Nationaal Archief. Het is geen officiële publicatie of standpunt van het Nationaal Archief en geen juridisch advies. Als medewerker van het Nationaal Archief heb ik het ontwikkeltraject van de Archiefwet 2026 van dichtbij meegemaakt. Daardoor ken ik de inhoud, de context en de achtergrond van deze wet goed en kan ik de informatie in dit overzicht redelijk onderbouwen en verifiëren. Het overzicht is achtereenvolgens met behulp van de AI-assistenten Copilot Pro en Mistral Vibe gemaakt, op basis van openbare bronnen. Ik heb de resultaten gecontroleerd aan de hand van mijn eigen kennis van de Archiefwet 2026. De samenvattingen kunnen onvolledig of verouderd zijn. Controleer altijd de actuele officiële teksten, zeker als u beslissingen neemt of beleid ontwikkelt op basis van de Archiefwet 2026, en laat de toepassing op uw situatie zo nodig juridisch beoordelen.</p>
     </details>
     <div class="panel">
-      <p><strong>Kennisbank Archiefwet 2026</strong> — Wat er verandert en wanneer de nieuwe wet in werking treedt, staat op de kennisbankpagina <a href="https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026">Nieuwe Archiefwet: samen werken aan duurzaam toegankelijke informatie | Nationaal Archief</a>. Die pagina van het Nationaal Archief bundelt de achtergrond bij de nieuwe wet, een factsheet over de veranderingen, de officiële publicaties en actuele informatie over het invoeringstraject. De teksten op de kennisbank over de Archiefwet 2026 zijn geschreven door de beleidsmedewerkers van het Ministerie van OCW, in samenwerking met medewerkers van het Nationaal Archief en de Inspectie Overheidsinformatie en Erfgoed.</p>
+      <p><strong>Kennisbank Archiefwet 2026</strong> — Wat er verandert en wanneer de nieuwe wet in werking treedt, staat op de kennisbankpagina <a href="https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026">Nieuwe Archiefwet: samen werken aan duurzaam toegankelijke informatie | Nationaal Archief</a>. Die pagina van het Nationaal Archief bundelt de achtergrond bij de nieuwe wet, een factsheet over de veranderingen, de officiële publicaties en actuele informatie over het invoeringstraject. De teksten op de kennisbank over de Archiefwet 2026 zijn geschreven door de beleidsmedewerkers van het Ministerie van Onderwijs, Cultuur en Wetenschap (OCW), in samenwerking met medewerkers van het Nationaal Archief en de Inspectie Overheidsinformatie en Erfgoed.</p>
     </div>
+    <details class="panel toolbox">
+      <summary><strong>Landelijk instrumentarium</strong> — kapstok, standaarden, software en kennisproducten</summary>
+      <div id="toolboxList"></div>
+      <p class="tdisc">Ter inspiratie en niet uitputtend — geen checklist. Bronnen: het Nationaal Archief en de koepels VNG, IPO en Unie van Waterschappen.</p>
+    </details>
     <div id="topics"></div>
     <div id="empty" hidden>
       <p>Geen regels gevonden voor deze zoekterm en filters.</p>
@@ -260,6 +292,13 @@ const LAYERS = [
   { key:"diploma", letter:"D", cls:"d", name:"Besluit diploma’s", sub:"Welke diploma’s voldoen", none:"noteD", optional:true }
 ];
 const KIND_LABEL = { dig:"digitaal", fys:"fysiek" };
+const CHG = {
+  gelijk:    { cls:"chg-gelijk",    label:"grotendeels gelijk t.o.v. Archiefwet 1995" },
+  gewijzigd: { cls:"chg-gewijzigd", label:"gewijzigd t.o.v. Archiefwet 1995" },
+  nieuw:     { cls:"chg-nieuw",     label:"nieuw" }
+};
+const MONTHS = ["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"];
+const fmtDt = s => { const p = String(s).split("-"); return `${Number(p[2])} ${MONTHS[Number(p[1]) - 1]} ${p[0]}`; };
 const articleOrder = ref => {
   const match = String(ref).match(/\d+(?:\.\d+)?/);
   if (!match) return [Infinity, Infinity];
@@ -289,8 +328,8 @@ phases.forEach((ph, pi) => {
         return aChapter - bChapter || aArticle - bArticle || a.idx - b.idx;
       }).map(({ it, idx }) => {
         const id = `${t.id}:${L.key}:${idx}`;
-        const txt = [it.a, it.t, ...(it.d || []), it.n || ""].join(" ").toLowerCase();
-        const tag = it.k ? `<span class="tag ${it.k}">${KIND_LABEL[it.k]}</span>` : "";
+        const txt = [it.a, it.t, ...(it.d || []), it.n || "", it.dt ? "vanaf " + fmtDt(it.dt) + " " + it.dt : "", t.du ? "DUTO " + t.du : ""].join(" ").toLowerCase();
+        const tag = [it.k ? `<span class="tag ${it.k}">${KIND_LABEL[it.k]}</span>` : "", it.dt ? `<span class="tag dt">vanaf ${fmtDt(it.dt)}</span>` : ""].join("");
         const src = SOURCES[L.key];
         const art = `<a class="art" href="${src.url}" target="_blank" rel="noopener" title="Officiële tekst: ${esc(src.name)}">${L.letter} ${esc(it.a)}</a>`;
         const badge = `<span class="art" aria-hidden="true">${L.letter} ${esc(it.a)}</span>`;
@@ -300,18 +339,39 @@ phases.forEach((ph, pi) => {
         const body = extra
           ? `<details class="item"><summary>${badge}${head}</summary>${srcLine}${it.d ? `<ul class="det">${it.d.map(d => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}${it.n ? `<p class="note">${esc(it.n)}</p>` : ""}</details>`
           : `<div class="item">${art}${head}</div>`;
-        return `<li data-id="${esc(id)}" data-kind="${it.k || ""}" data-who="${(it.w || []).join(" ")}" data-text="${esc(txt)}"><input type="checkbox" aria-labelledby="${esc(t.id)}-h ${esc(id)}-lbl" ${state.done[id] ? "checked" : ""}>${body}</li>`;
+        return `<li data-id="${esc(id)}" data-kind="${it.k || ""}" data-who="${(it.w || t.w || []).join(" ")}" data-text="${esc(txt)}"><input type="checkbox" aria-labelledby="${esc(t.id)}-h ${esc(id)}-lbl" ${state.done[id] ? "checked" : ""}>${body}</li>`;
       }).join("");
       const chip = L.key === "regeling" ? ` <span class="chip concept">concept</span>` : "";
       return `<div class="layer ${L.key}"><h3><span class="badge ${L.cls}" aria-hidden="true">${L.letter}</span>${L.name}${chip}</h3><p class="sub">${L.sub}</p>${items.length ? `<ul class="items">${lis}</ul>` : ""}<p class="none" data-static="${items.length ? "" : esc(fallback || (L.key === "wet" ? "" : ""))}" ${items.length ? "hidden" : ""}>${items.length ? "" : esc(fallback)}</p></div>`;
     }).join("");
-    sec.innerHTML = `<div class="thead"><div class="row"><span class="n">${t.n}.</span><h2 id="${esc(t.id)}-h">${esc(t.title)}</h2><span class="prog" data-prog></span></div><p>${esc(t.doel)}</p></div><div class="cols"><div class="grid">${layers}</div></div>`;
+    const toolItems = (t.tools || []).map(h => {
+      const txt = [h.t, h.d || ""].join(" ").toLowerCase();
+      const head = h.u ? `<a href="${h.u}" target="_blank" rel="noopener">${esc(h.t)}</a>` : `<strong>${esc(h.t)}</strong>`;
+      return `<li data-text="${esc(txt)}">${head}${h.d ? ` <span class="td">${esc(h.d)}</span>` : ""}</li>`;
+    }).join("");
+    const toolsHtml = toolItems
+      ? `<details class="tools"><summary><span class="badge pm" aria-hidden="true">PM</span>Passende maatregelen en hulpmiddelen <span class="cnt">${t.tools.length}</span></summary><ul class="tlist">${toolItems}</ul><p class="tdisc">Ter inspiratie en niet uitputtend — geen checklist.</p></details>`
+      : "";
+    const chgInfo = t.change && CHG[t.change.s] ? CHG[t.change.s] : null;
+    const chips = [
+      t.du ? `<span class="chip du">DUTO: ${esc(t.du)}</span>` : "",
+      chgInfo ? `<span class="chip chg ${chgInfo.cls}">${chgInfo.label}</span>` : ""
+    ].filter(Boolean).join(" ");
+    const changeLine = chips ? `<p class="change">${chips}${t.change && t.change.t ? `<span>${esc(t.change.t)}</span>` : ""}</p>` : "";
+    sec.innerHTML = `<div class="thead"><div class="row"><span class="n">${t.n}.</span><h2 id="${esc(t.id)}-h">${esc(t.title)}</h2><span class="prog" data-prog></span></div><p>${esc(t.doel)}</p>${changeLine}</div><div class="cols"><div class="grid">${layers}</div></div>${toolsHtml}`;
     topicsEl.append(sec);
     tocHtml += `<li data-topic="${t.id}"><a href="#${t.id}"><span>${t.n}. ${esc(t.title)}</span><span class="cnt"></span></a></li>`;
   });
   tocHtml += "</ol>";
 });
 toc.innerHTML = tocHtml;
+
+$("#toolboxList").innerHTML = TOOLBOX.map(g =>
+  `<h3>${esc(g.g)}</h3><ul>${g.items.map(h => {
+    const head = h.u ? `<a href="${h.u}" target="_blank" rel="noopener">${esc(h.t)}</a>` : `<strong>${esc(h.t)}</strong>`;
+    return `<li>${head}${h.d ? ` — ${esc(h.d)}` : ""}</li>`;
+  }).join("")}</ul>`
+).join("");
 
 // ---------- filtering ----------
 const q = $("#q"), org = $("#org"), hideDone = $("#hideDone"), statusEl = $("#status"), emptyEl = $("#empty");
@@ -324,7 +384,7 @@ syncUI();
 function apply() {
   const activeLi = document.activeElement ? document.activeElement.closest(".items > li") : null;
   const words = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  let shown = 0, total = 0, done = 0;
+  let shown = 0, total = 0, done = 0, toolsShown = 0;
   const phaseCnt = {};
   $$("section.topic").forEach(sec => {
     let secShown = 0, secTotal = 0, secDone = 0;
@@ -349,7 +409,21 @@ function apply() {
         none.textContent = "Geen regels voor deze selectie.";
       }
     });
-    const hide = secShown === 0;
+    const toolsDet = $(".tools", sec);
+    let toolsVis = 0;
+    if (toolsDet) {
+      $$(".tlist > li", toolsDet).forEach(li => {
+        const ok = !words.length || words.every(w => li.dataset.text.includes(w));
+        li.classList.toggle("hidden", !ok);
+        if (ok) toolsVis++;
+      });
+      const toolsOnly = words.length > 0 && secShown === 0 && toolsVis > 0;
+      toolsDet.classList.toggle("hidden", words.length > 0 && toolsVis === 0);
+      $(".cols", sec).classList.toggle("hidden", toolsOnly);
+      if (toolsOnly) toolsDet.open = true;
+      if (words.length) toolsShown += toolsVis;
+    }
+    const hide = secShown === 0 && !(words.length > 0 && toolsVis > 0);
     sec.classList.toggle("hidden", hide);
     $("[data-prog]", sec).textContent = secTotal ? `${secDone} van ${secTotal} afgevinkt` : "";
     const link = $(`#toc li[data-topic="${sec.id}"]`);
@@ -370,8 +444,10 @@ function apply() {
   $("#bar").max = total || 1; $("#bar").value = done;
   $("#overall").textContent = `${done} / ${total} afgevinkt`;
   const hasFilter = words.length || state.kind !== "all" || state.org !== "all" || state.hideDone;
-  statusEl.textContent = hasFilter ? `${shown} ${shown === 1 ? "regel" : "regels"} getoond.` : "";
-  emptyEl.hidden = !(hasFilter && shown === 0);
+  statusEl.textContent = hasFilter
+    ? (toolsShown ? `${shown} ${shown === 1 ? "regel" : "regels"} en ${toolsShown} ${toolsShown === 1 ? "hulpmiddel" : "hulpmiddelen"} getoond.` : `${shown} ${shown === 1 ? "regel" : "regels"} getoond.`)
+    : "";
+  emptyEl.hidden = !(hasFilter && shown === 0 && toolsShown === 0);
   if (activeLi && activeLi.classList.contains("hidden")) {
     const all = $$(".items > li");
     const i = all.indexOf(activeLi);
@@ -431,7 +507,7 @@ importFile.addEventListener("change", () => {
       if (!d || typeof d !== "object" || typeof d.done !== "object") throw new Error("ongeldig");
       state.done = d.done;
       state.kind = ["all", "dig", "fys"].includes(d.kind) ? d.kind : "all";
-      state.org = ["all", "rijk", "decentraal", "gr", "archiefdienst"].includes(d.org) ? d.org : "all";
+      state.org = ["all", "rijk", "decentraal", "gr", "archiefdienst", "toezichthouder"].includes(d.org) ? d.org : "all";
       state.hideDone = !!d.hideDone;
       save(); syncUI(); apply();
     } catch { alert("In dit bestand staat geen herkenbare voortgang van dit overzicht."); }
