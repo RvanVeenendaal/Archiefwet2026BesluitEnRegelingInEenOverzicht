@@ -72,7 +72,17 @@ const U = {
   radio: "https://leerplatform.it-academieoverheid.nl/",
   radioIh: "https://www.it-academieoverheid.nl/onderwerpen/i/informatiehuishouding",
   kvanbrain: "https://www.kvanbrain.nl/pagina/werken-de-archiefsector",
-  kvanProfielen: "https://www.kvan.nl/wp-content/uploads/2026/08/Kennis-en-Competentieprofielen-KVAN.pdf"
+  kvanProfielen: "https://www.kvan.nl/wp-content/uploads/2026/08/Kennis-en-Competentieprofielen-KVAN.pdf",
+  rceWegwijzer: "https://kennis.cultureelerfgoed.nl/index.php/Thema/Wegwijzer_duurzaamheidsbeleid",
+  rceKlimaat: "https://www.cultureelerfgoed.nl/onderwerpen/v/veilig-erfgoed/preventieve-conservering/binnenklimaat",
+  lerenPreserveren: "https://lerenpreserveren.nl/topic/preserveringsstrategieen/",
+  siard: "https://siard.dilcis.eu/",
+  forumStandaarden: "https://www.forumstandaardisatie.nl/open-standaarden",
+  noraEdepot: "https://www.noraonline.nl/wiki/E-depot",
+  ed3: "https://www.noraonline.nl/images/noraonline/6/6b/ED3_v1.pdf",
+  gemmaEdepot: "https://www.gemmaonline.nl/images/gemma/5/59/Handreiking_in_gebruik_nemen_e-depot_decentrale_overheden_versie_1.0_dec._2015.pdf",
+  vngPreservering: "https://vng.nl/sites/default/files/2026-01/aan-de-slag-met-preserveringsbeleid-een-naslagwerk-bij-het-opstellen.pdf",
+  metamorfoze: "https://www.metamorfoze.nl/sites/default/files/documents/MM%20AC%20Richtlijnen%20conservering%202023.pdf"
 };
 
 // Landelijk instrumentarium: dwarsdoorsnede over alle onderwerpen heen.
@@ -81,10 +91,12 @@ const TOOLBOX = [
     H("DUTO-raamwerk (Duurzaam Toegankelijke Overheidsinformatie)",{u:U.duto,d:"Vertaalt 'passende maatregelen' in modeleisen per proces (registreren, vernietigen, bewaren, migreren, ter beschikking stellen), inclusief een risicobeoordeling; toe te passen volgens archiving by design én op bestaande systemen."})
   ]},
   { g:"Metadata en ordening", items:[
-    H("MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Normerend metadataschema (NEN-ISO 23081-1) met XML-schema en SIP-specificatie voor uitwisseling tussen systemen."})
+    H("MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Normerend metadataschema (NEN-ISO 23081-1) met XML-schema en SIP-specificatie voor uitwisseling tussen systemen." }),
+    H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst open standaarden (o.a. MDTO en TOOI)",{u:U.forumStandaarden,d:"MDTO is sinds september 2026 door het OBDO (Overheidsbreed Beleidsoverleg Digitale Overheid) verplicht gesteld voor de overheid. TOOI (Thesauri en Ontologieën Overheidsinformatie, beheerd door KOOP/Logius) is in procedure: begrippenkaders en URI's van overheidsorganisaties."})
   ]},
   { g:"Duurzame formaten", items:[
-    H("Norm Voorkeursformaten",{u:U.voorkeurs,d:"Duurzame formaten bij creatie; geen massale conversie van bestaand archief vlak voor overbrenging."})
+    H("Norm Voorkeursformaten",{u:U.voorkeurs,d:"Duurzame formaten bij creatie; geen massale conversie van bestaand archief vlak voor overbrenging." }),
+    H("SIARD (Software Independent Archiving of Relational Databases)",{u:U.siard,d:"Open archiefformaat van de DILCIS Board (het beheerorgaan van o.a. de SIARD- en E-ARK-specificaties) voor langetermijnbewaring van relationele databases; door het Nationaal Archief erkend in de Norm Voorkeursformaten voor opname in het e-Depot."})
   ]},
   { g:"Beveiliging", items:[
     H("BIO2 — Baseline Informatiebeveiliging Overheid 2",{u:U.bio2,d:"Normenkader voor 'passende maatregelen ter beveiliging' (Besluit 2.1 lid 2)."})
@@ -92,7 +104,11 @@ const TOOLBOX = [
   { g:"Digitale bewaring en overbrenging", items:[
     H("e-Depot Nationaal Archief (CoreTrustSeal-gecertificeerd)",{u:U.edepot,d:"Bewaarplaats voor digitaal archief; OAIS (NEN-ISO 14721) als model voor een eigen bewaaromgeving." }),
     H("Archivematica",{u:U.archivematica,d:"Open source preserveringssysteem volgens OAIS (Open Archival Information System): normalisatie, metadata volgens PREMIS (Preservation Metadata: Implementation Strategies), fixity en toegang." }),
-    H("AtoM (Access to Memory)",{u:U.atom,d:"Open source voor archiefbeschrijving en online toegang." })
+    H("AtoM (Access to Memory)",{u:U.atom,d:"Open source voor archiefbeschrijving en online toegang." }),
+    H("Wegwijzer Duurzaamheidsbeleid (RCE / NDE)",{u:U.rceWegwijzer,d:"Van de RCE (Rijksdienst voor het Cultureel Erfgoed), ontwikkeld binnen het NDE (Netwerk Digitaal Erfgoed) en beheerd door de RCE. Preserveringsstrategieën per collectie: media-migratie, formaat-migratie, converteren, normaliseren of emuleren (incl. emulation-as-a-service); inclusief het stapsgewijs opstellen van een duurzaamheidsbeleid (preservation policy). Zie ook de pagina 'Functionele preservering – preserveringsstrategieën' op dezelfde kennisbank." }),
+    H("NORA (Nederlandse Overheids Referentie Architectuur) — e-depot",{u:U.noraEdepot,d:"Referentiearchitectuur voor e-depots bij de overheid." }),
+    H("ED3 — Eisen Duurzaam Digitaal Depot (toetsingskader)",{u:U.ed3,d:"Toetsingskader voor de beheersomgeving van een eigen digitaal depot, als aanvulling op OAIS en CoreTrustSeal." }),
+    H("GEMMA (Gemeentelijke Model Architectuur) — Handreiking in gebruik nemen e-depot (decentrale overheden, 2015)",{u:U.gemmaEdepot,d:"Praktische handreiking voor decentrale overheden bij het inrichten en aansluiten van een e-depot." })
   ]},
   { g:"Formaten, integriteit en overdrachtspakketten", items:[
     H("DROID",{u:U.droid,d:"Formatidentificatie op basis van PRONOM (formaatregister van The National Archives, VK)." }),
@@ -107,11 +123,13 @@ const TOOLBOX = [
   ]},
   { g:"Leren en community", items:[
     H("Voorbereiden op de inwerkingtreding",{u:U.voorbereiden,d:"KIA (Kenniscommunity Informatie en Archief) en het Leerhuis Informatiehuishouding volgen het invoeringstraject." }),
-    H("Training Digitale Preservering",{u:U.training,d:"Vakbekwaamheid voor digitale bewaring." })
+    H("Training Digitale Preservering",{u:U.training,d:"Vakbekwaamheid voor digitale bewaring." }),
+    H("Leren Preserveren (NDE)",{u:U.lerenPreserveren,d:"Leeromgeving van het NDE (Netwerk Digitaal Erfgoed) met o.a. preserveringsstrategieën (migratie, conversie, normalisatie, emulatie) en de Wegwijzer duurzaamheidsbeleid." })
   ]},
   { g:"Decentrale koepels: VNG (Vereniging van Nederlandse Gemeenten), IPO (Interprovinciaal Overleg) en Unie van Waterschappen", items:[
     H("VNG — Grip op Informatie (programma en kennisbank)",{u:U.vngGrip,d:"Programma met handreikingen en praktijksessies 'Archiefwet 2026 in de praktijk' voor gemeenten en gemeenschappelijke regelingen, o.a. via de Kennisbank Grip op Informatie." }),
     H("VNG — Strategisch meerjarenplan digitale informatiehuishouding 2026–2030",{u:U.vngMJP,d:"Inclusief de visie op informatiehuishouding; zie ook vng.nl/onderwerpen/archieven." }),
+    H("VNG — Aan de slag met preserveringsbeleid (naslagwerk 2026)",{u:U.vngPreservering,d:"Praktisch naslagwerk bij het opstellen van een preserveringsbeleid voor de digitale collectie: welke strategie (migreren, converteren, emuleren) voor welke collectie." }),
     H("IPO — Meerjarenplan Digitale Informatiehuishouding Provincies 2026–2030",{u:U.ipoMJP,d:"Implementatieaanpak van de provincies voor o.a. de Archiefwet 2026." }),
     H("IPO — Handreiking digitaliseringswetgeving 2026",{u:U.ipoHandreiking,d:"Overzicht van digitaliseringswetgeving voor provincies, inclusief de Archiefwet 2026." }),
     H("UvW (Unie van Waterschappen) — Meerjarenplan digitale informatiehuishouding waterschappen 2026–2030",{u:U.uvwMJP,d:"Implementatieaanpak van de waterschappen; zie ook het thema transparante overheid/archiefbeheer." }),
@@ -188,7 +206,9 @@ const phases = [
       H("Beheerregels als drie-kolomentabel",{u:U.beheerregels,d:"Gebruik de wetspecificatie letterlijk: belegging van het beheer, passende maatregelen per categorie, evaluatiecyclus. Publiceer de beheerregels openbaar (Wet 4.2)."}),
       H("Overzicht informatiehuishouding als wegwijzer",{u:U.overzicht,d:"Taken → werkprocessen → systemen → vindplaatsen. Basis om te bepalen welke maatregelen passend zijn, en werkinstrument voor toezichthouders (concept-Regeling 2.3)."}),
       H("OIM (Overheidsinformatiemodel), Richtlijn Metagegevens Overheidsinformatie en een applicatieregister/CMDB (configuration management database)",{u:U.catalogus,d:"Hulpmiddelen voor de invulling; een beheerd applicatieregister als technische onderlegger."}),
-      H("KIA-community en VNG Kennisbank Grip op Informatie",{u:U.kiaAw,d:"Praktijkgidsen en sessies 'Archiefwet 2026 in de praktijk' van de koepels (VNG, IPO, UvW) voor decentrale overheden."})
+      H("KIA-community en VNG Kennisbank Grip op Informatie",{u:U.kiaAw,d:"Praktijkgidsen en sessies 'Archiefwet 2026 in de praktijk' van de koepels (VNG, IPO, UvW) voor decentrale overheden."}),
+      H("Wegwijzer Duurzaamheidsbeleid (RCE / NDE)",{u:U.rceWegwijzer,d:"Stapsgewijs een duurzaamheidsbeleid (preservation policy) voor de digitale collectie opstellen; sluit aan bij de beheerregels (Wet 4.2)."}),
+      H("VNG — Aan de slag met preserveringsbeleid (naslagwerk 2026)",{u:U.vngPreservering,d:"Naslagwerk bij het uitwerken van de passende maatregelen per categorie in de beheerregels."})
     ]}
  ]},
 
@@ -238,7 +258,8 @@ const phases = [
     tools:[
       H("MDTO + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Nederlands normerend metadataschema conform NEN-ISO 23081-1, met XML-schema en SIP-specificatie voor uitwisseling tussen systemen; vult concept-Regeling 2.5 en 2.8 in."}),
       H("Ordeningsstructuren op taken en werkprocessen",{d:"Minstens één ordeningsstructuur aansluitend op taken en werkprocessen; leg de plaats van een document vast via metadata of externe registratie (concept-Regeling 2.2). Handtekeningmetadata volgens 2.6."}),
-      H("EU DSS — Digital Signature Service (eIDAS, de EU-verordening voor elektronische identificatie en vertrouwensdiensten)",{u:U.dss,d:"Open source-bibliotheek (github.com/esig/dss) voor het aanmaken, uitbreiden en valideren van elektronische handtekeningen (handtekeningformaten XAdES, CAdES en PAdES); zie ook het eIDAS Dashboard-hulpmiddel voor validatie. Relevant voor de handtekeningmetadata uit concept-Regeling 2.6."})
+      H("EU DSS — Digital Signature Service (eIDAS, de EU-verordening voor elektronische identificatie en vertrouwensdiensten)",{u:U.dss,d:"Open source-bibliotheek (github.com/esig/dss) voor het aanmaken, uitbreiden en valideren van elektronische handtekeningen (handtekeningformaten XAdES, CAdES en PAdES); zie ook het eIDAS Dashboard-hulpmiddel voor validatie. Relevant voor de handtekeningmetadata uit concept-Regeling 2.6."}),
+      H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst (MDTO verplicht; TOOI in procedure)",{u:U.forumStandaarden,d:"MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) verplicht sinds september 2026. TOOI (Thesauri en Ontologieën Overheidsinformatie) voor begrippenkaders, ordeningsstructuren en URI's van overheidsorganisaties."})
     ]},
   { id:"digitaal10", title:"Digitale bewaring langer dan 10 jaar",
     doel:"Aanvullende eisen aan digitale documenten die op basis van het selectiebesluit langer dan tien jaar bewaard worden.",
@@ -263,6 +284,7 @@ const phases = [
       H("Fixity met checksums en manifesten",{d:"Verifieerbare opslag; periodieke fixity-checks zijn de integriteitschecks uit concept-Regeling 2.8. Voor de transferverpakking: volg de gepubliceerde aanlevervoorwaarden van uw archiefdienst (zie onderwerp 'Overbrenging')."}),
       H("veraPDF",{u:U.verapdf,d:"Open source validatie van PDF/A (duurzame archiefvariant van PDF) en PDF/UA (toegankelijkheidsvariant van PDF): controleer of documenten daadwerkelijk aan het duurzame formaat voldoen."}),
       H("e-Depot of een eigen OAIS-omgeving",{u:U.edepot,d:"e-deposit bij de archiefdienst (het NA e-Depot is CoreTrustSeal-gecertificeerd) of een eigen bewaaromgeving conform OAIS (NEN-ISO 14721). Open source: Archivematica."}),
+      H("SIARD voor relationele databases",{u:U.siard,d:"Open archiefformaat (DILCIS Board) voor databases, erkend in de Norm Voorkeursformaten; het e-Depot van het Nationaal Archief neemt SIARD op."}),
       H("Training Digitale Preservering",{u:U.training,d:"Vakbekwaamheid voor digitale bewaring."})
     ]},
   { id:"migratie", title:"Migratie, conversie en vervanging",
@@ -289,7 +311,9 @@ const phases = [
       H("DUTO-proces Migreren (module 7)",{u:U.duto,d:"Modeleisen voor migratie- en conversiescenario's."}),
       H("Handreiking Vervanging archiefbescheiden",{u:U.catalogus,d:"Scankwaliteit, procesbeschrijving en controle bij vervanging van analoog archief (Besluit 2.3, concept-Regeling 3.1)."}),
       H("Proefmigraties met dubbele controle",{d:"Vergelijk steekproefgewijs bron en doel (inhoud, metadata, handtekeningen) vóór de originelen vervallen; leg de resultaten vast in de migratieverklaring, inclusief de niet-gemigreerde documenten (concept-Regeling 3.2–3.3)."}),
-      H("Handreikingen per informatiesoort",{u:U.catalogus,d:"E-mail, chatberichten, sociale media en overheidswebsites (incl. validatie van WARC-websitebestanden; WARC = webarchief-formaat)."})
+      H("Handreikingen per informatiesoort",{u:U.catalogus,d:"E-mail, chatberichten, sociale media en overheidswebsites (incl. validatie van WARC-websitebestanden; WARC = webarchief-formaat)."}),
+      H("Wegwijzer Duurzaamheidsbeleid — preserveringsstrategieën (RCE / NDE)",{u:U.rceWegwijzer,d:"Kies per scenario een strategie: media-migratie, formaat-migratie, converteren, normaliseren of emuleren (incl. emulation-as-a-service); leg de keuze en de borging vast in het migratieplan (Besluit 2.2)."}),
+      H("Metamorfoze — Richtlijnen Conservering en kwaliteitsrichtlijnen digitalisering",{u:U.metamorfoze,d:"Voor vervanging van analoog archief (Besluit 2.3, concept-Regeling 3.1): kwaliteitsrichtlijnen voor de scan/reproductie en richtlijnen voor conservering van het origineel."})
     ]}
  ]},
 
@@ -482,6 +506,7 @@ const phases = [
     tools:[
       H("Beleidskader aanwijzen archiefdienst en archivaris",{u:U.thema,d:"Inclusief diploma-eis, Regionaal Historische Centra en overgangsregels: organen zonder archivaris wijzen er binnen twee jaar een aan (Wet 12.4–12.7)."}),
       H("OAIS (NEN-ISO 14721) met CoreTrustSeal als maatstaf",{u:U.edepot,d:"Praktijkstandaard voor het beheer van overgebracht digitaal archief, zoals het NA e-Depot die hanteert."}),
+      H("NORA e-depot en ED3 (Eisen Duurzaam Digitaal Depot) voor een eigen e-depot",{u:U.noraEdepot,d:"NORA (Nederlandse Overheids Referentie Architectuur) beschrijft e-depots; ED3 is een toetsingskader voor de beheersomgeving. Zie ook de GEMMA (Gemeentelijke Model Architectuur)-handreiking 'In gebruik nemen e-depot' voor decentrale overheden."}),
       H("AtoM (Access to Memory)",{u:U.atom,d:"Open source voor archiefbeschrijving en online toegang."}),
       H("Aangewezen opleidingen diploma Archivistiek A/B: UvA (wo), HvA en Reinwardt Academie (hbo)",{u:U.naDiploma,d:"Zie ook de groep 'Opleiding en vakbekwaamheid' in het landelijk instrumentarium bovenaan."})
     ] }
@@ -527,7 +552,8 @@ const phases = [
       H("Module Klimaatbeheer met continue monitoring",{u:U.fysiek,d:"Dataloggers en trendrapportage tegen de normwaarden (concept-Regeling 5.14)."}),
       H("Module Depothygiëne en protocollen depothygiëne",{u:U.depothygiene,d:"Schoonmaak, schimmelcontrole en geïntegreerde ongediertebestrijding; het protocol minstens jaarlijks evalueren (concept-Regeling 5.15)."}),
       H("Module Collectiebehoudsplan",{u:U.cbp,d:"Schade-inventarisatie en collectiewaardering om prioriteiten te stellen tussen conservering en restauratie."}),
-      H("Module Collectiehulpverleningsplan",{u:U.fysiek,d:"Calamiteitenplan voor het depot, met draagvlak in de organisatie."})
+      H("Module Collectiehulpverleningsplan",{u:U.fysiek,d:"Calamiteitenplan voor het depot, met draagvlak in de organisatie."}),
+      H("RCE — binnenklimaat en klimaatrisico's voor depotbeheer",{u:U.rceKlimaat,d:"Praktische informatie van de Rijksdienst voor het Cultureel Erfgoed over binnenklimaat in depots, als aanvulling op de Module Klimaatbeheer."})
     ]},
   { id:"materialen", title:"Verpakkingen en materialen",
     doel:"Duurzame verpakkingen, papier en schrijfmaterialen voor blijvend te bewaren fysieke documenten.",
