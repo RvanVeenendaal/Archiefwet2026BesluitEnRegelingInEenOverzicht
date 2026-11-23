@@ -14,7 +14,7 @@ Per onderwerp is er onder de vier lagen een uitklapbaar blok "Passende maatregel
 
 Elk onderwerp rangschikt de regels in vier lagen: de Archiefwet (wat moet geregeld zijn), het Archiefbesluit (hoe werkt dat uit), de Archiefregeling (welke minimale eisen) en het Besluit diploma’s archivarissen (diploma-eisen). De artikelverwijzingen linken rechtstreeks naar de officiële publicaties. De onderwerpen zijn gegroepeerd in zes fasen, van organisatie en verantwoordelijkheid tot toezicht en overgang. Bij het afdrukken print de pagina het kader "Bron, leeswijzer en status" en de onderwerpen automatisch uitgeklapt.
 
-De Archiefregeling 2026 is op 23 november 2026 gepubliceerd in de Staatscourant (nr. 40895). Die laag is in het overzicht als definitief gemarkeerd.
+De Archiefregeling 2026 is op 23 november 2026 gepubliceerd in de Staatscourant (nr. 40895).
 
 ## Bronnen
 

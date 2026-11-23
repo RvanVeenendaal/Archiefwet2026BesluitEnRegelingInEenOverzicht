@@ -136,7 +136,6 @@
   .none { margin:.25rem 0 0; color:var(--muted); font-style:italic; font-size:.88rem; }
   .none[hidden] { display:none; }
   .chip { display:inline-block; font-size:.72rem; border-radius:10px; padding:0 .5rem; margin-left:.3rem; vertical-align:middle; white-space:nowrap; }
-  .chip.definitief { background:var(--regeling-bg); border:1px solid var(--regeling); color:var(--regeling); }
   .badge.pm { background:var(--accent); }
   .tools { border-top:1px solid var(--line); background:var(--surface-2); padding:.55rem 1.1rem .9rem; }
   .tools.hidden, .cols.hidden { display:none; }
@@ -193,7 +192,7 @@
       <li class="arrow" aria-hidden="true">→</li>
       <li><span class="badge b" aria-hidden="true">B</span><span><strong>Archiefbesluit</strong>: hoe werkt dat uit</span></li>
       <li class="arrow" aria-hidden="true">→</li>
-      <li><span class="badge r" aria-hidden="true">R</span><span><strong>Archiefregeling</strong> <span class="chip definitief">definitief</span>: welke minimale eisen</span></li>
+      <li><span class="badge r" aria-hidden="true">R</span><span><strong>Archiefregeling</strong>: welke minimale eisen</span></li>
       <li><span class="badge d" aria-hidden="true">D</span><span><strong>Besluit diploma’s archivarissen</strong>: diploma-eisen</span></li>
     </ol>
   </div>
@@ -350,8 +349,7 @@ phases.forEach((ph, pi) => {
           : `<div class="item">${art}${head}</div>`;
         return `<li data-id="${esc(id)}" data-kind="${it.k || ""}" data-who="${(it.w || t.w || []).join(" ")}" data-text="${esc(txt)}"><input type="checkbox" aria-labelledby="${esc(t.id)}-h ${esc(id)}-lbl" ${state.done[id] ? "checked" : ""}>${body}</li>`;
       }).join("");
-      const chip = L.key === "regeling" ? ` <span class="chip definitief">definitief</span>` : "";
-      return `<div class="layer ${L.key}"><h3><span class="badge ${L.cls}" aria-hidden="true">${L.letter}</span>${L.name}${chip}</h3><p class="sub">${L.sub}</p>${items.length ? `<ul class="items">${lis}</ul>` : ""}<p class="none" data-static="${items.length ? "" : esc(fallback || (L.key === "wet" ? "" : ""))}" ${items.length ? "hidden" : ""}>${items.length ? "" : esc(fallback)}</p></div>`;
+      return `<div class="layer ${L.key}"><h3><span class="badge ${L.cls}" aria-hidden="true">${L.letter}</span>${L.name}</h3><p class="sub">${L.sub}</p>${items.length ? `<ul class="items">${lis}</ul>` : ""}<p class="none" data-static="${items.length ? "" : esc(fallback || (L.key === "wet" ? "" : ""))}" ${items.length ? "hidden" : ""}>${items.length ? "" : esc(fallback)}</p></div>`;
     }).join("");
     const toolItems = (t.tools || []).map(h => {
       const txt = [h.t, h.d || ""].join(" ").toLowerCase();
