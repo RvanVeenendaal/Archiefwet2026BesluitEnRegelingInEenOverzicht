@@ -32,7 +32,6 @@ const U = {
   verapdf: "https://verapdf.org/",
   dss: "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467109107/Digital+Signature+Service+-+DSS",
   earksip: "https://earksip.dilcis.eu/",
-  naSip: "https://www.nationaalarchief.nl/archiveren/mdto/specificatie-submission-information-package",
   naVoorwaarden: "https://www.nationaalarchief.nl/archiveren/mdto/aanleverproces-submission-information-package/voorwaarden",
   nha: "https://noord-hollandsarchief.nl/images/Archiefbeheer/Handleidingen/Aanlevervoorwaarden_MDTO_v10.pdf",
   ioeMeld: "https://www.inspectie-oe.nl/onderwerpen/overheidsinformatie/meldplicht-informatie-incidenten",
@@ -70,7 +69,6 @@ const U = {
   naDiploma: "https://www.nationaalarchief.nl/archiveren/kennisbank/archiefwet-2026-aangewezen-archivaris-en-diploma-eis",
   leerhuisAanbod: "https://www.leerhuisinformatiehuishouding.nl/actueel/nieuws/2025/12/30/het-leerhuis-leeraanbod-in-2026---met-nieuwe-trainingen",
   radio: "https://leerplatform.it-academieoverheid.nl/",
-  radioIh: "https://www.it-academieoverheid.nl/onderwerpen/i/informatiehuishouding",
   kvanbrain: "https://www.kvanbrain.nl/pagina/werken-de-archiefsector",
   kvanProfielen: "https://www.kvan.nl/wp-content/uploads/2026/08/Kennis-en-Competentieprofielen-KVAN.pdf",
   rceWegwijzer: "https://kennis.cultureelerfgoed.nl/index.php/Thema/Wegwijzer_duurzaamheidsbeleid",
@@ -86,8 +84,9 @@ const U = {
   tkAw: "https://toetsingskader.inspectie-oe.nl/",
   dutoQuickscan: "https://www.nationaalarchief.nl/archiveren/kennisbank/risicobeoordeling-quickscan",
   kiaGids: "https://kiacommunity.nl/thoughts/29561",
-  ioeEscalatie: "https://www.inspectie-oe.nl/onderwerpen/escalatiebeleid",
+  ioeEscalatie: "https://www.inspectie-oe.nl/de-inspectie-overheidsinformatie-en-erfgoed/toezichtkader-en-toetsingskaders",
   ioeCollectie: "https://inspectie-oe.nl/onderwerpen/meldplicht-incidenten-met-de-rijkscollectie",
+  naOpenbaarheid: "https://www.nationaalarchief.nl/archiveren/kennisbank/openbaarheid-overbrenging",
   mdtoFaq: "https://nationaalarchief.github.io/MDTO-Veelgestelde-vragen/",
   mdtoGh: "https://github.com/NationaalArchief",
   siptt: "https://github.com/OpenIPC/sip-tt"
@@ -132,7 +131,11 @@ const TOOLBOX = [
   ]},
   { g:"Kennisproducten per onderwerp", items:[
     H("Catalogus kennisproducten Nationaal Archief",{u:U.catalogus,d:"Handreikingen voor e-mail, chat, sociale media, websites, vervanging, waardering/selectie, steekproeven, externe deskundige, digitaal vernietigen, digitaal overbrengen en fysiek archief." }),
-    H("Toetsingskader Archiefwet 2026 (Inspectie Overheidsinformatie en Erfgoed, live sinds 23 november 2026)",{u:U.tkAw,d:"Maakt de open normen uit de Archiefwet 2026 concreet en toetsbaar: per onderwerp de geldende voorschriften plus de criteria en indicatoren waarmee de Inspectie naleving beoordeelt. Ook te gebruiken om de eigen informatiehuishouding op orde te brengen. Open source: RijksICTGilde/toetsingskader-archiefwet op GitHub." })
+  ]},
+  { g:"Toezicht, melding en handhaving", items:[
+    H("Toetsingskader Archiefwet 2026 (Inspectie Overheidsinformatie en Erfgoed, live sinds 23 november 2026)",{u:U.tkAw,d:"Maakt de open normen uit de Archiefwet 2026 concreet en toetsbaar: per onderwerp de geldende voorschriften plus de criteria en indicatoren waarmee de Inspectie naleving beoordeelt. Ook te gebruiken om de eigen informatiehuishouding op orde te brengen. Open source: RijksICTGilde/toetsingskader-archiefwet op GitHub." }),
+    H("Meldpagina meldplicht informatie-incidenten (Inspectie IOE)",{u:U.ioeMeld,d:"Vanaf 1 januari 2027 meldt u een (informatie)incident binnen 72 uur na ontdekking bij de Inspectie." }),
+    H("Toezichtkader en escalatiebeleid Inspectie",{u:U.ioeEscalatie,d:"Hoe de Inspectie optreedt bij tekortkomingen: toezicht intensiveren of bestuursrechtelijke maatregelen, waaronder de bestuurlijke boete (Wet 10.3)." })
   ]},
   { g:"Leren en community", items:[
     H("Voorbereiden op de inwerkingtreding",{u:U.voorbereiden,d:"KIA (Kenniscommunity Informatie en Archief) en het Leerhuis Informatiehuishouding volgen het invoeringstraject." }),
@@ -140,7 +143,7 @@ const TOOLBOX = [
     H("Leren Preserveren (NDE)",{u:U.lerenPreserveren,d:"Leeromgeving van het NDE (Netwerk Digitaal Erfgoed) met o.a. preserveringsstrategieën (migratie, conversie, normalisatie, emulatie) en de Wegwijzer duurzaamheidsbeleid." }),
     H("Leerhuis Informatiehuishouding — Archiefwet 2026",{u:U.leerhuisFs,d:"Gratis leeraanbod voor rijks- en medeoverheden: factsheet, 5 microlearnings van ~15 minuten, trainingen, de tweedaagse workshop 'Slim schakelen tussen wetten', webinars (o.a. over toezicht) en een podcastserie met praktijkverhalen." })
   ]},
-  { g:"Decentrale koepels: VNG (Vereniging van Nederlandse Gemeenten), IPO (Interprovinciaal Overleg) en Unie van Waterschappen", items:[
+  { g:"Koepels en communities: VNG, IPO, Unie van Waterschappen en KIA", items:[
     H("VNG — Grip op Informatie (programma en kennisbank)",{u:U.vngGrip,d:"Programma met handreikingen en praktijksessies 'Archiefwet 2026 in de praktijk' voor gemeenten en gemeenschappelijke regelingen, o.a. via de Kennisbank Grip op Informatie." }),
     H("VNG — Strategisch meerjarenplan digitale informatiehuishouding 2026–2030",{u:U.vngMJP,d:"Inclusief de visie op informatiehuishouding; zie ook vng.nl/onderwerpen/archieven." }),
     H("VNG — Aan de slag met preserveringsbeleid (naslagwerk 2026)",{u:U.vngPreservering,d:"Praktisch naslagwerk bij het opstellen van een preserveringsbeleid voor de digitale collectie: welke strategie (migreren, converteren, emuleren) voor welke collectie." }),
@@ -477,7 +480,7 @@ const phases = [
     tools:[
       H("Woo-afwegingsinstrumentarium hergebruiken",{u:U.openbaarheid,d:"De beperkingsgronden zijn Woo-conform; koppel het bestaande kader (o.a. de brochure 'Open tenzij') aan de archiefmetadata."}),
       H("Openbaarheidsstatus als verplicht metagegevensveld",{d:"Status, grond, duur en einddatum per document (Regeling 2.12); maakt de verklaring van overbrenging en inzageverzoeken machinaal verwerkbaar."}),
-      H("Handreiking Openbaarheid bij en na overbrenging",{u:U.catalogus,d:"In ontwikkeling; houd de catalogus kennisproducten in de gaten."})
+      H("Handreiking Openbaarheid bij en na overbrenging",{u:U.naOpenbaarheid,d:"Praktische handreiking over openbaarheid bij en na overbrenging naar de archiefdienst."})
     ]},
   { id:"toegang", title:"Toegang tot overgebracht archief",
     doel:"Verzoeken om raadpleging, informatie in andere vorm en uitlening afhandelen.",
@@ -611,7 +614,7 @@ const phases = [
       H("72-uursmeldplicht koppelen aan bestaande processen",{u:U.toezicht,d:"Meld (informatie)incidenten binnen 72 uur (Wet 10.2, Regeling 7.1) via de bestaande incidentregistratie en calamiteitenplannen, zodat de 72-uursklok geen ad-hocproces wordt."}),
       H("Interbestuurlijk toezicht organiseren",{d:"Decentraal houdt de eigen archivaris rechtstreeks toezicht (Wet 10.4); de Inspectie houdt interbestuurlijk toezicht."}),
       H("Meldpagina meldplicht informatie-incidenten (Inspectie Overheidsinformatie en Erfgoed (IOE))",{u:U.ioeMeld,d:"Officiële pagina van de Inspectie over de meldplicht die vanaf 1 januari 2027 geldt." }),
-      H("Escalatiebeleid Inspectie — van intensivering tot bestuurlijke boete",{u:U.ioeEscalatie,d:"Het vernieuwde escalatiebeleid (november 2026) beschrijft hoe de Inspectie optreedt bij tekortkomingen: toezicht intensiveren of bestuursrechtelijke maatregelen, waaronder de bestuurlijke boete (Wet 10.3)."}),
+      H("Toezichtkader en escalatiebeleid Inspectie — van intensivering tot bestuurlijke boete",{u:U.ioeEscalatie,d:"Het vernieuwde escalatiebeleid (november 2026) beschrijft hoe de Inspectie optreedt bij tekortkomingen: toezicht intensiveren of bestuursrechtelijke maatregelen, waaronder de bestuurlijke boete (Wet 10.3)."}),
       H("Meldplicht incidenten met de rijkscollectie (Erfgoedwet)",{u:U.ioeCollectie,d:"Vermissing, tenietgaan of schade aan rijkscollectie moet worden gemeld aan de Inspectie (Erfgoedwet); relevant voor houders van rijkscollectie."})
     ],
     noteB:"Het Besluit bevat geen aparte bepalingen over toezicht en melding." },
