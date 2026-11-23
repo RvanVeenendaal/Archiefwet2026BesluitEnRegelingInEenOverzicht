@@ -85,7 +85,12 @@ const U = {
   metamorfoze: "https://www.metamorfoze.nl/sites/default/files/documents/MM%20AC%20Richtlijnen%20conservering%202023.pdf",
   tkAw: "https://toetsingskader.inspectie-oe.nl/",
   dutoQuickscan: "https://www.nationaalarchief.nl/archiveren/kennisbank/risicobeoordeling-quickscan",
-  kiaGids: "https://kiacommunity.nl/thoughts/29561"
+  kiaGids: "https://kiacommunity.nl/thoughts/29561",
+  ioeEscalatie: "https://www.inspectie-oe.nl/onderwerpen/escalatiebeleid",
+  ioeCollectie: "https://inspectie-oe.nl/onderwerpen/meldplicht-incidenten-met-de-rijkscollectie",
+  mdtoFaq: "https://nationaalarchief.github.io/MDTO-Veelgestelde-vragen/",
+  mdtoGh: "https://github.com/NationaalArchief",
+  siptt: "https://github.com/OpenIPC/sip-tt"
 };
 
 // Instrumentarium en hulpmiddelen: dwarsdoorsnede over alle onderwerpen heen.
@@ -96,7 +101,9 @@ const TOOLBOX = [
   ]},
   { g:"Metadata en ordening", items:[
     H("MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Normerend metadataschema (NEN-ISO 23081-1) met XML-schema en SIP-specificatie voor uitwisseling tussen systemen." }),
-    H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst open standaarden (o.a. MDTO)",{u:U.forumStandaarden,d:"MDTO is sinds september 2026 door het OBDO (Overheidsbreed Beleidsoverleg Digitale Overheid) verplicht gesteld voor de overheid."})
+    H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst open standaarden (o.a. MDTO)",{u:U.forumStandaarden,d:"MDTO is sinds september 2026 door het OBDO (Overheidsbreed Beleidsoverleg Digitale Overheid) verplicht gesteld voor de overheid."}),
+    H("MDTO-Veelgestelde-vragen (Nationaal Archief)",{u:U.mdtoFaq,d:"Praktische vragen en antwoorden over het normerend metadataschema MDTO." }),
+    H("MDTO-repository op GitHub / code.overheid.nl (Nationaal Archief)",{u:U.mdtoGh,d:"Alle MDTO-onderdelen open beschikbaar: Metagegevensschema, XML-schema (MDTO-XSD), RDF-variant (MDTO-RDF), SIP-specificatie en -aanleverproces, uitleg wanneer een informatiesysteem MDTO-conform is, en de TMLO/TMR-overgang." })
   ]},
   { g:"Duurzame formaten", items:[
     H("Norm Voorkeursformaten",{u:U.voorkeurs,d:"Duurzame formaten bij creatie; geen massale conversie van bestaand archief vlak voor overbrenging." }),
@@ -119,6 +126,7 @@ const TOOLBOX = [
     H("JHOVE",{u:U.jhove,d:"Formatspecifieke validatie." }),
     H("veraPDF",{u:U.verapdf,d:"Open source validatie van PDF/A (duurzame archiefvariant van PDF) en PDF/UA (toegankelijkheidsvariant van PDF): controleer of documenten aan het duurzame formaat voldoen." }),
     H("E-ARK SIP (Submission Information Package) / CSIP (Common Specification for Information Packages) (eArchiving Building Block)",{u:U.earksip,d:"Europese specificatie voor Submission Information Packages (overdrachtspakketten), incl. referentie-implementatie earkweb; sluit aan bij de MDTO-SIP." }),
+    H("sip-tt — open source SIP-conformance-testtool (OpenIPC)",{u:U.siptt,d:"Test SIP-overdrachtspakketten headless en CI-vriendelijk tegen de specificatie, vóór aanlevering bij de archiefdienst." }),
     H("Voorwaarden voor aanlevering (Nationaal Archief)",{u:U.naVoorwaarden,d:"Gepubliceerde acceptatievoorwaarden voor digitale overbrenging: export als SIP volgens de MDTO-standaard; zie ook de SIP-specificatie." }),
     H("Aanlevervoorwaarden MDTO — voorbeeld decentrale archiefdienst (Noord-Hollands Archief)",{u:U.nha,d:"Vergelijkbare MDTO-gebaseerde aanlever-/aansluitvoorwaarden publiceren diverse RHC's (Regionaal Historische Centra) en gemeentelijke archiefdiensten (o.a. Drents Archief, Regionaal Archief Nijmegen, Erfgoed Leiden, Stadsarchief Amsterdam)." })
   ]},
@@ -265,6 +273,7 @@ const phases = [
     ],
     tools:[
       H("MDTO + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Nederlands normerend metadataschema conform NEN-ISO 23081-1, met XML-schema en SIP-specificatie voor uitwisseling tussen systemen; vult Regeling 2.5 en 2.8 in."}),
+      H("MDTO-onderdelen: XSD, RDF, FAQ en conformiteit",{u:U.mdtoGh,d:"GitHub-repository van het Nationaal Archief met het XML-schema (MDTO-XSD), de RDF-variant (MDTO-RDF), veelgestelde vragen en de uitleg wanneer een informatiesysteem MDTO-conform is."}),
       H("Ordeningsstructuren op taken en werkprocessen",{d:"Minstens één ordeningsstructuur aansluitend op taken en werkprocessen; leg de plaats van een document vast via metadata of externe registratie (Regeling 2.2). Handtekeningmetadata volgens 2.6."}),
       H("EU DSS — Digital Signature Service (eIDAS, de EU-verordening voor elektronische identificatie en vertrouwensdiensten)",{u:U.dss,d:"Open source-bibliotheek (github.com/esig/dss) voor het aanmaken, uitbreiden en valideren van elektronische handtekeningen (handtekeningformaten XAdES, CAdES en PAdES); zie ook het eIDAS Dashboard-hulpmiddel voor validatie. Relevant voor de handtekeningmetadata uit Regeling 2.6."}),
       H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst (MDTO verplicht)",{u:U.forumStandaarden,d:"MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) is sinds september 2026 verplicht voor de overheid."})
@@ -417,6 +426,7 @@ const phases = [
       H("Aansluiten op het e-Depot (rijksorganen)",{u:U.edepotEerste,d:"Het e-Depot van het Nationaal Archief is CoreTrustSeal-gecertificeerd en garandeert bewaring, vindbaarheid en hergebruik."}),
       H("Acceptatievoorwaarden van de archiefdienst overnemen en een proefoverbrenging plannen",{d:"Neem formaten, MDTO-metadata, openbaarheidsgegevens en fixity-eisen op in de beheerregels en oefen ruim vóór de overbrenging."}),
       H("SIP volgens de aanlevervoorwaarden van de archiefdienst",{u:U.naVoorwaarden,d:"Bij het Nationaal Archief: export als SIP conform de MDTO-standaard (zie ook de SIP-specificatie). Checksums/manifesten voor integriteit."}),
+      H("SIP-conformiteit testen met sip-tt (open source)",{u:U.siptt,d:"Headless, CI-vriendelijke conformance-testtool (OpenIPC op GitHub) om SIP-overdrachtspakketten te toetsen tegen de MDTO-SIP/E-ARK-specificatie, vóór aanlevering bij de archiefdienst."}),
       H("Grootste gemene deler aanlevervoorwaarden Nederlandse archiefdiensten",{u:U.nha,d:"Wat bij het Nationaal Archief, RHC's en gemeentelijke archiefdiensten gangbaar is: SIP met MDTO-metadata (incidenteel nog TMLO (Toepassingsmodel Metadata Lokale Overheden)), duurzame/open bestandsformaten, checksums (pakbon) voor integriteitscontrole, geen versleuteling en openbaarheidsgegevens als metadata. Check altijd de actuele aanlever-/aansluitvoorwaarden van uw eigen archiefdienst."}),
       H("E-ARK SIP/CSIP als overdrachtsformaat",{u:U.earksip,d:"Europese specificatie voor Submission Information Packages, aansluitend bij de MDTO-SIP; inclusief referentie-implementatie earkweb."}),
       H("Termijnbewaking per object",{u:U.overbrengingOp,d:"De tienjaarstermijn telt per document vanaf creatie of ontvangst, niet per dossier."}),
@@ -541,7 +551,7 @@ const phases = [
       H("Depotaudit / gap-analyse tegen de Regeling",{d:"Toets het depot aan Regeling hoofdstuk 5. Voor bestaande depots: afweging tussen aanpassen en ontheffing aanvragen (Regeling 5.2); bij de equivalentieclausule (Regeling 5.1) de onderbouwing documenteren."}),
       H("Handreiking Behoud en beheer fysiek archief",{u:U.fysiek,d:"Modules Klimaatbeheer, Depothygiëne, Collectiebehoudsplan en Collectiehulpverleningsplan als praktische vertaling van de normeisen."}),
       H("Beheers- en calamiteitenplan opstellen en oefenen",{d:"Expliciet vereist (Regeling 5.3)."}),
-      H("Meldplicht (informatie)incidenten binnen 72 uur inrichten",{u:U.toezicht,d:"Koppel de meldplicht (Wet 10.2, Regeling 7.1) aan de bestaande incidentregistratie (BIO/Woo) en calamiteitendraaiboeken; het meldformulier is in ontwikkeling."})
+      H("Meldplicht (informatie)incidenten binnen 72 uur inrichten",{u:U.ioeMeld,d:"Koppel de meldplicht (Wet 10.2, Regeling 7.1) aan de bestaande incidentregistratie (BIO/Woo) en calamiteitendraaiboeken. Melden kan via de meldpagina/contact van de Inspectie; het gepubliceerde toetsingskader (zie hierboven) beschrijft het kader voor de meldplicht."})
     ]},
   { id:"depot-klimaat", title:"Depot: klimaat, inrichting en hygiëne",
     doel:"Bewaaromstandigheden die verval van fysieke documenten tegengaan.",
@@ -600,7 +610,9 @@ const phases = [
       H("Toetsingskader Archiefwet 2026 — Inspectie IOE (live sinds 23 november 2026)",{u:U.tkAw,d:"Maakt de open norm 'passend' concreet en toetsbaar: per onderwerp de geldende voorschriften plus de criteria/indicatoren waarmee de Inspectie naleving beoordeelt. Stem uw eigen toetsing hierop af; ook open source beschikbaar (RijksICTGilde op GitHub)."}),
       H("72-uursmeldplicht koppelen aan bestaande processen",{u:U.toezicht,d:"Meld (informatie)incidenten binnen 72 uur (Wet 10.2, Regeling 7.1) via de bestaande incidentregistratie en calamiteitenplannen, zodat de 72-uursklok geen ad-hocproces wordt."}),
       H("Interbestuurlijk toezicht organiseren",{d:"Decentraal houdt de eigen archivaris rechtstreeks toezicht (Wet 10.4); de Inspectie houdt interbestuurlijk toezicht."}),
-      H("Meldpagina meldplicht informatie-incidenten (Inspectie Overheidsinformatie en Erfgoed (IOE))",{u:U.ioeMeld,d:"Officiële pagina van de Inspectie Overheidsinformatie en Erfgoed over de meldplicht die vanaf 1 januari 2027 geldt."})
+      H("Meldpagina meldplicht informatie-incidenten (Inspectie Overheidsinformatie en Erfgoed (IOE))",{u:U.ioeMeld,d:"Officiële pagina van de Inspectie over de meldplicht die vanaf 1 januari 2027 geldt." }),
+      H("Escalatiebeleid Inspectie — van intensivering tot bestuurlijke boete",{u:U.ioeEscalatie,d:"Het vernieuwde escalatiebeleid (november 2026) beschrijft hoe de Inspectie optreedt bij tekortkomingen: toezicht intensiveren of bestuursrechtelijke maatregelen, waaronder de bestuurlijke boete (Wet 10.3)."}),
+      H("Meldplicht incidenten met de rijkscollectie (Erfgoedwet)",{u:U.ioeCollectie,d:"Vermissing, tenietgaan of schade aan rijkscollectie moet worden gemeld aan de Inspectie (Erfgoedwet); relevant voor houders van rijkscollectie."})
     ],
     noteB:"Het Besluit bevat geen aparte bepalingen over toezicht en melding." },
   { id:"overgang", title:"Evaluatie, overgangsrecht en inwerkingtreding",
