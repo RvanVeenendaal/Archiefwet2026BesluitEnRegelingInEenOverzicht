@@ -281,7 +281,7 @@
 </div>
 
 <footer>
-  Laatst gecontroleerd en bijgewerkt op <span class="js-updated"></span>.
+  Versie <span class="js-version"></span> &middot; Laatst gecontroleerd en bijgewerkt op <span class="js-updated"></span>.
 </footer>
 
 <script src="data.js"></script>
@@ -490,6 +490,7 @@ toggleAll.addEventListener("click", () => {
 
 // ---------- voortgang ----------
 $$(".js-updated").forEach(el => el.textContent = LAST_UPDATED);
+$$(".js-version").forEach(el => el.textContent = APP_VERSION);
 
 $("#clearFilters").addEventListener("click", () => {
   q.value = ""; state.kind = "all"; state.org = "all"; state.chg = "all"; state.hideDone = false;
@@ -498,7 +499,7 @@ $("#clearFilters").addEventListener("click", () => {
 
 const exportBtn = $("#exportBtn"), importBtn = $("#importBtn"), importFile = $("#importFile"), resetBtn = $("#resetBtn");
 exportBtn.addEventListener("click", () => {
-  const data = { app: KEY, exported: new Date().toISOString(), done: state.done, kind: state.kind, org: state.org, chg: state.chg, hideDone: state.hideDone };
+  const data = { app: KEY, version: APP_VERSION, exported: new Date().toISOString(), done: state.done, kind: state.kind, org: state.org, chg: state.chg, hideDone: state.hideDone };
   const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
   const a = document.createElement("a");
   a.href = url; a.download = "archiefwet2026-voortgang.json";

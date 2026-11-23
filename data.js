@@ -1,8 +1,9 @@
 // Brondata en instellingen voor het Archiefwet 2026-overzicht.
 // Laatst gecontroleerd en bijgewerkt op: zie LAST_UPDATED.
 
+const APP_VERSION = "3.0.0"; // SemVer: v2.x = versie met concept-Regeling; v3.0.0 = definitieve Archiefregeling 2026. Bij major-bump KEY mee-bumpen (zie onder).
 const LAST_UPDATED = "23 november 2026";
-const KEY = "archiefwet2026.v2";
+const KEY = "archiefwet2026.v" + APP_VERSION.split(".")[0];
 
 const SOURCES = {
   wet:      { url: "https://zoek.officielebekendmakingen.nl/stb-2026-149.html", name: "Archiefwet 2026 (Staatsblad 2026, 149)" },
