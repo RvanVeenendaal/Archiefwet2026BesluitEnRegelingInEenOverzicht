@@ -325,7 +325,7 @@ const phases = [
     ],
     regeling:[
       I("3.1","Procesbeschrijving vervanging bevat minimaal:",{k:"fys",d:["documenten, inhoud, structuur en vorm; gronden voor vervanging;","wanneer en hoe de archivaris adviseert en hoe cultureel-erfgoeddocumenten bewaard blijven;","uitzonderingen, technische infrastructuur, procesinrichting en kwaliteitsprocedures;","hoe de vervangen documenten worden vernietigd en hoe de beschrijving periodiek wordt geëvalueerd;","minimale beeldkwaliteit en metadatering."]}),
-      I("3.2","Migratieplan bevat: borging van duurzame toegankelijkheid, borging van bewaartermijnen en een beschrijving van bron- en doelsystemen.",{k:"dig",dt:"2029-01-01",n:"Treedt pas later in werking (Regeling 8.4): artikel 8.4 spreekt van het derde kalenderjaar na inwerkingtreding, de toelichting van twee jaar erna, mogelijk dus een jaar verschil. Volgens het inwerkingtredings-KB (koninklijk besluit) is dat 1 januari 2029. Tot die tijd geldt alleen de planplicht uit Besluit 2.2, zonder deze inhoudseisen."}),
+      I("3.2","Migratieplan bevat: borging van duurzame toegankelijkheid, borging van bewaartermijnen en een beschrijving van bron- en doelsystemen.",{k:"dig",dt:"2029-01-01",n:"Treedt pas later in werking (Regeling 8.4): artikel 8.4 spreekt van het derde kalenderjaar na inwerkingtreding, de toelichting van twee jaar erna, mogelijk dus een jaar verschil. Volgens artikel 8.4 van de Regeling zelf is dat 1 januari 2029. Tot die tijd geldt alleen de planplicht uit Besluit 2.2, zonder deze inhoudseisen."}),
       I("3.3","Migratieverklaring bevat: gemigreerde documenten, niet of niet volledig gemigreerde documenten en hoe die raadpleegbaar blijven tot einde bewaartermijn.",{k:"dig",dt:"2029-01-01",n:"Zelfde latere inwerkingtreding als 3.2: 1 januari 2029."})
     ],
     tools:[
@@ -442,7 +442,7 @@ const phases = [
     change:{s:"gewijzigd",t:"Opschorting bij veelvuldig gebruik (5.5) bestond al onder de oude wet maar is aangepast; de ontheffing van de overbrengingsplicht (5.6) is nieuw."},
     du:"Ter beschikking stellen",
     wet:[
-      I("5.5 lid 2 – 4","Opschorten bij veelvuldig gebruik kan met machtiging van gedeputeerde staten of de Minister, telkens voor maximaal tien jaar (verlengbaar).",{n:"De ingangsdatum van dit artikel kan bij het inwerkingtredings-KB afwijken van 1 januari 2027 (art. 12.14)."}),
+      I("5.5 lid 2 – 4","Opschorten bij veelvuldig gebruik kan met machtiging van gedeputeerde staten of de Minister, telkens voor maximaal tien jaar (verlengbaar).",{n:"Volgens het inwerkingtredings-KB (Stb 2026, 375) is voor dit artikel geen afwijkende ingangsdatum vastgesteld: 1 januari 2027."}),
       I("5.6","Ontheffing door de rijksarchivaris alleen bij een omvangrijke samenhangende verzameling, ernstige afbreuk bij overbrenging en gelijkwaardige borging van bewaring en beschikbaarstelling.",{d:["Documenten zijn kosteloos te raadplegen. Overzicht en raadpleeginformatie zijn openbaar.","Intrekking door de rijksarchivaris als de redenen vervallen of de voorzieningen tekortschieten."]}),
       I("12.3 lid 2","Bestaande machtigingen blijven gelden als machtigingen op grond van 5.5 lid 2.")
     ],
@@ -467,7 +467,7 @@ const phases = [
     wet:[
       I("1.2","Wet open overheid en Wet hergebruik zijn niet van toepassing op overgebrachte documenten, tenzij de Archiefwet anders bepaalt. Geheimhoudingsplichten staan overbrenging niet in de weg (met voorbehoud van 7.2). Bijzondere persoonsgegevens mogen verwerkt worden bij vervanging, overbrenging en beheer."),
       I("7.1 lid 1","Na overbrenging zijn documenten openbaar."),
-      I("7.2","Beperk de openbaarheid bij overbrenging bij:",{d:["absolute gronden: eenheid van de Kroon, veiligheid van de Staat, vertrouwelijke bedrijfsgegevens, bijzondere en strafrechtelijke persoonsgegevens, identificatienummers;","relatieve gronden (belangenafweging): internationale betrekkingen, financiële belangen, opsporing, toezicht, privacy, concurrentiegevoelige gegevens, beveiliging, goed functioneren van de overheid;","milieu-informatie met aparte regels, emissies zijn uitgezonderd."],n:"Voor de nieuwe beperkingsgronden kan het inwerkingtredings-KB een afwijkende ingangsdatum vaststellen (art. 12.14)."}),
+      I("7.2","Beperk de openbaarheid bij overbrenging bij:",{d:["absolute gronden: eenheid van de Kroon, veiligheid van de Staat, vertrouwelijke bedrijfsgegevens, bijzondere en strafrechtelijke persoonsgegevens, identificatienummers;","relatieve gronden (belangenafweging): internationale betrekkingen, financiële belangen, opsporing, toezicht, privacy, concurrentiegevoelige gegevens, beveiliging, goed functioneren van de overheid;","milieu-informatie met aparte regels, emissies zijn uitgezonderd."],n:"Volgens het inwerkingtredings-KB (Stb 2026, 375) is voor deze beperkingsgronden geen afwijkende ingangsdatum vastgesteld: 1 januari 2027."}),
       I("7.3","Vraag advies aan de archivaris en motiveer de beperking per grond, ondanks het tijdsverloop."),
       I("7.4","Beperkingstermijnen: 75 jaar (Kroon, Staat, internationale betrekkingen), 110 jaar (bijzondere persoonsgegevens, identificatienummers, privacy), anders 20 jaar. Langer kan met instemming van gedeputeerde staten of de Minister."),
       I("7.5, 7.6","Na overbrenging nog beperken kan alleen als openbaarheid onaanvaardbaar is. Opheffen kan als de gronden vervallen (bij Minister gehoord of in overeenstemming met het overbrengende orgaan)."),
@@ -624,7 +624,7 @@ const phases = [
     change:{s:"nieuw",t:"De evaluatie van de wet binnen vijf en vijftien jaar en het overgangsrecht (o.a. oude selectielijsten, openbaarheidsbeperkingen en de twintigjaarstermijn voor bestaand archief) zijn nieuw."},
     wet:[
       I("12.11","Evaluatie binnen vijf en binnen vijftien jaar na inwerkingtreding."),
-      I("12.12 – 12.14","De Archiefwet 1995 wordt ingetrokken. Inwerkingtreding bij koninklijk besluit, per artikel verschillend.",{n:"Voorzien: 1 januari 2027."}),
+      I("12.12 – 12.14","De Archiefwet 1995 wordt ingetrokken. Inwerkingtreding bij koninklijk besluit, per artikel verschillend.",{n:"Vastgesteld bij KB (Stb 2026, 375): 1 januari 2027; geen artikelgewijze afwijkingen."}),
       I("12.1 – 12.10","Overgangsbepalingen: zie bij de betreffende onderwerpen (gemeenschappelijke regelingen, selectielijsten, overbrenging, archiefdiensten, openbaarheid)."),
     ],
     besluit:[
