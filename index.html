@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Archiefwet 2026 in één overzicht</title>
-<meta name="description" content="Checklist van de Archiefwet 2026, het Archiefbesluit 2026, de concept-Archiefregeling en het Besluit diploma’s archivarissen: per onderwerp wat uw organisatie moet regelen. Met filters en voortgangsbewaking in de browser.">
+<meta name="description" content="Checklist van de Archiefwet 2026, het Archiefbesluit 2026, de Archiefregeling 2026 en het Besluit diploma’s archivarissen: per onderwerp wat uw organisatie moet regelen. Met filters en voortgangsbewaking in de browser.">
 <meta property="og:title" content="Archiefwet 2026 in één overzicht">
-<meta property="og:description" content="Per onderwerp de bepalingen uit Archiefwet, Archiefbesluit, concept-Archiefregeling en Besluit diploma’s archivarissen naast elkaar: wat moet uw organisatie regelen?">
+<meta property="og:description" content="Per onderwerp de bepalingen uit Archiefwet, Archiefbesluit, Archiefregeling 2026 en Besluit diploma’s archivarissen naast elkaar: wat moet uw organisatie regelen?">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rvanveenendaal.github.io/Archiefwet2026checks/">
 <meta property="og:locale" content="nl_NL">
@@ -136,7 +136,7 @@
   .none { margin:.25rem 0 0; color:var(--muted); font-style:italic; font-size:.88rem; }
   .none[hidden] { display:none; }
   .chip { display:inline-block; font-size:.72rem; border-radius:10px; padding:0 .5rem; margin-left:.3rem; vertical-align:middle; white-space:nowrap; }
-  .chip.concept { background:var(--warn-bg); border:1px solid var(--warn-line); color:var(--besluit); }
+  .chip.definitief { background:var(--regeling-bg); border:1px solid var(--regeling); color:var(--regeling); }
   .badge.pm { background:var(--accent); }
   .tools { border-top:1px solid var(--line); background:var(--surface-2); padding:.55rem 1.1rem .9rem; }
   .tools.hidden, .cols.hidden { display:none; }
@@ -193,7 +193,7 @@
       <li class="arrow" aria-hidden="true">→</li>
       <li><span class="badge b" aria-hidden="true">B</span><span><strong>Archiefbesluit</strong>: hoe werkt dat uit</span></li>
       <li class="arrow" aria-hidden="true">→</li>
-      <li><span class="badge r" aria-hidden="true">R</span><span><strong>Archiefregeling</strong> <span class="chip concept">concept</span>: welke minimale eisen</span></li>
+      <li><span class="badge r" aria-hidden="true">R</span><span><strong>Archiefregeling</strong> <span class="chip definitief">definitief</span>: welke minimale eisen</span></li>
       <li><span class="badge d" aria-hidden="true">D</span><span><strong>Besluit diploma’s archivarissen</strong>: diploma-eisen</span></li>
     </ol>
   </div>
@@ -257,7 +257,7 @@
   <main id="main">
     <details class="notice">
       <summary>Bron, leeswijzer en status</summary>
-      <p>Dit overzicht combineert de <a href="https://zoek.officielebekendmakingen.nl/stb-2026-149.html">Archiefwet 2026 (Staatsblad 2026, 149)</a>, het <a href="https://zoek.officielebekendmakingen.nl/stb-2026-321.html">Archiefbesluit 2026 (Staatsblad 2026, 321, inclusief nota van toelichting)</a>, de <a href="https://technical-regulation-information-system.ec.europa.eu/nl/notification/27387">concept-Archiefregeling (EU-notificatie 27387)</a> en het <a href="https://zoek.officielebekendmakingen.nl/stb-2026-303.html">Besluit diploma’s archivarissen (Staatsblad 2026, 303)</a>. De artikel-badges in de onderwerpen linken rechtstreeks naar deze officiële teksten. De Archiefregeling is nog een concept en spreekt over "20XX". Controleer die bepalingen daarom in de definitieve regeling, zodra die beschikbaar is. De checklist is een samenvatting, niet de volledige wettekst.</p>
+      <p>Dit overzicht combineert de <a href="https://zoek.officielebekendmakingen.nl/stb-2026-149.html">Archiefwet 2026 (Staatsblad 2026, 149)</a>, het <a href="https://zoek.officielebekendmakingen.nl/stb-2026-321.html">Archiefbesluit 2026 (Staatsblad 2026, 321, inclusief nota van toelichting)</a>, de <a href="https://zoek.officielebekendmakingen.nl/stcrt-2026-40895.html">Archiefregeling 2026 (Staatscourant 2026, 40895)</a> en het <a href="https://zoek.officielebekendmakingen.nl/stb-2026-303.html">Besluit diploma’s archivarissen (Staatsblad 2026, 303)</a>. De artikel-badges in de onderwerpen linken rechtstreeks naar deze officiële teksten. De Archiefregeling 2026 is op 23 november 2026 gepubliceerd in de Staatscourant (nr. 40895). De checklist is een samenvatting, niet de volledige wettekst.</p>
       <p>Dit overzicht richt zich uitsluitend op <strong>Nederland</strong>: alle wet- en regelgeving waarnaar wordt verwezen is Nederlands. De genoemde hulpmiddelen kunnen internationale open source-tools zijn; de verplichtingen zelf zijn dat niet.</p>
       <p>Heeft een regel geen label, dan geldt hij voor alle vormen van archief. De labels <span class="tag dig">digitaal</span> en <span class="tag fys">fysiek</span> betekenen dat de regel alleen voor die vorm geldt. Klik op een regel met een driehoekje voor meer details.</p>
       <p>Onderaan elk onderwerp klapt u een blok <strong>Passende maatregelen en hulpmiddelen</strong> uit: beschikbare standaarden, handreikingen en software (zoals DUTO (Duurzaam Toegankelijke Overheidsinformatie), MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie), BIO2 (Baseline Informatiebeveiliging Overheid 2) en het e-Depot) die bij dat onderwerp passen, inclusief publicaties van de koepels VNG, IPO en Unie van Waterschappen. Deze lijst is <strong>ter inspiratie en niet uitputtend</strong> — het is geen checklist. De hulpmiddelen zijn niet afvinkbaar en tellen niet mee in de voortgang, maar zijn wel doorzoekbaar via de zoekbalk. Boven de onderwerpen staat een verzamelblok: <strong>Instrumentarium en hulpmiddelen</strong>.</p>
@@ -350,7 +350,7 @@ phases.forEach((ph, pi) => {
           : `<div class="item">${art}${head}</div>`;
         return `<li data-id="${esc(id)}" data-kind="${it.k || ""}" data-who="${(it.w || t.w || []).join(" ")}" data-text="${esc(txt)}"><input type="checkbox" aria-labelledby="${esc(t.id)}-h ${esc(id)}-lbl" ${state.done[id] ? "checked" : ""}>${body}</li>`;
       }).join("");
-      const chip = L.key === "regeling" ? ` <span class="chip concept">concept</span>` : "";
+      const chip = L.key === "regeling" ? ` <span class="chip definitief">definitief</span>` : "";
       return `<div class="layer ${L.key}"><h3><span class="badge ${L.cls}" aria-hidden="true">${L.letter}</span>${L.name}${chip}</h3><p class="sub">${L.sub}</p>${items.length ? `<ul class="items">${lis}</ul>` : ""}<p class="none" data-static="${items.length ? "" : esc(fallback || (L.key === "wet" ? "" : ""))}" ${items.length ? "hidden" : ""}>${items.length ? "" : esc(fallback)}</p></div>`;
     }).join("");
     const toolItems = (t.tools || []).map(h => {

@@ -1,13 +1,13 @@
 // Brondata en instellingen voor het Archiefwet 2026-overzicht.
 // Laatst gecontroleerd en bijgewerkt op: zie LAST_UPDATED.
 
-const LAST_UPDATED = "14 november 2026";
+const LAST_UPDATED = "23 november 2026";
 const KEY = "archiefwet2026.v2";
 
 const SOURCES = {
   wet:      { url: "https://zoek.officielebekendmakingen.nl/stb-2026-149.html", name: "Archiefwet 2026 (Staatsblad 2026, 149)" },
   besluit:  { url: "https://zoek.officielebekendmakingen.nl/stb-2026-321.html", name: "Archiefbesluit 2026 (Staatsblad 2026, 321)" },
-  regeling: { url: "https://technical-regulation-information-system.ec.europa.eu/nl/notification/27387", name: "concept-Archiefregeling (EU-notificatie 27387)" },
+  regeling: { url: "https://zoek.officielebekendmakingen.nl/stcrt-2026-40895.html", name: "Archiefregeling 2026 (Staatscourant 2026, 40895)" },
   diploma:  { url: "https://zoek.officielebekendmakingen.nl/stb-2026-303.html", name: "Besluit diploma's archivarissen (Staatsblad 2026, 303)" }
 };
 
@@ -204,7 +204,7 @@ const phases = [
     ],
     tools:[
       H("Beheerregels als drie-kolomentabel",{u:U.beheerregels,d:"Gebruik de wetspecificatie letterlijk: belegging van het beheer, passende maatregelen per categorie, evaluatiecyclus. Publiceer de beheerregels openbaar (Wet 4.2)."}),
-      H("Overzicht informatiehuishouding als wegwijzer",{u:U.overzicht,d:"Taken → werkprocessen → systemen → vindplaatsen. Basis om te bepalen welke maatregelen passend zijn, en werkinstrument voor toezichthouders (concept-Regeling 2.3)."}),
+      H("Overzicht informatiehuishouding als wegwijzer",{u:U.overzicht,d:"Taken → werkprocessen → systemen → vindplaatsen. Basis om te bepalen welke maatregelen passend zijn, en werkinstrument voor toezichthouders (Regeling 2.3)."}),
       H("OIM (Overheidsinformatiemodel), Richtlijn Metagegevens Overheidsinformatie en een applicatieregister/CMDB (configuration management database)",{u:U.catalogus,d:"Hulpmiddelen voor de invulling; een beheerd applicatieregister als technische onderlegger."}),
       H("KIA-community en VNG Kennisbank Grip op Informatie",{u:U.kiaAw,d:"Praktijkgidsen en sessies 'Archiefwet 2026 in de praktijk' van de koepels (VNG, IPO, UvW) voor decentrale overheden."}),
       H("Wegwijzer Duurzaamheidsbeleid (RCE / NDE)",{u:U.rceWegwijzer,d:"Stapsgewijs een duurzaamheidsbeleid (preservation policy) voor de digitale collectie opstellen; sluit aan bij de beheerregels (Wet 4.2)."}),
@@ -236,8 +236,8 @@ const phases = [
       H("Risicobenadering, vastgelegd in de beheerregels",{u:U.duurzaam,d:"Differentieer de zwaarte van de maatregelen per categorie; documenten mogen nooit 'buiten beheer' raken. Verantwoord de differentiatie in de beheerregels."}),
       H("BIO2 (Baseline Informatiebeveiliging Overheid 2) als beveiligingskader",{u:U.bio2,d:"Normenkader voor de 'passende maatregelen ter beveiliging' (Besluit 2.1 lid 2). Het NA e-Depot gebruikt Baseline Rijk plus periodieke beveiligingsaudits als referentiepatroon."}),
       H("DUTO (Duurzaam Toegankelijke Overheidsinformatie) volgens archiving by design en bij inkoop",{u:U.duto,d:"Pas het raamwerk toe bij (her)ontwerp van systemen; de DUTO-risicobeoordeling bepaalt hoe zwaar de maatregelen per categorie moeten zijn."}),
-      H("EU/EER-opslag vastleggen in verwerkersovereenkomsten",{d:"Concept-Regeling 2.1: opslag en verwerking binnen de EU/EER of een land met een adequaatheidsbesluit."}),
-      H("Jaarlijkse steekproefexport",{d:"Test dat u op verzoek een juiste en volledige weergave of export kunt leveren (concept-Regeling 2.4)."})
+      H("EU/EER-opslag vastleggen in verwerkersovereenkomsten",{d:"Regeling 2.1: opslag en verwerking binnen de EU/EER of een land met een adequaatheidsbesluit."}),
+      H("Jaarlijkse steekproefexport",{d:"Test dat u op verzoek een juiste en volledige weergave of export kunt leveren (Regeling 2.4)."})
     ]},
   { id:"metadata", title:"Ordening en metadata",
     doel:"Documenten voorzien van metadata en een plek in een ordeningsstructuur, zodat ze vindbaar en te verantwoorden zijn.",
@@ -256,9 +256,9 @@ const phases = [
       I("2.8","Aanvullend vastleggen: gebruikte hard- en software, resultaten van integriteitschecks en een permanent uniek identificatiekenmerk.",{k:"dig",n:"Alleen voor digitale documenten met een bewaartermijn langer dan 10 jaar (Regeling 2.7)."})
     ],
     tools:[
-      H("MDTO + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Nederlands normerend metadataschema conform NEN-ISO 23081-1, met XML-schema en SIP-specificatie voor uitwisseling tussen systemen; vult concept-Regeling 2.5 en 2.8 in."}),
-      H("Ordeningsstructuren op taken en werkprocessen",{d:"Minstens één ordeningsstructuur aansluitend op taken en werkprocessen; leg de plaats van een document vast via metadata of externe registratie (concept-Regeling 2.2). Handtekeningmetadata volgens 2.6."}),
-      H("EU DSS — Digital Signature Service (eIDAS, de EU-verordening voor elektronische identificatie en vertrouwensdiensten)",{u:U.dss,d:"Open source-bibliotheek (github.com/esig/dss) voor het aanmaken, uitbreiden en valideren van elektronische handtekeningen (handtekeningformaten XAdES, CAdES en PAdES); zie ook het eIDAS Dashboard-hulpmiddel voor validatie. Relevant voor de handtekeningmetadata uit concept-Regeling 2.6."}),
+      H("MDTO + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Nederlands normerend metadataschema conform NEN-ISO 23081-1, met XML-schema en SIP-specificatie voor uitwisseling tussen systemen; vult Regeling 2.5 en 2.8 in."}),
+      H("Ordeningsstructuren op taken en werkprocessen",{d:"Minstens één ordeningsstructuur aansluitend op taken en werkprocessen; leg de plaats van een document vast via metadata of externe registratie (Regeling 2.2). Handtekeningmetadata volgens 2.6."}),
+      H("EU DSS — Digital Signature Service (eIDAS, de EU-verordening voor elektronische identificatie en vertrouwensdiensten)",{u:U.dss,d:"Open source-bibliotheek (github.com/esig/dss) voor het aanmaken, uitbreiden en valideren van elektronische handtekeningen (handtekeningformaten XAdES, CAdES en PAdES); zie ook het eIDAS Dashboard-hulpmiddel voor validatie. Relevant voor de handtekeningmetadata uit Regeling 2.6."}),
       H("Forum Standaardisatie — 'Pas toe of leg uit'-lijst (MDTO verplicht)",{u:U.forumStandaarden,d:"MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) is sinds september 2026 verplicht voor de overheid."})
     ]},
   { id:"digitaal10", title:"Digitale bewaring langer dan 10 jaar",
@@ -281,7 +281,7 @@ const phases = [
       H("Norm Voorkeursformaten",{u:U.voorkeurs,d:"Sla informatieobjecten bij creatie in een duurzaam formaat op. Geen massale conversie van bestaand archief vlak voor overbrenging (informatieverlies); bewaar bestaande objecten in het originele formaat."}),
       H("DROID",{u:U.droid,d:"Formatidentificatie op basis van PRONOM; breng het formaatlandschap in kaart."}),
       H("JHOVE",{u:U.jhove,d:"Formatspecifieke validatie: controleer objecten op leesbaarheid."}),
-      H("Fixity met checksums en manifesten",{d:"Verifieerbare opslag; periodieke fixity-checks zijn de integriteitschecks uit concept-Regeling 2.8. Voor de transferverpakking: volg de gepubliceerde aanlevervoorwaarden van uw archiefdienst (zie onderwerp 'Overbrenging')."}),
+      H("Fixity met checksums en manifesten",{d:"Verifieerbare opslag; periodieke fixity-checks zijn de integriteitschecks uit Regeling 2.8. Voor de transferverpakking: volg de gepubliceerde aanlevervoorwaarden van uw archiefdienst (zie onderwerp 'Overbrenging')."}),
       H("veraPDF",{u:U.verapdf,d:"Open source validatie van PDF/A (duurzame archiefvariant van PDF) en PDF/UA (toegankelijkheidsvariant van PDF): controleer of documenten daadwerkelijk aan het duurzame formaat voldoen."}),
       H("e-Depot of een eigen OAIS-omgeving",{u:U.edepot,d:"e-deposit bij de archiefdienst (het NA e-Depot is CoreTrustSeal-gecertificeerd) of een eigen bewaaromgeving conform OAIS (NEN-ISO 14721). Open source: Archivematica."}),
       H("SIARD voor relationele databases",{u:U.siard,d:"Open archiefformaat (DILCIS Board) voor databases, erkend in de Norm Voorkeursformaten; het e-Depot van het Nationaal Archief neemt SIARD op."}),
@@ -309,11 +309,11 @@ const phases = [
     ],
     tools:[
       H("DUTO-proces Migreren (module 7)",{u:U.duto,d:"Modeleisen voor migratie- en conversiescenario's."}),
-      H("Handreiking Vervanging archiefbescheiden",{u:U.catalogus,d:"Scankwaliteit, procesbeschrijving en controle bij vervanging van analoog archief (Besluit 2.3, concept-Regeling 3.1)."}),
-      H("Proefmigraties met dubbele controle",{d:"Vergelijk steekproefgewijs bron en doel (inhoud, metadata, handtekeningen) vóór de originelen vervallen; leg de resultaten vast in de migratieverklaring, inclusief de niet-gemigreerde documenten (concept-Regeling 3.2–3.3)."}),
+      H("Handreiking Vervanging archiefbescheiden",{u:U.catalogus,d:"Scankwaliteit, procesbeschrijving en controle bij vervanging van analoog archief (Besluit 2.3, Regeling 3.1)."}),
+      H("Proefmigraties met dubbele controle",{d:"Vergelijk steekproefgewijs bron en doel (inhoud, metadata, handtekeningen) vóór de originelen vervallen; leg de resultaten vast in de migratieverklaring, inclusief de niet-gemigreerde documenten (Regeling 3.2–3.3)."}),
       H("Handreikingen per informatiesoort",{u:U.catalogus,d:"E-mail, chatberichten, sociale media en overheidswebsites (incl. validatie van WARC-websitebestanden; WARC = webarchief-formaat)."}),
       H("Wegwijzer Duurzaamheidsbeleid — preserveringsstrategieën (RCE / NDE)",{u:U.rceWegwijzer,d:"Kies per scenario een strategie: media-migratie, formaat-migratie, converteren, normaliseren of emuleren (incl. emulation-as-a-service); leg de keuze en de borging vast in het migratieplan (Besluit 2.2)."}),
-      H("Metamorfoze — Richtlijnen Conservering en kwaliteitsrichtlijnen digitalisering",{u:U.metamorfoze,d:"Voor vervanging van analoog archief (Besluit 2.3, concept-Regeling 3.1): kwaliteitsrichtlijnen voor de scan/reproductie en richtlijnen voor conservering van het origineel."})
+      H("Metamorfoze — Richtlijnen Conservering en kwaliteitsrichtlijnen digitalisering",{u:U.metamorfoze,d:"Voor vervanging van analoog archief (Besluit 2.3, Regeling 3.1): kwaliteitsrichtlijnen voor de scan/reproductie en richtlijnen voor conservering van het origineel."})
     ]}
  ]},
 
@@ -345,7 +345,7 @@ const phases = [
       H("Handreiking Waardering en selectie en Handreiking Steekproeven voor selectie",{u:U.catalogus,d:"Methodiek voor waardering en selectie; zie ook de themapagina Waardering en selectie voor de procedurestappen."}),
       H("Modelselectiebesluiten van de rijksarchivaris",{u:U.selectie,d:"Hergebruik een model in plaats van zelf te ontwerpen (Besluit 3.2)."}),
       H("Handreiking Externe deskundige",{u:U.catalogus,d:"Voor de verplichte onafhankelijke inbreng (Besluit 3.5), naast de archivaris en de verantwoordelijke voor de informatiehuishouding."}),
-      H("Categorie en bewaartermijn als metadata koppelen",{d:"Leg per document de categorie uit het selectiebesluit vast (concept-Regeling 2.5 sub j/k); zonder die koppeling is een selectiebesluit een dode letter."})
+      H("Categorie en bewaartermijn als metadata koppelen",{d:"Leg per document de categorie uit het selectiebesluit vast (Regeling 2.5 sub j/k); zonder die koppeling is een selectiebesluit een dode letter."})
     ]},
   { id:"vernietiging", title:"Vernietiging",
     doel:"Documenten na het verstrijken van de bewaartermijn gecontroleerd en aantoonbaar vernietigen.",
@@ -367,7 +367,7 @@ const phases = [
     ],
     tools:[
       H("Handreiking Digitaal vernietigen",{u:U.vernietigen,d:"Standaardwerk voor het vernietigingsproces: handvatten, keuzen en maatregelen (gebaseerd op AVG, BIO, MoReq2010, ISO 16175 en ISO 15489)."}),
-      H("Retentie- en disposalfunctionaliteit in zaak- en documentsystemen",{d:"Richt vernietiging in als continu proces; log vernietigingsacties en genereer daaruit de verklaring van vernietiging (concept-Regeling 4.2)."}),
+      H("Retentie- en disposalfunctionaliteit in zaak- en documentsystemen",{d:"Richt vernietiging in als continu proces; log vernietigingsacties en genereer daaruit de verklaring van vernietiging (Regeling 4.2)."}),
       H("DUTO-proces Vernietigen (module 5)",{u:U.duto,d:"Modeleisen voor de inrichting van het vernietigingsproces."}),
       H("Ruimte 'op elk moment vernietigbaar' uitwerken in de beheerregels",{d:"Leg uit hoe medewerkers verantwoord omgaan met categorieën die op elk moment vernietigd mogen worden (Besluit 4.1 lid 3)."})
     ]},
@@ -458,7 +458,7 @@ const phases = [
     ],
     tools:[
       H("Woo-afwegingsinstrumentarium hergebruiken",{u:U.openbaarheid,d:"De beperkingsgronden zijn Woo-conform; koppel het bestaande kader (o.a. de brochure 'Open tenzij') aan de archiefmetadata."}),
-      H("Openbaarheidsstatus als verplicht metagegevensveld",{d:"Status, grond, duur en einddatum per document (concept-Regeling 2.12); maakt de verklaring van overbrenging en inzageverzoeken machinaal verwerkbaar."}),
+      H("Openbaarheidsstatus als verplicht metagegevensveld",{d:"Status, grond, duur en einddatum per document (Regeling 2.12); maakt de verklaring van overbrenging en inzageverzoeken machinaal verwerkbaar."}),
       H("Handreiking Openbaarheid bij en na overbrenging",{u:U.catalogus,d:"In ontwikkeling; houd de catalogus kennisproducten in de gaten."})
     ]},
   { id:"toegang", title:"Toegang tot overgebracht archief",
@@ -481,7 +481,7 @@ const phases = [
     tools:[
       H("Handreiking Toegang tot digitaal archief na overbrenging",{u:U.catalogus,d:"Voor archiefdiensten: verzoekafhandeling na overbrenging."}),
       H("Zaaksysteem met beslistermen en logging",{d:"Bouw de bewijsstukken uit Besluit 6.1 (overlijdensbewijs, toestemming, motivering) in als checklist bij beperkt openbare documenten met persoonsgegevens."}),
-      H("Redactiewerkplekken voor gedeeltelijke export",{d:"Ondersteun 'informatie in andere vorm' (Wet 8.4) met een gefilterde weergave of export (concept-Regeling 2.4 sub b)."})
+      H("Redactiewerkplekken voor gedeeltelijke export",{d:"Ondersteun 'informatie in andere vorm' (Wet 8.4) met een gefilterde weergave of export (Regeling 2.4 sub b)."})
     ],
     noteR:NONE_R },
   { id:"archiefdiensten", title:"Archiefdiensten, archivarissen en beheer na overbrenging",
@@ -530,10 +530,10 @@ const phases = [
       I("5.16","Aanvullend voor depots met overgebrachte documenten: klasse A1, 120 minuten brandwerendheid, R200 rookdoorgang, tweemelder-afhankelijke sprinklers, extra blustoestellen en communicatiemiddel.",{k:"fys",w:["archiefdienst"]})
     ],
     tools:[
-      H("Depotaudit / gap-analyse tegen de Regeling",{d:"Toets het depot aan concept-Regeling hoofdstuk 5. Voor bestaande depots: afweging tussen aanpassen en ontheffing aanvragen (Regeling 5.2); bij de equivalentieclausule (Regeling 5.1) de onderbouwing documenteren."}),
+      H("Depotaudit / gap-analyse tegen de Regeling",{d:"Toets het depot aan Regeling hoofdstuk 5. Voor bestaande depots: afweging tussen aanpassen en ontheffing aanvragen (Regeling 5.2); bij de equivalentieclausule (Regeling 5.1) de onderbouwing documenteren."}),
       H("Handreiking Behoud en beheer fysiek archief",{u:U.fysiek,d:"Modules Klimaatbeheer, Depothygiëne, Collectiebehoudsplan en Collectiehulpverleningsplan als praktische vertaling van de normeisen."}),
-      H("Beheers- en calamiteitenplan opstellen en oefenen",{d:"Expliciet vereist (concept-Regeling 5.3)."}),
-      H("Meldplicht (informatie)incidenten binnen 72 uur inrichten",{u:U.toezicht,d:"Koppel de meldplicht (Wet 10.2, concept-Regeling 7.1) aan de bestaande incidentregistratie (BIO/Woo) en calamiteitendraaiboeken; het meldformulier is in ontwikkeling."})
+      H("Beheers- en calamiteitenplan opstellen en oefenen",{d:"Expliciet vereist (Regeling 5.3)."}),
+      H("Meldplicht (informatie)incidenten binnen 72 uur inrichten",{u:U.toezicht,d:"Koppel de meldplicht (Wet 10.2, Regeling 7.1) aan de bestaande incidentregistratie (BIO/Woo) en calamiteitendraaiboeken; het meldformulier is in ontwikkeling."})
     ]},
   { id:"depot-klimaat", title:"Depot: klimaat, inrichting en hygiëne",
     doel:"Bewaaromstandigheden die verval van fysieke documenten tegengaan.",
@@ -549,8 +549,8 @@ const phases = [
       I("5.18","Afwijkende klimaatwaarden voor kleurenprocedés, cellulosenitraat en -acetaat, met acclimatisering bij verplaatsing.",{k:"fys"})
     ],
     tools:[
-      H("Module Klimaatbeheer met continue monitoring",{u:U.fysiek,d:"Dataloggers en trendrapportage tegen de normwaarden (concept-Regeling 5.14)."}),
-      H("Module Depothygiëne en protocollen depothygiëne",{u:U.depothygiene,d:"Schoonmaak, schimmelcontrole en geïntegreerde ongediertebestrijding; het protocol minstens jaarlijks evalueren (concept-Regeling 5.15)."}),
+      H("Module Klimaatbeheer met continue monitoring",{u:U.fysiek,d:"Dataloggers en trendrapportage tegen de normwaarden (Regeling 5.14)."}),
+      H("Module Depothygiëne en protocollen depothygiëne",{u:U.depothygiene,d:"Schoonmaak, schimmelcontrole en geïntegreerde ongediertebestrijding; het protocol minstens jaarlijks evalueren (Regeling 5.15)."}),
       H("Module Collectiebehoudsplan",{u:U.cbp,d:"Schade-inventarisatie en collectiewaardering om prioriteiten te stellen tussen conservering en restauratie."}),
       H("Module Collectiehulpverleningsplan",{u:U.fysiek,d:"Calamiteitenplan voor het depot, met draagvlak in de organisatie."}),
       H("RCE — binnenklimaat en klimaatrisico's voor depotbeheer",{u:U.rceKlimaat,d:"Praktische informatie van de Rijksdienst voor het Cultureel Erfgoed over binnenklimaat in depots, als aanvulling op de Module Klimaatbeheer."})
@@ -568,7 +568,7 @@ const phases = [
       I("6.8","Papier volgens NEN 2728 of NEN-EN-ISO 9706; inkt en toner watervast, lichtecht en niet doordrukkend.",{k:"fys"})
     ],
     tools:[
-      H("ICN-kwaliteitseisen als norm",{d:"Concept-Regeling hoofdstuk 6 is zelf de norm: verpakkingen, omslagen, dozen en etiketten; papier volgens NEN 2728 of NEN-EN-ISO 9706; watervaste, lichtechte inkt en toner."}),
+      H("ICN-kwaliteitseisen als norm",{d:"Regeling hoofdstuk 6 is zelf de norm: verpakkingen, omslagen, dozen en etiketten; papier volgens NEN 2728 of NEN-EN-ISO 9706; watervaste, lichtechte inkt en toner."}),
       H("Catalogus kennisproducten",{u:U.catalogus,d:"Verdiepende handreikingen voor behoud en beheer van fysiek archief."})
     ]}
  ]},
@@ -590,7 +590,7 @@ const phases = [
     ],
     tools:[
       H("Toetsingskader Inspectie afwachten en afstemmen",{u:U.toezicht,d:"Nieuw kader (verwacht najaar 2026) maakt de open norm 'passend' toetsbaar; stem uw interne toetsingskader hierop af."}),
-      H("72-uursmeldplicht koppelen aan bestaande processen",{u:U.toezicht,d:"Meld (informatie)incidenten binnen 72 uur (Wet 10.2, concept-Regeling 7.1) via de bestaande incidentregistratie en calamiteitenplannen, zodat de 72-uursklok geen ad-hocproces wordt."}),
+      H("72-uursmeldplicht koppelen aan bestaande processen",{u:U.toezicht,d:"Meld (informatie)incidenten binnen 72 uur (Wet 10.2, Regeling 7.1) via de bestaande incidentregistratie en calamiteitenplannen, zodat de 72-uursklok geen ad-hocproces wordt."}),
       H("Interbestuurlijk toezicht organiseren",{d:"Decentraal houdt de eigen archivaris rechtstreeks toezicht (Wet 10.4); de Inspectie houdt interbestuurlijk toezicht."}),
       H("Meldpagina meldplicht informatie-incidenten (Inspectie Overheidsinformatie en Erfgoed (IOE))",{u:U.ioeMeld,d:"Officiële pagina van de Inspectie Overheidsinformatie en Erfgoed over de meldplicht die vanaf 1 januari 2027 geldt."})
     ],
