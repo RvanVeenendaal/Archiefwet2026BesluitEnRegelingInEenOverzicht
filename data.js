@@ -82,13 +82,17 @@ const U = {
   ed3: "https://www.noraonline.nl/images/noraonline/6/6b/ED3_v1.pdf",
   gemmaEdepot: "https://www.gemmaonline.nl/images/gemma/5/59/Handreiking_in_gebruik_nemen_e-depot_decentrale_overheden_versie_1.0_dec._2015.pdf",
   vngPreservering: "https://vng.nl/sites/default/files/2026-01/aan-de-slag-met-preserveringsbeleid-een-naslagwerk-bij-het-opstellen.pdf",
-  metamorfoze: "https://www.metamorfoze.nl/sites/default/files/documents/MM%20AC%20Richtlijnen%20conservering%202023.pdf"
+  metamorfoze: "https://www.metamorfoze.nl/sites/default/files/documents/MM%20AC%20Richtlijnen%20conservering%202023.pdf",
+  tkAw: "https://toetsingskader.inspectie-oe.nl/",
+  dutoQuickscan: "https://www.nationaalarchief.nl/archiveren/kennisbank/risicobeoordeling-quickscan",
+  kiaGids: "https://kiacommunity.nl/thoughts/29561"
 };
 
 // Instrumentarium en hulpmiddelen: dwarsdoorsnede over alle onderwerpen heen.
 const TOOLBOX = [
   { g:"Kapstok voor passende maatregelen", items:[
-    H("DUTO-raamwerk (Duurzaam Toegankelijke Overheidsinformatie)",{u:U.duto,d:"Vertaalt 'passende maatregelen' in modeleisen per proces (registreren, vernietigen, bewaren, migreren, ter beschikking stellen), inclusief een risicobeoordeling; toe te passen volgens archiving by design én op bestaande systemen."})
+    H("DUTO-raamwerk (Duurzaam Toegankelijke Overheidsinformatie)",{u:U.duto,d:"Vertaalt 'passende maatregelen' in modeleisen per proces (registreren, vernietigen, bewaren, migreren, ter beschikking stellen), inclusief een risicobeoordeling; toe te passen volgens archiving by design én op bestaande systemen."}),
+    H("DUTO-quickscan (risicobeoordeling)",{u:U.dutoQuickscan,d:"Snelle, globale risicoscan binnen een bepaalde scope: inzicht in de belangrijkste risico's voor duurzame toegankelijkheid en de daarbij passende maatregelen. Een quickscan is geen vorm van toezicht."})
   ]},
   { g:"Metadata en ordening", items:[
     H("MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie) + Stappenplan toepassen MDTO (23 juni 2026)",{u:U.mdto,d:"Normerend metadataschema (NEN-ISO 23081-1) met XML-schema en SIP-specificatie voor uitwisseling tussen systemen." }),
@@ -119,12 +123,14 @@ const TOOLBOX = [
     H("Aanlevervoorwaarden MDTO — voorbeeld decentrale archiefdienst (Noord-Hollands Archief)",{u:U.nha,d:"Vergelijkbare MDTO-gebaseerde aanlever-/aansluitvoorwaarden publiceren diverse RHC's (Regionaal Historische Centra) en gemeentelijke archiefdiensten (o.a. Drents Archief, Regionaal Archief Nijmegen, Erfgoed Leiden, Stadsarchief Amsterdam)." })
   ]},
   { g:"Kennisproducten per onderwerp", items:[
-    H("Catalogus kennisproducten Nationaal Archief",{u:U.catalogus,d:"Handreikingen voor e-mail, chat, sociale media, websites, vervanging, waardering/selectie, steekproeven, externe deskundige, digitaal vernietigen, digitaal overbrengen en fysiek archief." })
+    H("Catalogus kennisproducten Nationaal Archief",{u:U.catalogus,d:"Handreikingen voor e-mail, chat, sociale media, websites, vervanging, waardering/selectie, steekproeven, externe deskundige, digitaal vernietigen, digitaal overbrengen en fysiek archief." }),
+    H("Toetsingskader Archiefwet 2026 (Inspectie Overheidsinformatie en Erfgoed, live sinds 23 november 2026)",{u:U.tkAw,d:"Maakt de open normen uit de Archiefwet 2026 concreet en toetsbaar: per onderwerp de geldende voorschriften plus de criteria en indicatoren waarmee de Inspectie naleving beoordeelt. Ook te gebruiken om de eigen informatiehuishouding op orde te brengen. Open source: RijksICTGilde/toetsingskader-archiefwet op GitHub." })
   ]},
   { g:"Leren en community", items:[
     H("Voorbereiden op de inwerkingtreding",{u:U.voorbereiden,d:"KIA (Kenniscommunity Informatie en Archief) en het Leerhuis Informatiehuishouding volgen het invoeringstraject." }),
     H("Training Digitale Preservering",{u:U.training,d:"Vakbekwaamheid voor digitale bewaring." }),
-    H("Leren Preserveren (NDE)",{u:U.lerenPreserveren,d:"Leeromgeving van het NDE (Netwerk Digitaal Erfgoed) met o.a. preserveringsstrategieën (migratie, conversie, normalisatie, emulatie) en de Wegwijzer duurzaamheidsbeleid." })
+    H("Leren Preserveren (NDE)",{u:U.lerenPreserveren,d:"Leeromgeving van het NDE (Netwerk Digitaal Erfgoed) met o.a. preserveringsstrategieën (migratie, conversie, normalisatie, emulatie) en de Wegwijzer duurzaamheidsbeleid." }),
+    H("Leerhuis Informatiehuishouding — Archiefwet 2026",{u:U.leerhuisFs,d:"Gratis leeraanbod voor rijks- en medeoverheden: factsheet, 5 microlearnings van ~15 minuten, trainingen, de tweedaagse workshop 'Slim schakelen tussen wetten', webinars (o.a. over toezicht) en een podcastserie met praktijkverhalen." })
   ]},
   { g:"Decentrale koepels: VNG (Vereniging van Nederlandse Gemeenten), IPO (Interprovinciaal Overleg) en Unie van Waterschappen", items:[
     H("VNG — Grip op Informatie (programma en kennisbank)",{u:U.vngGrip,d:"Programma met handreikingen en praktijksessies 'Archiefwet 2026 in de praktijk' voor gemeenten en gemeenschappelijke regelingen, o.a. via de Kennisbank Grip op Informatie." }),
@@ -135,7 +141,7 @@ const TOOLBOX = [
     H("UvW (Unie van Waterschappen) — Meerjarenplan digitale informatiehuishouding waterschappen 2026–2030",{u:U.uvwMJP,d:"Implementatieaanpak van de waterschappen; zie ook het thema transparante overheid/archiefbeheer." }),
     H("UvW — Thema transparante overheid",{u:U.uvwTransparant,d:"Informatie over archiefbeheer en openbaarheid bij waterschappen." }),
     H("KIA-community 'Archiefwet 2026'",{u:U.kiaAw,d:"Kenniscommunity Informatie en Archief: praktijkgidsen, sessies en ervaringen van o.a. VNG, IPO en UvW." }),
-    H("Factsheet Archiefwet 2026 (Ministerie van Onderwijs, Cultuur en Wetenschap, via het Leerhuis Informatiehuishouding)",{u:U.leerhuisFs,d:"Wat verandert er ten opzichte van de Archiefwet 1995." })
+    H("Praktijkgids Archiefwet 2026 v1.2 (1 november 2026, gratis via KIA community)",{u:U.kiaGids,d:"Praktische gids per onderwerp over wat de Archiefwet 2026 vraagt, incl. Woo-verzoeken en het Selectiebesluit na de machtiging; ook als pdf te downloaden." })
   ]},
   { g:"Opleiding en vakbekwaamheid (diploma-eis archivaris)", items:[
     H("UvA — Dual Master Archival and Information Studies (wo; aangewezen voor diploma Archivistiek A)",{u:U.uva,d:"Academische route tot archivaris; een van de drie aangewezen opleidingen onder het Besluit diploma's archivarissen." }),
@@ -207,6 +213,7 @@ const phases = [
       H("Overzicht informatiehuishouding als wegwijzer",{u:U.overzicht,d:"Taken → werkprocessen → systemen → vindplaatsen. Basis om te bepalen welke maatregelen passend zijn, en werkinstrument voor toezichthouders (Regeling 2.3)."}),
       H("OIM (Overheidsinformatiemodel), Richtlijn Metagegevens Overheidsinformatie en een applicatieregister/CMDB (configuration management database)",{u:U.catalogus,d:"Hulpmiddelen voor de invulling; een beheerd applicatieregister als technische onderlegger."}),
       H("KIA-community en VNG Kennisbank Grip op Informatie",{u:U.kiaAw,d:"Praktijkgidsen en sessies 'Archiefwet 2026 in de praktijk' van de koepels (VNG, IPO, UvW) voor decentrale overheden."}),
+      H("Praktijkgids Archiefwet 2026 v1.2 (KIA community)",{u:U.kiaGids,d:"Gratis praktische gids per onderwerp voor de implementatie, o.a. Woo-verzoeken en het Selectiebesluit na de machtiging."}),
       H("Wegwijzer Duurzaamheidsbeleid (RCE / NDE)",{u:U.rceWegwijzer,d:"Stapsgewijs een duurzaamheidsbeleid (preservation policy) voor de digitale collectie opstellen; sluit aan bij de beheerregels (Wet 4.2)."}),
       H("VNG — Aan de slag met preserveringsbeleid (naslagwerk 2026)",{u:U.vngPreservering,d:"Naslagwerk bij het uitwerken van de passende maatregelen per categorie in de beheerregels."})
     ]}
@@ -236,6 +243,7 @@ const phases = [
       H("Risicobenadering, vastgelegd in de beheerregels",{u:U.duurzaam,d:"Differentieer de zwaarte van de maatregelen per categorie; documenten mogen nooit 'buiten beheer' raken. Verantwoord de differentiatie in de beheerregels."}),
       H("BIO2 (Baseline Informatiebeveiliging Overheid 2) als beveiligingskader",{u:U.bio2,d:"Normenkader voor de 'passende maatregelen ter beveiliging' (Besluit 2.1 lid 2). Het NA e-Depot gebruikt Baseline Rijk plus periodieke beveiligingsaudits als referentiepatroon."}),
       H("DUTO (Duurzaam Toegankelijke Overheidsinformatie) volgens archiving by design en bij inkoop",{u:U.duto,d:"Pas het raamwerk toe bij (her)ontwerp van systemen; de DUTO-risicobeoordeling bepaalt hoe zwaar de maatregelen per categorie moeten zijn."}),
+      H("DUTO-quickscan als snelle risicoscan",{u:U.dutoQuickscan,d:"Snel globaal inzicht in de risico's voor duurzame toegankelijkheid binnen een scope, met concrete maatregelen; geen vorm van toezicht."}),
       H("EU/EER-opslag vastleggen in verwerkersovereenkomsten",{d:"Regeling 2.1: opslag en verwerking binnen de EU/EER of een land met een adequaatheidsbesluit."}),
       H("Jaarlijkse steekproefexport",{d:"Test dat u op verzoek een juiste en volledige weergave of export kunt leveren (Regeling 2.4)."})
     ]},
@@ -589,7 +597,7 @@ const phases = [
       I("7.1","Meld een incident binnen 72 uur na ontdekking aan de hoofdinspecteur met contactgegevens, omschrijving, aanmerkelijk belang, schade, genomen maatregelen en omvang.",{w:["rijk","toezichthouder"],d:["'Incident' is gedefinieerd in Regeling 1.1 als een situatie of calamiteit uit Wet 10.2 lid 1 sub a en b."]})
     ],
     tools:[
-      H("Toetsingskader Inspectie afwachten en afstemmen",{u:U.toezicht,d:"Nieuw kader (verwacht najaar 2026) maakt de open norm 'passend' toetsbaar; stem uw interne toetsingskader hierop af."}),
+      H("Toetsingskader Archiefwet 2026 — Inspectie IOE (live sinds 23 november 2026)",{u:U.tkAw,d:"Maakt de open norm 'passend' concreet en toetsbaar: per onderwerp de geldende voorschriften plus de criteria/indicatoren waarmee de Inspectie naleving beoordeelt. Stem uw eigen toetsing hierop af; ook open source beschikbaar (RijksICTGilde op GitHub)."}),
       H("72-uursmeldplicht koppelen aan bestaande processen",{u:U.toezicht,d:"Meld (informatie)incidenten binnen 72 uur (Wet 10.2, Regeling 7.1) via de bestaande incidentregistratie en calamiteitenplannen, zodat de 72-uursklok geen ad-hocproces wordt."}),
       H("Interbestuurlijk toezicht organiseren",{d:"Decentraal houdt de eigen archivaris rechtstreeks toezicht (Wet 10.4); de Inspectie houdt interbestuurlijk toezicht."}),
       H("Meldpagina meldplicht informatie-incidenten (Inspectie Overheidsinformatie en Erfgoed (IOE))",{u:U.ioeMeld,d:"Officiële pagina van de Inspectie Overheidsinformatie en Erfgoed over de meldplicht die vanaf 1 januari 2027 geldt."})
